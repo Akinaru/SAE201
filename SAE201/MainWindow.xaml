@@ -41,8 +41,11 @@
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
+
             <Grid Grid.Column="0">
+
                 <ListView
                     x:Name="listViewCategorie"
                     Margin="10,102,10,52"
@@ -156,7 +159,35 @@
                     VerticalAlignment="Top"
                     Content="" />
             </Grid>
-
+            <Grid Grid.Column="3">
+                <ListView
+                    x:Name="listViewPersonnel"
+                    Margin="10,102,10,52"
+                    BorderBrush="#FF849082"
+                    ItemsSource="{Binding Path=LesPersonnels}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding Nom}" Header="Nom" />
+                            <GridViewColumn DisplayMemberBinding="{Binding Prenom}" Header="Prenom" />
+                            <GridViewColumn DisplayMemberBinding="{Binding Email}" Header="Email" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Button
+                    Width="148"
+                    Margin="0,0,0,27"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    Background="#FF14213D"
+                    Content="+ Ajouter"
+                    Foreground="White" />
+                <Label
+                    Height="26"
+                    Margin="0,31,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Content="Personnel" />
+            </Grid>
 
 
         </Grid>
