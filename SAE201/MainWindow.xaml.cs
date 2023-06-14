@@ -21,6 +21,8 @@ namespace SAE201
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private Window pageajout;
         public MainWindow()
         {
             InitializeComponent();
@@ -60,7 +62,8 @@ namespace SAE201
 
         private void MenuModificationPersonnel(object sender, RoutedEventArgs e)
         {
-            return;
+            pageajout = new Ajout(new Personnel(), this);
+            pageajout.Show();
         }
 
         private void MenuSuppressionPersonnel(object sender, RoutedEventArgs e)

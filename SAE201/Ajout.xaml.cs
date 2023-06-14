@@ -1,5 +1,7 @@
-﻿using System;
+﻿using SAE201.Ressources;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +21,17 @@ namespace SAE201
     /// </summary>
     public partial class Ajout : Window
     {
-        public Ajout()
+        
+        public Ajout(Object obj, MainWindow mainWindow)
         {
             InitializeComponent();
+            if (obj is Personnel)
+            {
+                ObservableCollection<Personnel> listePerso = new ObservableCollection<Personnel>();
+                listePerso.Add(obj as Personnel);
+                dataGrid.DataContext = mainWindow.applicationData.LesPersonnels;
+                dataGrid.ItemsSource = listePerso;
+            }
         }
     }
 }

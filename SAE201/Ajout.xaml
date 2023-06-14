@@ -9,5 +9,10 @@
     Width="800"
     Height="450"
     mc:Ignorable="d">
-    <Grid />
+    <Grid>
+        <DataGrid
+            x:Name="dataGrid"
+            Margin="177,122,177,122"
+            d:ItemsSource="{d:SampleData ItemCount=5}" />
+    </Grid>
 </Window>
