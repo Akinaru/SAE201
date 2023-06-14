@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SAE201.Ressources
 {
-    internal class Personnel : Crud<Personnel>
+    public class Personnel : Crud<Personnel>
     {
 
         private int id;

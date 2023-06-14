@@ -21,17 +21,22 @@ namespace SAE201
     /// </summary>
     public partial class Ajout : Window
     {
-        
-        public Ajout(Object obj, MainWindow mainWindow)
+        public ObservableCollection<Personnel> LesPersonnels { get; set; }
+
+        public Ajout(Personnel perso, MainWindow mainWindow)
         {
             InitializeComponent();
-            if (obj is Personnel)
-            {
+                Personnel p = perso;
+                LesPersonnels = p.FindAll();
                 ObservableCollection<Personnel> listePerso = new ObservableCollection<Personnel>();
-                listePerso.Add(obj as Personnel);
-                dataGrid.DataContext = mainWindow.applicationData.LesPersonnels;
-                dataGrid.ItemsSource = listePerso;
-            }
+                listePerso.Add(p);
+                dataGrid.DataContext = LesPersonnels;
+                dataGrid.ItemsSource = listePerso;  
+        }
+
+        public Ajout()
+        {
+            InitializeComponent();
         }
     }
 }
