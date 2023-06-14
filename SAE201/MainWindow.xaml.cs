@@ -38,7 +38,7 @@ namespace SAE201
 
         private void listViewCategorie_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(listViewCategorie.SelectedItem!= null)
+            if (listViewCategorie.SelectedItem != null)
             {
                 listViewMateriel.DataContext = listViewCategorie.SelectedItem;
                 listViewMateriel.ItemsSource = ((CategorieMateriel)listViewCategorie.SelectedItem).LesMateriels;
@@ -56,6 +56,16 @@ namespace SAE201
             listViewMateriel.SelectedItem = null;
             listViewAttribution.ItemsSource = applicationData.LesAttributions;
             lbSelection.Content = "";
+        }
+
+        private void MenuModificationPersonnel(object sender, RoutedEventArgs e)
+        {
+            return;
+        }
+
+        private void MenuSuppressionPersonnel(object sender, RoutedEventArgs e)
+        {
+            return;
         }
     }
 }

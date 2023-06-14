@@ -172,6 +172,12 @@
                             <GridViewColumn DisplayMemberBinding="{Binding Email}" Header="Email" />
                         </GridView>
                     </ListView.View>
+                    <ListBox.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Click="MenuModificationPersonnel" Header="Modifier" />
+                            <MenuItem Click="MenuSuppressionPersonnel" Header="Supprimer" />
+                        </ContextMenu>
+                    </ListBox.ContextMenu>
                 </ListView>
                 <Button
                     Width="148"
