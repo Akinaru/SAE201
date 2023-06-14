@@ -1,0 +1,164 @@
+﻿<Window
+    x:Class="SAE201.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:SAE201"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="clr-namespace:SAE201.Ressources"
+    Title="MATINFO - Gestion"
+    Width="1280"
+    Height="720"
+    MinWidth="1280"
+    MinHeight="720"
+    Background="#FFE5E5E5"
+    mc:Ignorable="d">
+    <Window.DataContext>
+        <model:ApplicationData x:Name="applicationData" />
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*" />
+            <RowDefinition Height="477*" />
+        </Grid.RowDefinitions>
+
+
+        <Grid Grid.Row="0">
+            <Label
+                Height="67"
+                VerticalAlignment="Center"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Background="#FF14213D"
+                Content="MATINFO"
+                FontSize="24"
+                Foreground="White" />
+
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="0,6,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <ListView
+                    x:Name="listViewCategorie"
+                    Margin="10,102,10,52"
+                    ItemsSource="{Binding Path=LesCategories}"
+                    SelectionChanged="listViewCategorie_SelectionChanged">
+
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding Nom}" Header="Nom" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Button
+                    Width="148"
+                    Margin="0,0,0,27"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    Background="#FF14213D"
+                    Content="+ Ajouter"
+                    Foreground="White" />
+                <Button
+                    x:Name="btResetSelecCategorie"
+                    Width="28"
+                    Height="20"
+                    Margin="0,77,10,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Click="btResetSelecCategorie_Click"
+                    Content="X" />
+                <Label
+                    Height="26"
+                    Margin="0,31,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Content="Catégorie" />
+            </Grid>
+
+            <Grid Grid.Column="1" Margin="10,0,10,0">
+                <ListView
+                    x:Name="listViewMateriel"
+                    Margin="0,102,0,52"
+                    SelectionChanged="listViewMateriel_SelectionChanged">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding Nom}" Header="Nom" />
+                            <GridViewColumn DisplayMemberBinding="{Binding CodeBarre}" Header="CodeBarre" />
+                            <GridViewColumn DisplayMemberBinding="{Binding RefConstructeur}" Header="RefConstructeur" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Button
+                    Width="148"
+                    Margin="0,0,0,27"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    Background="#FF14213D"
+                    Content="+ Ajouter"
+                    Foreground="White" />
+                <Button
+                    x:Name="btResetSelecMateriel"
+                    Width="28"
+                    Height="20"
+                    Margin="0,77,10,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Click="btResetSelecMateriel_Click"
+                    Content="X" />
+                <Label
+                    Height="26"
+                    Margin="0,31,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Content="Matériel" />
+            </Grid>
+            <Grid Grid.Column="2">
+                <ListView
+                    x:Name="listViewAttribution"
+                    Margin="10,102,10,52"
+                    BorderBrush="#FF849082"
+                    ItemsSource="{Binding Path=LesAttributions}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding Date}" Header="Date" />
+                            <GridViewColumn DisplayMemberBinding="{Binding Commentaire}" Header="Commentaire" />
+                            <GridViewColumn DisplayMemberBinding="{Binding PrenomPerso}" Header="Prenom Perso" />
+                            <GridViewColumn DisplayMemberBinding="{Binding NomPerso}" Header="Nom Perso" />
+                            <GridViewColumn DisplayMemberBinding="{Binding NomMat}" Header="Nom Mat" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Button
+                    Width="148"
+                    Margin="0,0,0,27"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    Background="#FF14213D"
+                    Content="+ Ajouter"
+                    Foreground="White" />
+                <Label
+                    Height="26"
+                    Margin="0,31,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Content="Attribution" />
+                <Label
+                    x:Name="lbSelection"
+                    Width="359"
+                    Height="26"
+                    Margin="10,71,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Content="" />
+            </Grid>
+
+
+
+        </Grid>
+    </Grid>
+</Window>
