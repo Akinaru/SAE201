@@ -13,7 +13,13 @@
         <DataGrid
             x:Name="dataGrid"
             Margin="177,155,177,155"
-            d:ItemsSource="{d:SampleData ItemCount=5}" CanUserAddRows="False" />
-        <Button Content="Valider" HorizontalAlignment="Left" Margin="534,376,0,0" VerticalAlignment="Top" Height="24" Width="89"/>
+            CanUserAddRows="False" />
+        <Button
+            Width="89"
+            Height="24"
+            Margin="534,376,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Valider" />
     </Grid>
 </Window>
