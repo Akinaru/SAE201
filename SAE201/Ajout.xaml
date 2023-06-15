@@ -13,6 +13,7 @@
         <DataGrid
             x:Name="dataGrid"
             Margin="177,155,177,155"
+            d:ItemsSource="{d:SampleData ItemCount=5}"
             CanUserAddRows="False" />
         <Button
             Width="89"
