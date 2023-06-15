@@ -109,7 +109,7 @@ namespace SAE201.Ressources
         {
             ObservableCollection<Personnel> lesPersonnels = new ObservableCollection<Personnel>();
             DataAccess accesBD = new DataAccess();
-            String requete = "select id, nom, prenom, email from personnel ;";
+            String requete = "select id, nom, prenom, email from personnel order by id;";
             DataTable datas = accesBD.GetData(requete);
             if (datas != null)
             {

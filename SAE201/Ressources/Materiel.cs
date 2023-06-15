@@ -128,7 +128,7 @@ namespace SAE201.Ressources
         {
             ObservableCollection<Materiel> lesMateriels = new ObservableCollection<Materiel>();
             DataAccess accesBD = new DataAccess();
-            String requete = "select id, nom, codebarre, refconstructeur, idcategorie from materiel ;";
+            String requete = "select id, nom, codebarre, refconstructeur, idcategorie from materiel order by id;";
             DataTable datas = accesBD.GetData(requete);
             if (datas != null)
             {
