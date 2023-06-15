@@ -62,7 +62,7 @@ namespace SAE201
 
         private void MenuModificationPersonnel(object sender, RoutedEventArgs e)
         {
-            pageajout = new Ajout((Personnel)listViewPersonnel.SelectedItem, this);
+            pageajout = new Ajout((Personnel)listViewPersonnel.SelectedItem);
             pageajout.Show();
         }
 

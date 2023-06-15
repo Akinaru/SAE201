@@ -23,16 +23,18 @@ namespace SAE201
     {
         public ObservableCollection<Personnel> LesPersonnels { get; set; }
 
-        public Ajout(Personnel perso, MainWindow mainWindow)
+        public Ajout(Personnel perso)
         {
             InitializeComponent();
-                Personnel p = perso;
+                Personnel p = new Personnel(perso.Id, perso.Nom, perso.Prenom, perso.Email);
                 LesPersonnels = p.FindAll();
                 ObservableCollection<Personnel> listePerso = new ObservableCollection<Personnel>();
                 listePerso.Add(p);
-                dataGrid.DataContext = LesPersonnels;
+                //dataGrid.DataContext = LesPersonnels;
                 dataGrid.ItemsSource = listePerso;  
         }
+
+
 
         public Ajout()
         {
