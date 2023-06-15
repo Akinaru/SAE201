@@ -51,7 +51,6 @@ namespace SAE201
             dataGrid.Columns.Add(nomColumn);
             dataGrid.Columns.Add(prenomColumn);
             dataGrid.Columns.Add(emailColumn);
-
             dataGrid.ItemsSource = listePerso;
 
         }
@@ -61,6 +60,11 @@ namespace SAE201
         public Modification()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
