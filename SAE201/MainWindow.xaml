@@ -37,6 +37,7 @@
 			</Grid>
 		</Border>
 
+
 		<Grid Grid.Row="1" Margin="0,6,0,0">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="1*" />
@@ -46,6 +47,15 @@
 			</Grid.ColumnDefinitions>
 
 			<Grid Grid.Column="0">
+				<Label
+					Height="56"
+					Margin="10,53,0,0"
+					HorizontalAlignment="Left"
+					VerticalAlignment="Top"
+					Content="Catégorie"
+					FontFamily="72 Black"
+					FontSize="36"
+					Foreground="#226F54" />
 
 				<ListView
 					x:Name="listViewCategorie"
@@ -65,8 +75,38 @@
 					HorizontalAlignment="Center"
 					VerticalAlignment="Bottom"
 					Background="#FF14213D"
+					Click="Button_Click_3"
 					Content="+ Ajouter"
-					Foreground="White" Click="Button_Click_3" />
+					Foreground="White">
+					<Button.Style>
+						<Style TargetType="Button">
+							<Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
+							<Setter Property="FontSize" Value="18" />
+							<Setter Property="Template">
+								<Setter.Value>
+									<ControlTemplate TargetType="Button">
+										<Border
+											x:Name="border"
+											Padding="10,6"
+											Background="{TemplateBinding Background}"
+											CornerRadius="10">
+											<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+										</Border>
+										<ControlTemplate.Triggers>
+											<Trigger Property="IsMouseOver" Value="True">
+												<Setter TargetName="border" Property="Background" Value="#FF0C192F" />
+											</Trigger>
+											<Trigger Property="IsPressed" Value="True">
+												<Setter TargetName="border" Property="Background" Value="#FF05142B" />
+											</Trigger>
+										</ControlTemplate.Triggers>
+									</ControlTemplate>
+								</Setter.Value>
+							</Setter>
+						</Style>
+					</Button.Style>
+				</Button>
+
 				<Button
 					x:Name="btResetSelecCategorie"
 					Width="28"
@@ -76,14 +116,6 @@
 					VerticalAlignment="Top"
 					Click="btResetSelecCategorie_Click"
 					Content="X" />
-				<Label
-					Height="26"
-					Margin="0,31,0,0"
-					HorizontalAlignment="Center"
-					VerticalAlignment="Top"
-					Content="Catégorie"
-					FontWeight="Bold"
-					Foreground="#226F54" />
 			</Grid>
 
 			<Grid Grid.Column="1" Margin="10,0,10,0">
@@ -105,8 +137,37 @@
 					HorizontalAlignment="Center"
 					VerticalAlignment="Bottom"
 					Background="#FF14213D"
+					Click="Button_Click_2"
 					Content="+ Ajouter"
-					Foreground="White" Click="Button_Click_2" />
+					Foreground="White">
+					<Button.Style>
+						<Style TargetType="Button">
+							<Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
+							<Setter Property="FontSize" Value="18" />
+							<Setter Property="Template">
+								<Setter.Value>
+									<ControlTemplate TargetType="Button">
+										<Border
+											x:Name="border"
+											Padding="10,6"
+											Background="{TemplateBinding Background}"
+											CornerRadius="10">
+											<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+										</Border>
+										<ControlTemplate.Triggers>
+											<Trigger Property="IsMouseOver" Value="True">
+												<Setter TargetName="border" Property="Background" Value="#FF0C192F" />
+											</Trigger>
+											<Trigger Property="IsPressed" Value="True">
+												<Setter TargetName="border" Property="Background" Value="#FF05142B" />
+											</Trigger>
+										</ControlTemplate.Triggers>
+									</ControlTemplate>
+								</Setter.Value>
+							</Setter>
+						</Style>
+					</Button.Style>
+				</Button>
 				<Button
 					x:Name="btResetSelecMateriel"
 					Width="28"
@@ -117,11 +178,13 @@
 					Click="btResetSelecMateriel_Click"
 					Content="X" />
 				<Label
-					Height="26"
-					Margin="0,31,0,0"
-					HorizontalAlignment="Center"
+					Height="56"
+					Margin="0,53,0,0"
+					HorizontalAlignment="Left"
 					VerticalAlignment="Top"
 					Content="Matériel"
+					FontFamily="72 Black"
+					FontSize="36"
 					FontWeight="Bold"
 					Foreground="#226F54" />
 			</Grid>
@@ -141,21 +204,52 @@
 						</GridView>
 					</ListView.View>
 				</ListView>
+
 				<Button
 					Width="148"
 					Margin="0,0,0,27"
 					HorizontalAlignment="Center"
 					VerticalAlignment="Bottom"
 					Background="#FF14213D"
+					Click="Button_Click_1"
 					Content="+ Ajouter"
-					Foreground="White" Click="Button_Click_1" />
+					Foreground="White">
+					<Button.Style>
+						<Style TargetType="Button">
+							<Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
+							<Setter Property="FontSize" Value="18" />
+							<Setter Property="Template">
+								<Setter.Value>
+									<ControlTemplate TargetType="Button">
+										<Border
+											x:Name="border"
+											Padding="10,6"
+											Background="{TemplateBinding Background}"
+											CornerRadius="10">
+											<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+										</Border>
+										<ControlTemplate.Triggers>
+											<Trigger Property="IsMouseOver" Value="True">
+												<Setter TargetName="border" Property="Background" Value="#FF0C192F" />
+											</Trigger>
+											<Trigger Property="IsPressed" Value="True">
+												<Setter TargetName="border" Property="Background" Value="#FF05142B" />
+											</Trigger>
+										</ControlTemplate.Triggers>
+									</ControlTemplate>
+								</Setter.Value>
+							</Setter>
+						</Style>
+					</Button.Style>
+				</Button>
 				<Label
-					Height="26"
-					Margin="0,31,0,0"
-					HorizontalAlignment="Center"
+					Height="50"
+					Margin="10,54,0,0"
+					HorizontalAlignment="Left"
 					VerticalAlignment="Top"
 					Content="Attribution"
-					FontWeight="Bold"
+					FontFamily="72 Black"
+					FontSize="36"
 					Foreground="#226F54" />
 				<Label
 					x:Name="lbSelection"
@@ -193,14 +287,45 @@
 					HorizontalAlignment="Center"
 					VerticalAlignment="Bottom"
 					Background="#FF14213D"
+					Click="Button_Click"
 					Content="+ Ajouter"
-					Foreground="White" Click="Button_Click" />
+					Foreground="White">
+					<Button.Style>
+						<Style TargetType="Button">
+							<Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
+							<Setter Property="FontSize" Value="18" />
+							<Setter Property="Template">
+								<Setter.Value>
+									<ControlTemplate TargetType="Button">
+										<Border
+											x:Name="border"
+											Padding="10,6"
+											Background="{TemplateBinding Background}"
+											CornerRadius="10">
+											<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+										</Border>
+										<ControlTemplate.Triggers>
+											<Trigger Property="IsMouseOver" Value="True">
+												<Setter TargetName="border" Property="Background" Value="#FF0C192F" />
+											</Trigger>
+											<Trigger Property="IsPressed" Value="True">
+												<Setter TargetName="border" Property="Background" Value="#FF05142B" />
+											</Trigger>
+										</ControlTemplate.Triggers>
+									</ControlTemplate>
+								</Setter.Value>
+							</Setter>
+						</Style>
+					</Button.Style>
+				</Button>
 				<Label
-					Height="26"
-					Margin="0,31,0,0"
-					HorizontalAlignment="Center"
+					Height="49"
+					Margin="10,53,0,0"
+					HorizontalAlignment="Left"
 					VerticalAlignment="Top"
 					Content="Personnel"
+					FontFamily="72 Black"
+					FontSize="36"
 					FontWeight="Bold"
 					Foreground="#226F54" />
 			</Grid>
