@@ -75,8 +75,38 @@
 					HorizontalAlignment="Center"
 					VerticalAlignment="Bottom"
 					Background="#FF14213D"
+					Click="Button_Click_3"
 					Content="+ Ajouter"
-					Foreground="White" Click="Button_Click_3" />
+					Foreground="White">
+					<Button.Style>
+						<Style TargetType="Button">
+							<Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
+							<Setter Property="FontSize" Value="18" />
+							<Setter Property="Template">
+								<Setter.Value>
+									<ControlTemplate TargetType="Button">
+										<Border
+											x:Name="border"
+											Padding="10,6"
+											Background="{TemplateBinding Background}"
+											CornerRadius="10">
+											<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+										</Border>
+										<ControlTemplate.Triggers>
+											<Trigger Property="IsMouseOver" Value="True">
+												<Setter TargetName="border" Property="Background" Value="#FF0C192F" />
+											</Trigger>
+											<Trigger Property="IsPressed" Value="True">
+												<Setter TargetName="border" Property="Background" Value="#FF05142B" />
+											</Trigger>
+										</ControlTemplate.Triggers>
+									</ControlTemplate>
+								</Setter.Value>
+							</Setter>
+						</Style>
+					</Button.Style>
+				</Button>
+
 				<Button
 					x:Name="btResetSelecCategorie"
 					Width="28"
@@ -107,8 +137,9 @@
 					HorizontalAlignment="Center"
 					VerticalAlignment="Bottom"
 					Background="#FF14213D"
+					Click="Button_Click_2"
 					Content="+ Ajouter"
-					Foreground="White" Click="Button_Click_2" />
+					Foreground="White" />
 				<Button
 					x:Name="btResetSelecMateriel"
 					Width="28"
@@ -152,8 +183,9 @@
 					HorizontalAlignment="Center"
 					VerticalAlignment="Bottom"
 					Background="#FF14213D"
+					Click="Button_Click_1"
 					Content="+ Ajouter"
-					Foreground="White" Click="Button_Click_1" />
+					Foreground="White" />
 				<Label
 					Height="50"
 					Margin="10,54,0,0"
@@ -199,8 +231,9 @@
 					HorizontalAlignment="Center"
 					VerticalAlignment="Bottom"
 					Background="#FF14213D"
+					Click="Button_Click"
 					Content="+ Ajouter"
-					Foreground="White" Click="Button_Click" />
+					Foreground="White" />
 				<Label
 					Height="49"
 					Margin="10,53,0,0"
