@@ -17,27 +17,27 @@ using System.Windows.Shapes;
 namespace SAE201
 {
     /// <summary>
-    /// Logique d'interaction pour Ajout.xaml
+    /// Logique d'interaction pour Modification.xaml
     /// </summary>
-    public partial class Ajout : Window
+    public partial class Modification : Window
     {
         public ObservableCollection<Personnel> LesPersonnels { get; set; }
 
-        public Ajout(Personnel perso)
+        public Modification(Personnel perso)
         {
             InitializeComponent();
-                this.Title += "Personnel";
-                Personnel p = new Personnel(perso.Id, perso.Nom, perso.Prenom, perso.Email);
-                LesPersonnels = p.FindAll();
-                ObservableCollection<Personnel> listePerso = new ObservableCollection<Personnel>();
-                listePerso.Add(p);
-                dataGrid.ItemsSource = listePerso;
-                
+            this.Title += "Personnel";
+            Personnel p = new Personnel(perso.Id, perso.Nom, perso.Prenom, perso.Email);
+            LesPersonnels = p.FindAll();
+            ObservableCollection<Personnel> listePerso = new ObservableCollection<Personnel>();
+            listePerso.Add(p);
+            dataGrid.ItemsSource = listePerso;
+
         }
 
 
 
-        public Ajout()
+        public Modification()
         {
             InitializeComponent();
         }
