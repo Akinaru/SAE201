@@ -11,7 +11,7 @@
 	Height="720"
 	MinWidth="1280"
 	MinHeight="720"
-	Background="#2f3542"
+	Background="#B0DDCE"
 	mc:Ignorable="d">
 	<Window.DataContext>
 		<model:ApplicationData x:Name="applicationData" />
@@ -23,18 +23,19 @@
 		</Grid.RowDefinitions>
 
 
-		<Grid Grid.Row="0">
-			<Label
-				Height="67"
-				VerticalAlignment="Center"
-				HorizontalContentAlignment="Center"
-				VerticalContentAlignment="Center"
-				Background="#5352ed"
-				Content="MATINFO"
-				FontSize="24"
-				Foreground="#f1f2f6" />
-
-		</Grid>
+		<Border Background="#226F54" CornerRadius="0,0,30,30">
+			<Grid Grid.Row="0">
+				<Label
+					Height="67"
+					VerticalAlignment="Center"
+					HorizontalContentAlignment="Center"
+					VerticalContentAlignment="Center"
+					Content="MATINFO"
+					FontFamily="Cascadia Mono SemiBold"
+					FontSize="24"
+					Foreground="#f1f2f6" />
+			</Grid>
+		</Border>
 
 		<Grid Grid.Row="1" Margin="0,6,0,0">
 			<Grid.ColumnDefinitions>
@@ -80,7 +81,9 @@
 					Margin="0,31,0,0"
 					HorizontalAlignment="Center"
 					VerticalAlignment="Top"
-					Content="Catégorie" />
+					Content="Catégorie"
+					FontWeight="Bold"
+					Foreground="#226F54" />
 			</Grid>
 
 			<Grid Grid.Column="1" Margin="10,0,10,0">
@@ -118,7 +121,9 @@
 					Margin="0,31,0,0"
 					HorizontalAlignment="Center"
 					VerticalAlignment="Top"
-					Content="Matériel" />
+					Content="Matériel"
+					FontWeight="Bold"
+					Foreground="#226F54" />
 			</Grid>
 			<Grid Grid.Column="2">
 				<ListView
@@ -149,7 +154,9 @@
 					Margin="0,31,0,0"
 					HorizontalAlignment="Center"
 					VerticalAlignment="Top"
-					Content="Attribution" />
+					Content="Attribution"
+					FontWeight="Bold"
+					Foreground="#226F54" />
 				<Label
 					x:Name="lbSelection"
 					Width="359"
@@ -193,7 +200,9 @@
 					Margin="0,31,0,0"
 					HorizontalAlignment="Center"
 					VerticalAlignment="Top"
-					Content="Personnel" />
+					Content="Personnel"
+					FontWeight="Bold"
+					Foreground="#226F54" />
 			</Grid>
 
 
