@@ -74,5 +74,29 @@ namespace SAE201
         {
             return;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e) // AJOUT PERSONNEL
+        {
+            pageajout = new Ajout();
+            pageajout.Show();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e) // AJOUT ATTRIBUTION
+        {
+            pageajout = new Ajout();
+            pageajout.Show();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e) // AJOUT MATERIEL
+        {
+            pageajout = new Ajout();
+            pageajout.Show();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e) // AJOUT CATEGORIE
+        {
+            pageajout = new Ajout();
+            pageajout.Show();
+        }
     }
 }
