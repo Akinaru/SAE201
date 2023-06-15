@@ -65,7 +65,7 @@ namespace SAE201
         {
             if(listViewPersonnel.SelectedItem != null)
             {
-                pageModif = new Modification((Personnel)listViewPersonnel.SelectedItem);
+                pageModif = new Modification((Personnel)listViewPersonnel.SelectedItem, this);
                 pageModif.Show();
             }
         }

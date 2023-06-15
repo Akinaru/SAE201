@@ -151,7 +151,7 @@ namespace SAE201.Ressources
         {
             ObservableCollection<Attribution> lesAttributions = new ObservableCollection<Attribution>();
             DataAccess accesBD = new DataAccess();
-            String requete = "select idpersonnel, idmateriel, date, commentaire, p.nom, p.prenom, m.nom as \"NomMat\" from attribution a join personnel p on p.id = a.idpersonnel join materiel m on a.idmateriel = m.id;";
+            String requete = "select idpersonnel, idmateriel, date, commentaire, p.nom, p.prenom, m.nom as \"NomMat\" from attribution a join personnel p on p.id = a.idpersonnel join materiel m on a.idmateriel = m.id order by idcategorie;";
             DataTable datas = accesBD.GetData(requete);
             if (datas != null)
             {

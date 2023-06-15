@@ -18,11 +18,22 @@
             d:ItemsSource="{d:SampleData ItemCount=5}"
             CanUserAddRows="False" />
         <Button
+            x:Name="btValider"
             Width="89"
             Height="24"
-            Margin="534,376,0,0"
+            Margin="534,374,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            Click="btValider_Click"
             Content="Valider" />
+        <Button
+            x:Name="btAnnuler"
+            Width="89"
+            Height="24"
+            Margin="177,374,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="Button_Click"
+            Content="Annuler" />
     </Grid>
 </Window>
