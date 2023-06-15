@@ -65,14 +65,17 @@ namespace SAE201
         {
             if(listViewPersonnel.SelectedItem != null)
             {
-                pageModif = new Modification((Personnel)listViewPersonnel.SelectedItem);
+                pageModif = new Modification((Personnel)listViewPersonnel.SelectedItem, this);
                 pageModif.Show();
             }
         }
 
         private void MenuSuppressionPersonnel(object sender, RoutedEventArgs e)
         {
-            return;
+            if (listViewPersonnel.SelectedItem != null)
+            {
+                MessageBoxResult result = MessageBox.Show("Êtes-vous sur de supprimer \"" + ((Personnel)listViewPersonnel.SelectedItem).Nom + " " + ((Personnel)listViewPersonnel.SelectedItem).Prenom + "\"", "Supprimer ?", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e) // AJOUT PERSONNEL
