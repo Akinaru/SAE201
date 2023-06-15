@@ -90,7 +90,6 @@ namespace SAE201.Ressources
             DataTable datas = accesBD.GetData(requete);
             if(datas != null)
             {
-
                 return true;
             }
             return false;
