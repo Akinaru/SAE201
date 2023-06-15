@@ -22,20 +22,20 @@ namespace SAE201
     public partial class Modification : Window
     {
         public ObservableCollection<Personnel> LesPersonnels { get; set; }
-        public Object actuelAvecModif;
-        public MainWindow mainWindow;
+        public Object actuel;
 
         public Modification(Personnel perso, MainWindow fenetre)
         {
             InitializeComponent();
             this.Title += "Personnel";
             dataGrid.AutoGenerateColumns = false;
-            mainWindow = fenetre;
+            actuel = perso;
 
-            Personnel p = new Personnel(perso.Id, perso.Nom, perso.Prenom, perso.Email);
-            LesPersonnels = p.FindAll();
+            // Personnel p = new Personnel(perso.Id, perso.Nom, perso.Prenom, perso.Email);
+            //actuel = p;
+            //LesPersonnels = p.FindAll();
             ObservableCollection<Personnel> listePerso = new ObservableCollection<Personnel>();
-            listePerso.Add(p);
+            listePerso.Add(perso);
 
             // Créer les colonnes
             DataGridTextColumn nomColumn = new DataGridTextColumn();
@@ -73,8 +73,16 @@ namespace SAE201
         {
             if(actuel is Personnel)
             {
-                actuelAvecModif = (Personnel)dataGrid.SelectedItem;
-                MessageBox.Show(((Personnel)actuelAvecModif).Nom);
+                if (((Personnel)actuel).Update())
+                {
+                    MessageBox.Show("La modification a été validée.", "Modification", MessageBoxButton.OK, MessageBoxImage.Exclamation); 
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("La modification a été refusée.", "Modification", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    this.Close();
+                }
             }
 
         }

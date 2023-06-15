@@ -85,7 +85,15 @@ namespace SAE201.Ressources
 
         public bool Update()
         {
-            throw new NotImplementedException();
+            DataAccess accesBD = new DataAccess();
+            string requete = $"UPDATE personnel SET Nom = '{this.Nom}', Prenom = '{this.Prenom}', Email = '{this.Email}' WHERE Id = {this.Id};";
+            DataTable datas = accesBD.GetData(requete);
+            if(datas != null)
+            {
+
+                return true;
+            }
+            return false;
         }
 
 
