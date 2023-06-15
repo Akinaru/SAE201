@@ -22,12 +22,15 @@ namespace SAE201
     public partial class Modification : Window
     {
         public ObservableCollection<Personnel> LesPersonnels { get; set; }
+        public Object actuelAvecModif;
+        public MainWindow mainWindow;
 
-        public Modification(Personnel perso)
+        public Modification(Personnel perso, MainWindow fenetre)
         {
             InitializeComponent();
             this.Title += "Personnel";
             dataGrid.AutoGenerateColumns = false;
+            mainWindow = fenetre;
 
             Personnel p = new Personnel(perso.Id, perso.Nom, perso.Prenom, perso.Email);
             LesPersonnels = p.FindAll();
@@ -52,7 +55,6 @@ namespace SAE201
             dataGrid.Columns.Add(prenomColumn);
             dataGrid.Columns.Add(emailColumn);
             dataGrid.ItemsSource = listePerso;
-
         }
 
 
@@ -65,6 +67,16 @@ namespace SAE201
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void btValider_Click(object sender, RoutedEventArgs e)
+        {
+            if(actuel is Personnel)
+            {
+                actuelAvecModif = (Personnel)dataGrid.SelectedItem;
+                MessageBox.Show(((Personnel)actuelAvecModif).Nom);
+            }
+
         }
     }
 }
