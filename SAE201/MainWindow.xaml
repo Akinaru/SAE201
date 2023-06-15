@@ -62,18 +62,27 @@
 					Margin="10,102,10,52"
 					ItemsSource="{Binding Path=LesCategories}"
 					SelectionChanged="listViewCategorie_SelectionChanged">
-
+					<ListView.Resources>
+						<Style TargetType="ListView">
+							<Setter Property="BorderThickness" Value="0" />
+							<Setter Property="ScrollViewer.CanContentScroll" Value="True" />
+							<Setter Property="Foreground" Value="#226F54" />
+							<Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
+							<Setter Property="FontSize" Value="18" />
+						</Style>
+					</ListView.Resources>
 					<ListView.View>
 						<GridView>
 							<GridViewColumn DisplayMemberBinding="{Binding Nom}" Header="Nom" />
 						</GridView>
 					</ListView.View>
 				</ListView>
+
 				<Button
 					Width="148"
-					Margin="0,0,0,27"
+					Height="32"
+					Margin="0,587,0,12"
 					HorizontalAlignment="Center"
-					VerticalAlignment="Bottom"
 					Background="#FF14213D"
 					Click="Button_Click_3"
 					Content="+ Ajouter"
@@ -133,9 +142,9 @@
 				</ListView>
 				<Button
 					Width="148"
-					Margin="0,0,0,27"
+					Height="32"
+					Margin="0,585,0,14"
 					HorizontalAlignment="Center"
-					VerticalAlignment="Bottom"
 					Background="#FF14213D"
 					Click="Button_Click_2"
 					Content="+ Ajouter"
@@ -207,9 +216,9 @@
 
 				<Button
 					Width="148"
-					Margin="0,0,0,27"
+					Height="32"
+					Margin="0,584,0,14"
 					HorizontalAlignment="Center"
-					VerticalAlignment="Bottom"
 					Background="#FF14213D"
 					Click="Button_Click_1"
 					Content="+ Ajouter"
@@ -283,9 +292,9 @@
 				</ListView>
 				<Button
 					Width="148"
-					Margin="0,0,0,27"
+					Height="32"
+					Margin="0,584,0,14"
 					HorizontalAlignment="Center"
-					VerticalAlignment="Bottom"
 					Background="#FF14213D"
 					Click="Button_Click"
 					Content="+ Ajouter"
