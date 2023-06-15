@@ -31,6 +31,7 @@ namespace SAE201
                 ObservableCollection<Personnel> listePerso = new ObservableCollection<Personnel>();
                 listePerso.Add(p);
                 dataGrid.ItemsSource = listePerso;
+                
         }
 
 

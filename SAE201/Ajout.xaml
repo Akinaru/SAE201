@@ -13,6 +13,6 @@
         <DataGrid
             x:Name="dataGrid"
             Margin="177,122,177,122"
-            d:ItemsSource="{d:SampleData ItemCount=5}" />
+            d:ItemsSource="{d:SampleData ItemCount=5}" CanUserAddRows="False" />
     </Grid>
 </Window>
