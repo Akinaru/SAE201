@@ -26,12 +26,13 @@ namespace SAE201
         public Ajout(Personnel perso)
         {
             InitializeComponent();
-                Personnel p = new Personnel(perso.Id, perso.Nom, perso.Prenom, perso.Email);
-                LesPersonnels = p.FindAll();
-                ObservableCollection<Personnel> listePerso = new ObservableCollection<Personnel>();
-                listePerso.Add(p);
-                //dataGrid.DataContext = LesPersonnels;
-                dataGrid.ItemsSource = listePerso;  
+            Personnel p = new Personnel(perso.Id, perso.Nom, perso.Prenom, perso.Email);
+            LesPersonnels = p.FindAll();
+            ObservableCollection<Personnel> listePerso = new ObservableCollection<Personnel>();
+            listePerso.Add(p);
+            //dataGrid.DataContext = LesPersonnels;
+            dataGrid.ItemsSource = listePerso;
+            
         }
 
 
