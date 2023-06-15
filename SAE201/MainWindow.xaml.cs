@@ -23,6 +23,7 @@ namespace SAE201
     {
 
         private Window pageajout;
+        private Window pageModif;
         public MainWindow()
         {
             InitializeComponent();
@@ -62,8 +63,11 @@ namespace SAE201
 
         private void MenuModificationPersonnel(object sender, RoutedEventArgs e)
         {
-            pageajout = new Ajout((Personnel)listViewPersonnel.SelectedItem);
-            pageajout.Show();
+            if(listViewPersonnel.SelectedItem != null)
+            {
+                pageModif = new Modification((Personnel)listViewPersonnel.SelectedItem);
+                pageModif.Show();
+            }
         }
 
         private void MenuSuppressionPersonnel(object sender, RoutedEventArgs e)
