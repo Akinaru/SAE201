@@ -108,10 +108,10 @@ namespace SAE201
         public Modification(CategorieMateriel materiel)
         {
             InitializeComponent();
+
             this.Title += "Categorie Materiel";
             dataGrid.AutoGenerateColumns = false;
             actuel = materiel;
-
 
             ObservableCollection<CategorieMateriel> listeCategorie = new ObservableCollection<CategorieMateriel>();
             listeCategorie.Add(materiel);
