@@ -24,7 +24,7 @@ namespace SAE201
         public ObservableCollection<Personnel> LesPersonnels { get; set; }
         public Object actuel;
 
-        public Modification(Personnel perso, MainWindow fenetre)
+        public Modification(Personnel perso)
         {
             InitializeComponent();
             this.Title += "Personnel";
@@ -51,11 +51,12 @@ namespace SAE201
             dataGrid.Columns.Add(prenomColumn);
             dataGrid.Columns.Add(emailColumn);
             dataGrid.ItemsSource = listePerso;
+            
         }
-        public Modification(Attribution attrib, MainWindow fenetre)
+        public Modification(Attribution attrib)
         {
             InitializeComponent();
-            this.Title += "Personnel";
+            this.Title += "Attribution";
             dataGrid.AutoGenerateColumns = false;
             actuel = attrib;
 
@@ -81,7 +82,6 @@ namespace SAE201
         public Modification()
         {
             InitializeComponent();
-
         }
 
 
@@ -91,12 +91,12 @@ namespace SAE201
             {
                 if (((Personnel)actuel).Update())
                 {
-                    MessageBox.Show("La modification a été validée.", "Modification", MessageBoxButton.OK, MessageBoxImage.Exclamation); 
+                    MessageBox.Show("La modification a été validée.", "Modification Personnel", MessageBoxButton.OK, MessageBoxImage.Exclamation); 
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("La modification a été refusée.", "Modification", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("La modification a été refusée.", "Modification Personnel", MessageBoxButton.OK, MessageBoxImage.Warning);
                     this.Close();
                 }
             }
@@ -104,12 +104,12 @@ namespace SAE201
             {
                 if (((Attribution)actuel).Update())
                 {
-                    MessageBox.Show("L'attribution a été validée.", "Modification", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                    MessageBox.Show("La modification a été validée.", "Modification Attribution", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("L'attribution a été refusée.", "Modification", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("La modification a été refusée.", "Modification Attribution", MessageBoxButton.OK, MessageBoxImage.Warning);
                     this.Close();
                 }
             }
