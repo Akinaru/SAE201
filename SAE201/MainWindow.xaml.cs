@@ -122,6 +122,20 @@ namespace SAE201
         }
         private void MenuSuppressionMateriel(object sender, RoutedEventArgs e)
         {
+            if (listViewAttribution.SelectedItem != null)
+            {
+                MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de supprimer ce matériel : ", "Suppression", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.Yes)
+                {
+                    ((Attribution)listViewAttribution.SelectedItem).Delete();
+
+                    MessageBox.Show("Bien supprimé", "Suppression", MessageBoxButton.OK);
+                }
+                else
+                {
+                    MessageBox.Show("Operation annulée", "Annulation", MessageBoxButton.OK);
+                }
+            }
         }
 
         private void MenuModificationCategorie(object sender, RoutedEventArgs e)
