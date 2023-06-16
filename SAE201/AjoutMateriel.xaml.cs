@@ -29,19 +29,6 @@ namespace SAE201
 
         private void btCreer_Click(object sender, RoutedEventArgs e)
         {
-            int idCategorie;
-
-            Materiel p = new Materiel(0, tbNom.Text, tbCodeBarre.Text, tbRefConstructeur.Text);
-
-            if (p.Create())
-            {
-                CategorieMateriel pFinal = new CategorieMateriel(p.GetId(), p.Nom);
-                ApplicationData.LesCategories.Add(pFinal);
-
-            }
-            else
-                MessageBox.Show("La création a été refusée.", "Ajout Categorie", MessageBoxButton.OK, MessageBoxImage.Warning);
-            this.Close();
         }
 
         private void btAnnuler_Click(object sender, RoutedEventArgs e)
