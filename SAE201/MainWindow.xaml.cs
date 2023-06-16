@@ -83,7 +83,6 @@ namespace SAE201
                     ApplicationData.LesPersonnels = new Personnel().FindAll();
                     listViewPersonnel.ItemsSource = ApplicationData.LesPersonnels;
 
-                    MessageBox.Show("Bien supprimé", "Suppression", MessageBoxButton.OK);
                 }
                 else
                 {
@@ -118,7 +117,6 @@ namespace SAE201
                     listViewAttribution.DataContext = listViewMateriel.SelectedItem;
                     listViewAttribution.ItemsSource = ((Materiel)listViewMateriel.SelectedItem).LesAttributions;
 
-                    MessageBox.Show("Bien supprimé", "Suppression", MessageBoxButton.OK);
                 }
                 else
                 {
@@ -154,7 +152,6 @@ namespace SAE201
                     listViewMateriel.ItemsSource = ((CategorieMateriel)listViewCategorie.SelectedItem).LesMateriels;
 
 
-                    MessageBox.Show("Bien supprimé", "Suppression", MessageBoxButton.OK);
                 }
                 else
                 {
@@ -175,15 +172,16 @@ namespace SAE201
         {
             if (listViewCategorie.SelectedItem != null)
             {
-                MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de supprimer cette catégorie de matériel : " + ((CategorieMateriel)listViewCategorie.SelectedItem).Nom, "Suppression", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                CategorieMateriel cat = ((CategorieMateriel)listViewCategorie.SelectedItem);
+                MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de supprimer cette catégorie de matériel : " + cat.Nom, "Suppression", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                 if (result == MessageBoxResult.Yes)
                 {
-                    ((CategorieMateriel)listViewCategorie.SelectedItem).Delete();
+                    MessageBox.Show(ApplicationData.LesCategories.Contains(cat) +" ");
+                    cat.Delete();
 
                     ApplicationData.LesCategories = new CategorieMateriel().FindAll();
                     listViewCategorie.ItemsSource = ApplicationData.LesCategories;
 
-                    MessageBox.Show("Bien supprimé", "Suppression", MessageBoxButton.OK);
                 }
                 else
                 {
@@ -194,7 +192,7 @@ namespace SAE201
 
         private void btAjouterPersonnel_Click(object sender, RoutedEventArgs e)
         {
-            pageAjout = new Ajout(new Personnel());
+            pageAjout = new AjoutPersonnel();
             pageAjout.Show();
         }
 
@@ -210,8 +208,6 @@ namespace SAE201
 
         private void btAjouterCategorie_Click(object sender, RoutedEventArgs e)
         {
-            pageAjout = new Ajout(new CategorieMateriel());
-            pageAjout.Show();
         }
     }
 }

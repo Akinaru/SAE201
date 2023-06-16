@@ -126,6 +126,7 @@ namespace SAE201.Ressources
             DataTable datas = accesBD.GetData(requete);
             if (datas != null)
             {
+                ApplicationData.LesAttributions.Add(this);
                 return true;
             }
             return false;

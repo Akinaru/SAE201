@@ -103,6 +103,7 @@ namespace SAE201.Ressources
             DataTable datas = accesBD.GetData(requete);
             if (datas != null)
             {
+                ApplicationData.LesMateriels.Add(this);
                 return true;
             }
             return false;

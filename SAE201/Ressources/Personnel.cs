@@ -76,6 +76,7 @@ namespace SAE201.Ressources
             DataTable datas = accesBD.GetData(requete);
             if (datas != null)
             {
+                ApplicationData.LesPersonnels.Add(this);
                 return true;
             }
             return false;
