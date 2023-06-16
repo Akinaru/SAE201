@@ -81,8 +81,8 @@ namespace SAE201
                 if (result == MessageBoxResult.Yes)
                 {
                     ((Personnel)listViewPersonnel.SelectedItem).Delete();
-                    CollectionViewSource.GetDefaultView(listViewPersonnel.ItemsSource).Refresh();
-
+                    applicationData.LesPersonnels = new Personnel().FindAll();
+                    listViewPersonnel.ItemsSource = applicationData.LesPersonnels;
                     MessageBox.Show("Bien supprimé", "Suppression", MessageBoxButton.OK);
                 }
                 else
