@@ -129,7 +129,7 @@
                     x:Name="btResetSelecCategorie"
                     Width="28"
                     Height="28"
-                    Margin="0,77,10,0"
+                    Margin="0,27,10,0"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Top"
                     Click="btResetSelecCategorie_Click">
