@@ -56,7 +56,7 @@
             x:Name="btAnnuler"
             Width="99"
             Height="39"
-            Margin="171,361,0,0"
+            Margin="177,361,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Background="Transparent"

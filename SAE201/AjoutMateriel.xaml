@@ -54,13 +54,42 @@
         </Button>
         <Button
             x:Name="btAnnuler"
-            Width="89"
-            Height="24"
-            Margin="177,376,0,0"
+            Width="99"
+            Height="39"
+            Margin="177,361,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            Background="Transparent"
             Click="btAnnuler_Click"
-            Content="Annuler" />
+            Content="Annuler">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
+                    <Setter Property="FontSize" Value="18" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border
+                                    x:Name="border"
+                                    Padding="10,6"
+                                    Background="{TemplateBinding Background}"
+                                    CornerRadius="10">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#E6E6E6" />
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#DFDFDF" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
 
         <Label
             Width="800"
