@@ -99,7 +99,14 @@ namespace SAE201.Ressources
 
         public bool Delete()
         {
-            throw new NotImplementedException();
+            DataAccess accesBD = new DataAccess();
+            string requete = $"DELETE from personnel WHERE Id = {this.Id};";
+            DataTable datas = accesBD.GetData(requete);
+            if (datas != null)
+            {
+                return true;
+            }
+            return false;
         }
 
 
