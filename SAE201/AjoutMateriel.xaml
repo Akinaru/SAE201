@@ -183,7 +183,26 @@
             Width="316"
             Margin="0,112,0,0"
             HorizontalAlignment="Center"
-            VerticalAlignment="Top" />
+            VerticalAlignment="Top"
+            Background="#FF14213D"
+            BorderBrush="#FF0C192F"
+            FontFamily="Cascadia Mono SemiBold"
+            FontSize="18"
+            Foreground="#FF14213D">
+            <ComboBox.ItemContainerStyle>
+                <Style TargetType="ComboBoxItem">
+                    <Setter Property="Foreground" Value="#f1f2f6" />
+                    <Setter Property="Background" Value="#FF14213D" />
+                    <Setter Property="Padding" Value="6" />
+                    <Style.Triggers>
+                        <Trigger Property="IsHighlighted" Value="True">
+                            <Setter Property="Foreground" Value="#f1f2f6" />
+                            <Setter Property="Background" Value="#FF0C192F" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ComboBox.ItemContainerStyle>
+        </ComboBox>
 
     </Grid>
 </Window>
