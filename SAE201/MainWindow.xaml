@@ -221,7 +221,7 @@
                     ItemsSource="{Binding Path=LesAttributions}">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn DisplayMemberBinding="{Binding Date}" Header="Date" />
+                            <GridViewColumn DisplayMemberBinding="{Binding Date, StringFormat=d}" Header="Date" />
                             <GridViewColumn DisplayMemberBinding="{Binding Commentaire}" Header="Commentaire" />
                             <GridViewColumn DisplayMemberBinding="{Binding PrenomPerso}" Header="Prenom Perso" />
                             <GridViewColumn DisplayMemberBinding="{Binding NomPerso}" Header="Nom Perso" />

@@ -135,7 +135,14 @@ namespace SAE201.Ressources
 
         public bool Update()
         {
-            throw new NotImplementedException();
+            DataAccess accesBD = new DataAccess();
+            string requete = $"UPDATE attribution SET date = '{this.Date}', commentaire = '{this.Commentaire}' WHERE idpersonnel = {this.IdPersonnel} and idmateriel = {this.IdMateriel};";
+            DataTable datas = accesBD.GetData(requete);
+            if (datas != null)
+            {
+                return true;
+            }
+            return false;
         }
 
 

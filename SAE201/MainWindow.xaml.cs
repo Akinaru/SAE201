@@ -90,6 +90,11 @@ namespace SAE201
 
         private void MenuModificationAttribution(object sender, RoutedEventArgs e)
         {
+            if (listViewAttribution.SelectedItem != null)
+            {
+                pageModif = new Modification((Attribution)listViewAttribution.SelectedItem, this);
+                pageModif.Show();
+            }
         }
         private void MenuSuppressionAttribution(object sender, RoutedEventArgs e)
         {

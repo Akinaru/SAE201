@@ -52,6 +52,29 @@ namespace SAE201
             dataGrid.Columns.Add(emailColumn);
             dataGrid.ItemsSource = listePerso;
         }
+        public Modification(Attribution attrib, MainWindow fenetre)
+        {
+            InitializeComponent();
+            this.Title += "Personnel";
+            dataGrid.AutoGenerateColumns = false;
+            actuel = attrib;
+
+
+            ObservableCollection<Attribution> listeAttribution = new ObservableCollection<Attribution>();
+            listeAttribution.Add(attrib);
+
+            DataGridTextColumn dateColumn = new DataGridTextColumn();
+            dateColumn.Header = "Date";
+            dateColumn.Binding = new Binding("Date");
+
+            DataGridTextColumn commentaireColumn = new DataGridTextColumn();
+            commentaireColumn.Header = "Commentaire";
+            commentaireColumn.Binding = new Binding("Commentaire");
+
+            dataGrid.Columns.Add(dateColumn);
+            dataGrid.Columns.Add(commentaireColumn);
+            dataGrid.ItemsSource = listeAttribution;
+        }
 
 
 
@@ -77,7 +100,19 @@ namespace SAE201
                     this.Close();
                 }
             }
-
+            if (actuel is Attribution)
+            {
+                if (((Attribution)actuel).Update())
+                {
+                    MessageBox.Show("L'attribution a été validée.", "Modification", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("L'attribution a été refusée.", "Modification", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    this.Close();
+                }
+            }
         }
 
         private void btAnnuler_Click(object sender, RoutedEventArgs e)
