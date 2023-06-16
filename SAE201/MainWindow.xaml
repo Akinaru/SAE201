@@ -219,12 +219,34 @@
                 <Button
                     x:Name="btResetSelecMateriel"
                     Width="28"
-                    Height="20"
-                    Margin="0,35,10,0"
+                    Height="28"
+                    Margin="0,27,10,0"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Top"
                     Click="btResetSelecMateriel_Click"
-                    Content="X" />
+                    Content="X">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#FF14213D" />
+                            <Setter Property="Foreground" Value="White" />
+                            <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
+                            <Setter Property="FontSize" Value="12" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border
+                                            Background="{TemplateBinding Background}"
+                                            BorderBrush="{TemplateBinding BorderBrush}"
+                                            BorderThickness="{TemplateBinding BorderThickness}"
+                                            CornerRadius="14">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <Label
                     Height="56"
                     Margin="0,15,0,0"
