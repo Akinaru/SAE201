@@ -131,7 +131,9 @@
             Margin="242,221,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Code Barre:" />
+            Content="Code Barre:"
+            FontFamily="Cascadia Mono SemiBold"
+            FontSize="18" />
         <TextBox
             x:Name="tbCodeBarre"
             Width="314"
@@ -147,7 +149,9 @@
             Margin="242,289,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Ref Constructeur:" />
+            Content="Ref Constructeur:"
+            FontFamily="Cascadia Mono SemiBold"
+            FontSize="18" />
         <TextBox
             x:Name="tbRefConstructeur"
             Width="314"
