@@ -89,6 +89,27 @@ namespace SAE201
             }
         }
 
+        private void MenuModificationAttribution(object sender, RoutedEventArgs e)
+        {
+        }
+        private void MenuSuppressionAttribution(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void MenuModificationMateriel(object sender, RoutedEventArgs e)
+        {
+        }
+        private void MenuSuppressionMateriel(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void MenuModificationCategorie(object sender, RoutedEventArgs e)
+        {
+        }
+        private void MenuSuppressionCategorie(object sender, RoutedEventArgs e)
+        {
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e) // AJOUT PERSONNEL
         {
             pageAjout = new Ajout();
