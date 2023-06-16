@@ -71,7 +71,14 @@ namespace SAE201.Ressources
 
         public bool Create()
         {
-            throw new NotImplementedException();
+            DataAccess accesBD = new DataAccess();
+            string requete = $"INSERT INTO personnel (nom, prenom, email) VALUES ('{this.Nom}','{this.Prenom}','{this.Email}');";
+            DataTable datas = accesBD.GetData(requete);
+            if (datas != null)
+            {
+                return true;
+            }
+            return false;
         }
 
 

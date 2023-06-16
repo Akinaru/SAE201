@@ -56,7 +56,14 @@ namespace SAE201.Ressources
 
         public bool Create()
         {
-            throw new NotImplementedException();
+            DataAccess accesBD = new DataAccess();
+            string requete = $"INSERT INTO categoriemateriel (nom) VALUES ('{this.Nom}');";
+            DataTable datas = accesBD.GetData(requete);
+            if (datas != null)
+            {
+                return true;
+            }
+            return false;
         }
 
 
