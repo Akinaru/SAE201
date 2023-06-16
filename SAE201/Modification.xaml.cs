@@ -76,7 +76,35 @@ namespace SAE201
             dataGrid.Columns.Add(commentaireColumn);
             dataGrid.ItemsSource = listeAttribution;
         }
+        public Modification(Materiel materiel)
+        {
+            InitializeComponent();
+            this.Title += "Materiel";
+            dataGrid.AutoGenerateColumns = false;
+            actuel = materiel;
 
+
+            ObservableCollection<Materiel> listeMateriel = new ObservableCollection<Materiel>();
+            listeMateriel.Add(materiel);
+
+            DataGridTextColumn nomColumn = new DataGridTextColumn();
+            nomColumn.Header = "Nom";
+            nomColumn.Binding = new Binding("Nom");
+
+            DataGridTextColumn codeBarreColumn = new DataGridTextColumn();
+            codeBarreColumn.Header = "Code Barre";
+            codeBarreColumn.Binding = new Binding("CodeBarre");
+
+            DataGridTextColumn refConstructeurColumn = new DataGridTextColumn();
+            refConstructeurColumn.Header = "Ref Constructeur";
+            refConstructeurColumn.Binding = new Binding("RefConstructeur");
+
+
+            dataGrid.Columns.Add(nomColumn);
+            dataGrid.Columns.Add(codeBarreColumn);
+            dataGrid.Columns.Add(refConstructeurColumn);
+            dataGrid.ItemsSource = listeMateriel;
+        }
 
 
         public Modification()

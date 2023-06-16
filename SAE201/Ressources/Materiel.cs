@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SAE201.Ressources
 {
-    internal class Materiel
+    public class Materiel
     {
         private int id;
         private string nom;
