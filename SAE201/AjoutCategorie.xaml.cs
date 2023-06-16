@@ -23,7 +23,6 @@ namespace SAE201
         public AjoutCategorie()
         {
             InitializeComponent();
-            this.Title += "Categorie";
         }
 
 

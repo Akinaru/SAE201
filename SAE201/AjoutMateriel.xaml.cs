@@ -1,14 +1,11 @@
 ﻿using SAE201.Ressources;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -19,31 +16,31 @@ using System.Windows.Shapes;
 namespace SAE201
 {
     /// <summary>
-    /// Logique d'interaction pour Ajout.xaml
+    /// Logique d'interaction pour AjoutMateriel.xaml
     /// </summary>
-    public partial class AjoutPersonnel : Window
+    public partial class AjoutMateriel : Window
     {
-        public AjoutPersonnel()
+        public AjoutMateriel()
         {
             InitializeComponent();
         }
 
 
+
         private void btCreer_Click(object sender, RoutedEventArgs e)
         {
+            int idCategorie;
 
+            Materiel p = new Materiel(0, tbNom.Text, tbCodeBarre.Text, tbRefConstructeur.Text);
 
-
-            Personnel p = new Personnel(0, tbNom.Text, tbPrenom.Text, tbEmail.Text);
-            
             if (p.Create())
             {
-                Personnel pFinal = new Personnel(p.GetId(), p.Nom, p.Prenom, p.Email);
-                ApplicationData.LesPersonnels.Add(pFinal);
+                CategorieMateriel pFinal = new CategorieMateriel(p.GetId(), p.Nom);
+                ApplicationData.LesCategories.Add(pFinal);
 
             }
             else
-               MessageBox.Show("La création a été refusée.", "Ajout Personnel", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("La création a été refusée.", "Ajout Categorie", MessageBoxButton.OK, MessageBoxImage.Warning);
             this.Close();
         }
 
