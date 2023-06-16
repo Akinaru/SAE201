@@ -109,7 +109,9 @@
             Margin="242,172,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Nom:" />
+            Content="Nom:"
+            FontFamily="Cascadia Mono SemiBold"
+            FontSize="18" />
         <TextBox
             x:Name="tbNom"
             Width="314"
@@ -117,6 +119,10 @@
             Margin="0,203,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
+            BorderBrush="#FF0C192F"
+            FontFamily="Cascadia Mono SemiBold"
+            FontSize="18"
+            Foreground="#FF14213D"
             Text=""
             TextWrapping="Wrap" />
     </Grid>
