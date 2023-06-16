@@ -61,7 +61,6 @@ namespace SAE201.Ressources
             DataTable datas = accesBD.GetData(requete);
             if (datas != null)
             {
-                ApplicationData.LesCategories.Add(this);
                 return true;
             }
             return false;
@@ -102,7 +101,21 @@ namespace SAE201.Ressources
             return false;
         }
 
-
+        public int GetId()
+        {
+            DataAccess accesBD = new DataAccess();
+            String requete = $"select id from categoriemateriel where nom = '{this.Nom}';";
+            DataTable datas = accesBD.GetData(requete);
+            int id = 0;
+            if (datas != null)
+            {
+                foreach (DataRow row in datas.Rows)
+                {
+                    id = int.Parse(row["id"].ToString());
+                }
+            }
+            return id;
+        }
 
         public ObservableCollection<CategorieMateriel> FindAll()
         {

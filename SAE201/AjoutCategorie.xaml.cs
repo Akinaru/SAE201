@@ -23,12 +23,27 @@ namespace SAE201
         public AjoutCategorie()
         {
             InitializeComponent();
-            this.Title += "Personnel";
+            this.Title += "Categorie";
         }
+
 
 
         private void btCreer_Click(object sender, RoutedEventArgs e)
         {
+
+
+
+            CategorieMateriel p = new CategorieMateriel(0, tbNom.Text);
+
+            if (p.Create())
+            {
+                CategorieMateriel pFinal = new CategorieMateriel(p.GetId(), p.Nom);
+                ApplicationData.LesCategories.Add(pFinal);
+
+            }
+            else
+                MessageBox.Show("La création a été refusée.", "Ajout Categorie", MessageBoxButton.OK, MessageBoxImage.Warning);
+            this.Close();
         }
 
         private void btAnnuler_Click(object sender, RoutedEventArgs e)
