@@ -1,4 +1,4 @@
-﻿<Window
+﻿<Window x:Name="fenetreAccueil"
     x:Class="SAE201.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -12,7 +12,7 @@
     MinWidth="1600"
     MinHeight="900"
     Background="#B0DDCE"
-    mc:Ignorable="d">
+    mc:Ignorable="d" WindowStartupLocation="CenterScreen">
     <Window.DataContext>
         <model:ApplicationData x:Name="applicationData" />
     </Window.DataContext>
@@ -142,12 +142,12 @@
                 <Button
                     Width="148"
                     Height="32"
-                    Margin="0,730,0,32"
+                    Margin="0,0,0,32"
                     HorizontalAlignment="Center"
                     Background="#FF14213D"
                     Click="Button_Click_2"
                     Content="+ Ajouter"
-                    Foreground="White">
+                    Foreground="White" VerticalAlignment="Bottom">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
@@ -216,12 +216,12 @@
                 <Button
                     Width="148"
                     Height="32"
-                    Margin="0,730,0,32"
+                    Margin="0,0,0,32"
                     HorizontalAlignment="Center"
                     Background="#FF14213D"
                     Click="Button_Click_1"
                     Content="+ Ajouter"
-                    Foreground="White">
+                    Foreground="White" VerticalAlignment="Bottom">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
@@ -292,12 +292,12 @@
                 <Button
                     Width="148"
                     Height="32"
-                    Margin="0,730,0,32"
+                    Margin="0,0,0,32"
                     HorizontalAlignment="Center"
                     Background="#FF14213D"
                     Click="Button_Click"
                     Content="+ Ajouter"
-                    Foreground="White">
+                    Foreground="White" VerticalAlignment="Bottom">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
