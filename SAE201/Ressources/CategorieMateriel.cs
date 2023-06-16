@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SAE201.Ressources
 {
-    public class CategorieMateriel
+    public class CategorieMateriel : Crud<CategorieMateriel>
     {
 
         private int id;
@@ -68,7 +68,7 @@ namespace SAE201.Ressources
 
 
 
-        public bool Read()
+        public CategorieMateriel Read(int id)
         {
             throw new NotImplementedException();
         }
