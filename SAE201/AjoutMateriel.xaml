@@ -131,7 +131,9 @@
             Margin="242,221,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Code Barre:" />
+            Content="Code Barre:"
+            FontFamily="Cascadia Mono SemiBold"
+            FontSize="18" />
         <TextBox
             x:Name="tbCodeBarre"
             Width="314"
@@ -139,6 +141,10 @@
             Margin="0,252,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
+            BorderBrush="#FF0C192F"
+            FontFamily="Cascadia Mono SemiBold"
+            FontSize="18"
+            Foreground="#FF14213D"
             Text=""
             TextWrapping="Wrap" />
         <Label
@@ -147,7 +153,9 @@
             Margin="242,289,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Ref Constructeur:" />
+            Content="Ref Constructeur:"
+            FontFamily="Cascadia Mono SemiBold"
+            FontSize="18" />
         <TextBox
             x:Name="tbRefConstructeur"
             Width="314"
@@ -155,6 +163,10 @@
             Margin="0,320,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
+            BorderBrush="#FF0C192F"
+            FontFamily="Cascadia Mono SemiBold"
+            FontSize="18"
+            Foreground="#FF14213D"
             Text=""
             TextWrapping="Wrap" />
         <Label
@@ -163,13 +175,34 @@
             Margin="242,80,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Categorie:" />
+            Content="Categorie:"
+            FontFamily="Cascadia Mono SemiBold"
+            FontSize="18" />
         <ComboBox
             x:Name="cbCategorie"
             Width="316"
             Margin="0,112,0,0"
             HorizontalAlignment="Center"
-            VerticalAlignment="Top" />
+            VerticalAlignment="Top"
+            Background="#FF14213D"
+            BorderBrush="#FF0C192F"
+            FontFamily="Cascadia Mono SemiBold"
+            FontSize="18"
+            Foreground="#FF14213D">
+            <ComboBox.ItemContainerStyle>
+                <Style TargetType="ComboBoxItem">
+                    <Setter Property="Foreground" Value="#f1f2f6" />
+                    <Setter Property="Background" Value="#FF14213D" />
+                    <Setter Property="Padding" Value="6" />
+                    <Style.Triggers>
+                        <Trigger Property="IsHighlighted" Value="True">
+                            <Setter Property="Foreground" Value="#f1f2f6" />
+                            <Setter Property="Background" Value="#FF0C192F" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ComboBox.ItemContainerStyle>
+        </ComboBox>
 
     </Grid>
 </Window>
