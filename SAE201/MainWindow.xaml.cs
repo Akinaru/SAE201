@@ -142,6 +142,7 @@ namespace SAE201
                 {
                     ((Materiel)listViewMateriel.SelectedItem).Delete();
 
+
                     applicationData.LesMateriels = new Materiel().FindAll();
                     
                     
