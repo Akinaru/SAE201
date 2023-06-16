@@ -14,19 +14,23 @@
             x:Name="dataGrid"
             Margin="177,155,177,155"
             CanUserAddRows="False" />
-        <Button x:Name="btCreer"
+        <Button
+            x:Name="btCreer"
             Width="89"
             Height="24"
             Margin="534,376,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            Click="btCreer_Click"
             Content="Créer" />
-        <Button x:Name="btAnnuler"
+        <Button
+            x:Name="btAnnuler"
             Width="89"
             Height="24"
             Margin="177,376,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            Click="btAnnuler_Click"
             Content="Annuler" />
     </Grid>
 </Window>

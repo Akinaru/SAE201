@@ -2,11 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -56,6 +58,28 @@ namespace SAE201
             dataGrid.Columns.Add(emailColumn);
 
             dataGrid.ItemsSource = listePerso;
+            dataGrid.SelectedIndex = 0;
+        }
+
+        private void btCreer_Click(object sender, RoutedEventArgs e)
+        {
+            dataGrid.SelectedIndex = 0;
+            if(actuel is Personnel)
+            {
+                MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de vouloir créer le personnel ?","Ajouter Personnel", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.Yes)
+                {
+                    Personnel p = dataGrid.SelectedItem as Personnel;
+                    p.Create();
+
+                }
+
+            }
+        }
+
+        private void btAnnuler_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
