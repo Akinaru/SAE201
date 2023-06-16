@@ -141,6 +141,20 @@ namespace SAE201
                     this.Close();
                 }
             }
+
+            if (actuel is Materiel)
+            {
+                if (((Materiel)actuel).Update())
+                {
+                    MessageBox.Show("La modification a été validée.", "Modification Materiel", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("La modification a été refusée.", "Modification Materiel", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    this.Close();
+                }
+            }
         }
 
         private void btAnnuler_Click(object sender, RoutedEventArgs e)

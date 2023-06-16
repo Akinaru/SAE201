@@ -112,7 +112,14 @@ namespace SAE201.Ressources
 
         public bool Update()
         {
-            throw new NotImplementedException();
+            DataAccess accesBD = new DataAccess();
+            string requete = $"UPDATE materiel SET Nom = '{this.Nom}', codebarre = '{this.CodeBarre}', refconstructeur = '{this.RefConstructeur}' WHERE Id = {this.Id};";
+            DataTable datas = accesBD.GetData(requete);
+            if (datas != null)
+            {
+                return true;
+            }
+            return false;
         }
 
 

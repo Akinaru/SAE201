@@ -12,6 +12,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.TextFormatting;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
@@ -80,8 +81,8 @@ namespace SAE201
                 if (result == MessageBoxResult.Yes)
                 {
                     ((Personnel)listViewPersonnel.SelectedItem).Delete();
-                    CollectionViewSource.GetDefaultView(listViewPersonnel.ItemsSource).Refresh();
-
+                    applicationData.LesPersonnels = new Personnel().FindAll();
+                    listViewPersonnel.ItemsSource = applicationData.LesPersonnels;
                     MessageBox.Show("Bien supprimé", "Suppression", MessageBoxButton.OK);
                 }
                 else
@@ -96,6 +97,7 @@ namespace SAE201
             if (listViewAttribution.SelectedItem != null)
             {
                 pageModif = new Modification((Attribution)listViewAttribution.SelectedItem);
+                pageModif.Owner = this;
                 pageModif.Show();
             }
         }
@@ -119,6 +121,12 @@ namespace SAE201
 
         private void MenuModificationMateriel(object sender, RoutedEventArgs e)
         {
+            if (listViewAttribution.SelectedItem != null)
+            {
+                pageModif = new Modification((Materiel)listViewMateriel.SelectedItem);
+                pageModif.Owner = this;
+                pageModif.Show();
+            }
         }
         private void MenuSuppressionMateriel(object sender, RoutedEventArgs e)
         {
