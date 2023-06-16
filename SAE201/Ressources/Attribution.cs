@@ -121,7 +121,14 @@ namespace SAE201.Ressources
 
         public bool Create()
         {
-            throw new NotImplementedException();
+            DataAccess accesBD = new DataAccess();
+            string requete = $"INSERT INTO attribution (date,commentaire,idpersonnel,idmateriel) VALUES ('{this.Date}','{this.Commentaire}','{this.IdPersonnel}','{this.IdMateriel}');";
+            DataTable datas = accesBD.GetData(requete);
+            if (datas != null)
+            {
+                return true;
+            }
+            return false;
         }
 
 
