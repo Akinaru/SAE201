@@ -52,6 +52,7 @@ namespace SAE201
             dataGrid.ItemsSource = listePerso;
             
         }
+        
         public Modification(Attribution attrib)
         {
             InitializeComponent();
@@ -75,6 +76,7 @@ namespace SAE201
             dataGrid.Columns.Add(commentaireColumn);
             dataGrid.ItemsSource = listeAttribution;
         }
+        
         public Modification(Materiel materiel)
         {
             InitializeComponent();
