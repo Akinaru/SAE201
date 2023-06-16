@@ -30,14 +30,11 @@ namespace SAE201
             this.Title += "Personnel";
             dataGrid.AutoGenerateColumns = false;
             actuel = perso;
-
-            // Personnel p = new Personnel(perso.Id, perso.Nom, perso.Prenom, perso.Email);
-            //actuel = p;
-            //LesPersonnels = p.FindAll();
+    
+            
             ObservableCollection<Personnel> listePerso = new ObservableCollection<Personnel>();
             listePerso.Add(perso);
 
-            // Créer les colonnes
             DataGridTextColumn nomColumn = new DataGridTextColumn();
             nomColumn.Header = "Nom";
             nomColumn.Binding = new Binding("Nom");
@@ -50,7 +47,6 @@ namespace SAE201
             emailColumn.Header = "Email";
             emailColumn.Binding = new Binding("Email");
 
-            // Ajouter les colonnes au DataGrid
             dataGrid.Columns.Add(nomColumn);
             dataGrid.Columns.Add(prenomColumn);
             dataGrid.Columns.Add(emailColumn);
@@ -64,10 +60,6 @@ namespace SAE201
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
 
         private void btValider_Click(object sender, RoutedEventArgs e)
         {
@@ -85,6 +77,11 @@ namespace SAE201
                 }
             }
 
+        }
+
+        private void btAnnuler_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -33,7 +33,6 @@
             Margin="177,374,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Click="Button_Click"
-            Content="Annuler" />
+            Content="Annuler" Click="btAnnuler_Click" />
     </Grid>
 </Window>
