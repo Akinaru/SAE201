@@ -76,11 +76,9 @@ namespace SAE201
             if (listViewPersonnel.SelectedItem != null)
             {
                 
-                MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de supprimer \"" + ((Personnel)listViewPersonnel.SelectedItem).Nom + " " + ((Personnel)listViewPersonnel.SelectedItem).Prenom + "\"", "Suppression", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de supprimer \"" + ((Personnel)listViewPersonnel.SelectedItem).Nom + " " + ((Personnel)listViewPersonnel.SelectedItem).Prenom + "\" ?", "Suppression", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                 if (result == MessageBoxResult.Yes)
                 {
-                    listViewPersonnel.Items.Refresh();
-                    MessageBox.Show("" + ((Personnel)listViewPersonnel.SelectedItem).Id);
                     if (((Personnel)listViewPersonnel.SelectedItem).Delete())
                         ApplicationData.LesPersonnels.Remove((Personnel)listViewPersonnel.SelectedItem);
 
@@ -126,6 +124,21 @@ namespace SAE201
         }
         private void MenuSuppressionCategorie(object sender, RoutedEventArgs e)
         {
+            if (listViewCategorie.SelectedItem != null)
+            {
+
+                MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de supprimer \"" + ((CategorieMateriel)listViewCategorie.SelectedItem).Nom + "\" ?", "Suppression", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.Yes)
+                {
+                    if (((CategorieMateriel)listViewCategorie.SelectedItem).Delete())
+                        ApplicationData.LesCategories.Remove((CategorieMateriel)listViewCategorie.SelectedItem);
+
+                }
+                else
+                {
+                    MessageBox.Show("Operation annulée", "Annulation", MessageBoxButton.OK);
+                }
+            }
         }
 
         private void btAjouterPersonnel_Click(object sender, RoutedEventArgs e)
