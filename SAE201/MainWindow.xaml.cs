@@ -81,6 +81,7 @@ namespace SAE201
                 {
                     ((Personnel)listViewPersonnel.SelectedItem).Delete();
                     CollectionViewSource.GetDefaultView(listViewPersonnel.ItemsSource).Refresh();
+
                     MessageBox.Show("Bien supprimé", "Suppression", MessageBoxButton.OK);
                 }
                 else
