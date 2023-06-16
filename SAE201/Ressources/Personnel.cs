@@ -116,9 +116,25 @@ namespace SAE201.Ressources
             return false;
         }
 
+        public int GetId()
+        {
+            DataAccess accesBD = new DataAccess();
+            String requete = $"select id from personnel where nom = '{this.Nom}' and prenom = '{this.Prenom}' and email = '{this.Email}';";
+            DataTable datas = accesBD.GetData(requete);
+            int id = 0;
+            if (datas != null)
+            {
+                foreach (DataRow row in datas.Rows)
+                {
+                    id = int.Parse(row["id"].ToString());
+                }
+            }
+            return id;
+        }
 
 
-        public ObservableCollection<Personnel> FindAll()
+
+            public ObservableCollection<Personnel> FindAll()
         {
             ObservableCollection<Personnel> lesPersonnels = new ObservableCollection<Personnel>();
             DataAccess accesBD = new DataAccess();

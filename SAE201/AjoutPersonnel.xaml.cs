@@ -32,11 +32,15 @@ namespace SAE201
 
         private void btCreer_Click(object sender, RoutedEventArgs e)
         {
+
+
+
             Personnel p = new Personnel(0, tbNom.Text, tbPrenom.Text, tbEmail.Text);
             
             if (p.Create())
             {
-                ApplicationData.LesPersonnels.Add(p);
+                Personnel pFinal = new Personnel(p.GetId(), p.Nom, p.Prenom, p.Email);
+                ApplicationData.LesPersonnels.Add(pFinal);
 
             }
             else
