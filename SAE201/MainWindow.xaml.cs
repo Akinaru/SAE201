@@ -66,7 +66,8 @@ namespace SAE201
         {
             if(listViewPersonnel.SelectedItem != null)
             {
-                pageModif = new Modification((Personnel)listViewPersonnel.SelectedItem, this);
+                pageModif = new Modification((Personnel)listViewPersonnel.SelectedItem);
+                pageModif.Owner = this;
                 pageModif.Show();
             }
         }
@@ -93,7 +94,7 @@ namespace SAE201
         {
             if (listViewAttribution.SelectedItem != null)
             {
-                pageModif = new Modification((Attribution)listViewAttribution.SelectedItem, this);
+                pageModif = new Modification((Attribution)listViewAttribution.SelectedItem);
                 pageModif.Show();
             }
         }
