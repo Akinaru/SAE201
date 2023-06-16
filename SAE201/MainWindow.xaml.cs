@@ -1,6 +1,7 @@
 ﻿using SAE201.Ressources;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -77,12 +78,12 @@ namespace SAE201
                 MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de supprimer \"" + ((Personnel)listViewPersonnel.SelectedItem).Nom + " " + ((Personnel)listViewPersonnel.SelectedItem).Prenom + "\"", "Suppression", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                 if (result == MessageBoxResult.Yes)
                 {
-                    
-                    MessageBox.Show("bonjour");
+                    ((Personnel)listViewPersonnel.SelectedItem).Delete();
+                    MessageBox.Show("Bien supprimé", "Suppression", MessageBoxButton.OK);
                 }
                 else
                 {
-                    MessageBox.Show("en revoir");
+                    MessageBox.Show("Operation annulée", "Annulation", MessageBoxButton.OK);
                 }
             }
         }
