@@ -54,11 +54,12 @@
         </Button>
         <Button
             x:Name="btAnnuler"
-            Width="89"
-            Height="24"
-            Margin="177,376,0,0"
+            Width="99"
+            Height="39"
+            Margin="171,361,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            Background="Transparent"
             Click="btAnnuler_Click"
             Content="Annuler"
             Foreground="#FF14213D">
