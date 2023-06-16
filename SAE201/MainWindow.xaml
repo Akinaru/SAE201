@@ -25,7 +25,7 @@
         </Grid.RowDefinitions>
 
 
-        <Border Background="#226F54" >
+        <Border Background="#226F54">
             <Grid Grid.Row="0">
                 <Label
                     Height="67"
@@ -94,9 +94,10 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Bottom"
                     Background="#FF14213D"
+                    Click="btAjouterCategorie_Click"
                     Content="+ Ajouter"
                     Cursor="Hand"
-                    Foreground="White" Click="btAjouterCategorie_Click">
+                    Foreground="#f1f2f6">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
@@ -138,7 +139,7 @@
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Background" Value="#FF14213D" />
-                            <Setter Property="Foreground" Value="White" />
+                            <Setter Property="Foreground" Value="#f1f2f6" />
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
                             <Setter Property="FontSize" Value="12" />
                             <Setter Property="Template">
@@ -193,9 +194,10 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Bottom"
                     Background="#FF14213D"
+                    Click="btAjouterMateriel_Click"
                     Content="+ Ajouter"
                     Cursor="Hand"
-                    Foreground="White" Click="btAjouterMateriel_Click">
+                    Foreground="#f1f2f6">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
@@ -237,7 +239,7 @@
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Background" Value="#FF14213D" />
-                            <Setter Property="Foreground" Value="White" />
+                            <Setter Property="Foreground" Value="#f1f2f6" />
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
                             <Setter Property="FontSize" Value="12" />
                             <Setter Property="Template">
@@ -303,9 +305,10 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Bottom"
                     Background="#FF14213D"
+                    Click="btAjouterAttribution_Click"
                     Content="+ Ajouter"
                     Cursor="Hand"
-                    Foreground="White" Click="btAjouterAttribution_Click">
+                    Foreground="#f1f2f6">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
@@ -380,9 +383,10 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Bottom"
                     Background="#FF14213D"
+                    Click="btAjouterPersonnel_Click"
                     Content="+ Ajouter"
                     Cursor="Hand"
-                    Foreground="White" Click="btAjouterPersonnel_Click">
+                    Foreground="#f1f2f6">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
