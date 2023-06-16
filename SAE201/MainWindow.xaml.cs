@@ -81,8 +81,10 @@ namespace SAE201
                 if (result == MessageBoxResult.Yes)
                 {
                     ((Personnel)listViewPersonnel.SelectedItem).Delete();
+
                     applicationData.LesPersonnels = new Personnel().FindAll();
                     listViewPersonnel.ItemsSource = applicationData.LesPersonnels;
+
                     MessageBox.Show("Bien supprimé", "Suppression", MessageBoxButton.OK);
                 }
                 else
@@ -110,6 +112,9 @@ namespace SAE201
                 {
                     ((Attribution)listViewAttribution.SelectedItem).Delete();
 
+                    applicationData.LesAttributions = new Attribution().FindAll();
+                    listViewAttribution.ItemsSource = applicationData.LesAttributions;
+
                     MessageBox.Show("Bien supprimé", "Suppression", MessageBoxButton.OK);
                 }
                 else
@@ -130,12 +135,20 @@ namespace SAE201
         }
         private void MenuSuppressionMateriel(object sender, RoutedEventArgs e)
         {
-            if (listViewAttribution.SelectedItem != null)
+            if (listViewMateriel.SelectedItem != null)
             {
-                MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de supprimer ce matériel : ", "Suppression", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de supprimer ce matériel : " + ((Materiel)listViewMateriel.SelectedItem).Nom, "Suppression", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                 if (result == MessageBoxResult.Yes)
                 {
-                    ((Attribution)listViewAttribution.SelectedItem).Delete();
+                    ((Materiel)listViewMateriel.SelectedItem).Delete();
+
+
+                    applicationData.LesMateriels = new Materiel().FindAll();
+                    
+                    
+                    listViewMateriel.DataContext = listViewCategorie.SelectedItem;
+                    listViewMateriel.ItemsSource = ((CategorieMateriel)listViewCategorie.SelectedItem).LesMateriels;
+
 
                     MessageBox.Show("Bien supprimé", "Suppression", MessageBoxButton.OK);
                 }
@@ -157,6 +170,25 @@ namespace SAE201
         }
         private void MenuSuppressionCategorie(object sender, RoutedEventArgs e)
         {
+            if (listViewCategorie.SelectedItem != null)
+            {
+                MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de supprimer cette catégorie de matériel : " + ((CategorieMateriel)listViewCategorie.SelectedItem).Nom, "Suppression", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.Yes)
+                {
+                    ((CategorieMateriel)listViewCategorie.SelectedItem).Delete();
+
+                    applicationData.LesCategories = new CategorieMateriel().FindAll();
+                    listViewCategorie.ItemsSource = applicationData.LesCategories;
+
+
+
+                    MessageBox.Show("Bien supprimé", "Suppression", MessageBoxButton.OK);
+                }
+                else
+                {
+                    MessageBox.Show("Operation annulée", "Annulation", MessageBoxButton.OK);
+                }
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e) // AJOUT PERSONNEL
