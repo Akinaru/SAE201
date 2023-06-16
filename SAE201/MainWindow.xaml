@@ -1,4 +1,4 @@
-﻿<Window x:Name="fenetreAccueil"
+﻿<Window
     x:Class="SAE201.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -6,13 +6,15 @@
     xmlns:local="clr-namespace:SAE201"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:model="clr-namespace:SAE201.Ressources"
+    x:Name="fenetreAccueil"
     Title="MATINFO - Gestion"
     Width="1600"
     Height="900"
     MinWidth="1600"
     MinHeight="900"
     Background="#B0DDCE"
-    mc:Ignorable="d" WindowStartupLocation="CenterScreen">
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
     <Window.DataContext>
         <model:ApplicationData x:Name="applicationData" />
     </Window.DataContext>
@@ -80,12 +82,14 @@
 
                 <Button
                     Width="148"
+                    Height="32"
                     Margin="0,0,0,32"
                     HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
                     Background="#FF14213D"
                     Click="Button_Click_3"
                     Content="+ Ajouter"
-                    Foreground="White" Height="32" VerticalAlignment="Bottom">
+                    Foreground="White">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
@@ -118,12 +122,35 @@
                 <Button
                     x:Name="btResetSelecCategorie"
                     Width="28"
-                    Height="20"
+                    Height="28"
                     Margin="0,77,10,0"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Top"
-                    Click="btResetSelecCategorie_Click"
-                    Content="X" />
+                    Click="btResetSelecCategorie_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#FF14213D" />
+                            <Setter Property="Foreground" Value="White" />
+                            <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
+                            <Setter Property="FontSize" Value="12" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border
+                                            Background="{TemplateBinding Background}"
+                                            BorderBrush="{TemplateBinding BorderBrush}"
+                                            BorderThickness="{TemplateBinding BorderThickness}"
+                                            CornerRadius="14">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                    <TextBlock Text="X" />
+                </Button>
+
             </Grid>
 
             <Grid Grid.Column="1" Margin="10,0,10,0">
@@ -144,10 +171,11 @@
                     Height="32"
                     Margin="0,0,0,32"
                     HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
                     Background="#FF14213D"
                     Click="Button_Click_2"
                     Content="+ Ajouter"
-                    Foreground="White" VerticalAlignment="Bottom">
+                    Foreground="White">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
@@ -218,10 +246,11 @@
                     Height="32"
                     Margin="0,0,0,32"
                     HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
                     Background="#FF14213D"
                     Click="Button_Click_1"
                     Content="+ Ajouter"
-                    Foreground="White" VerticalAlignment="Bottom">
+                    Foreground="White">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
@@ -294,10 +323,11 @@
                     Height="32"
                     Margin="0,0,0,32"
                     HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
                     Background="#FF14213D"
                     Click="Button_Click"
                     Content="+ Ajouter"
-                    Foreground="White" VerticalAlignment="Bottom">
+                    Foreground="White">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
