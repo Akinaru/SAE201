@@ -75,6 +75,15 @@ namespace SAE201
             if (listViewPersonnel.SelectedItem != null)
             {
                 MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de supprimer \"" + ((Personnel)listViewPersonnel.SelectedItem).Nom + " " + ((Personnel)listViewPersonnel.SelectedItem).Prenom + "\"", "Suppression", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.Yes)
+                {
+                    
+                    MessageBox.Show("bonjour");
+                }
+                else
+                {
+                    MessageBox.Show("en revoir");
+                }
             }
         }
 
