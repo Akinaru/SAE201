@@ -149,7 +149,14 @@ namespace SAE201.Ressources
 
         public bool Delete()
         {
-            throw new NotImplementedException();
+            DataAccess accesBD = new DataAccess();
+            string requete = $"DELETE FROM attribution WHERE idpersonnel = {this.IdPersonnel} and idmateriel = {this.IdMateriel};";
+            DataTable datas = accesBD.GetData(requete);
+            if (datas != null)
+            {
+                return true;
+            }
+            return false;
         }
 
 

@@ -77,7 +77,14 @@ namespace SAE201.Ressources
 
         public bool Delete()
         {
-            throw new NotImplementedException();
+            DataAccess accesBD = new DataAccess();
+            string requete = $"DELETE FROM categoriemateriel WHERE id = {this.Id};";
+            DataTable datas = accesBD.GetData(requete);
+            if (datas != null)
+            {
+                return true;
+            }
+            return false;
         }
 
 
