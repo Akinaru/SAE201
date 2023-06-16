@@ -38,8 +38,11 @@
             VerticalAlignment="Top"
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center"
-            Background="#FFEA0101"
-            Content="Ajout Matériel" />
+            Background="#226F54"
+            Content="Ajout Matériel"
+            FontFamily="Cascadia Mono SemiBold"
+            FontSize="24"
+            Foreground="#f1f2f6" />
         <Label
             x:Name="lbNom"
             Width="190"
