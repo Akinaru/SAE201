@@ -359,9 +359,16 @@
                 <ListView
                     x:Name="listViewPersonnel"
                     Margin="10,64,10,90"
-                    BorderBrush="#FF849082"
-                    Foreground="#ff4757"
                     ItemsSource="{Binding Path=LesPersonnels}">
+                    <ListView.Resources>
+                        <Style TargetType="ListView">
+                            <Setter Property="BorderThickness" Value="0" />
+                            <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
+                            <Setter Property="Foreground" Value="#226F54" />
+                            <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
+                            <Setter Property="FontSize" Value="18" />
+                        </Style>
+                    </ListView.Resources>
                     <ListView.View>
                         <GridView>
                             <GridViewColumn DisplayMemberBinding="{Binding Nom}" Header="Nom" />
