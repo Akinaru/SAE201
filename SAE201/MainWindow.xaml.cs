@@ -23,7 +23,7 @@ namespace SAE201
     public partial class MainWindow : Window
     {
 
-        private Window pageajout;
+        private Window pageAjout;
         private Window pageModif;
         public MainWindow()
         {
@@ -79,6 +79,7 @@ namespace SAE201
                 if (result == MessageBoxResult.Yes)
                 {
                     ((Personnel)listViewPersonnel.SelectedItem).Delete();
+                    
                     MessageBox.Show("Bien supprimé", "Suppression", MessageBoxButton.OK);
                 }
                 else
@@ -88,28 +89,49 @@ namespace SAE201
             }
         }
 
+        private void MenuModificationAttribution(object sender, RoutedEventArgs e)
+        {
+        }
+        private void MenuSuppressionAttribution(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void MenuModificationMateriel(object sender, RoutedEventArgs e)
+        {
+        }
+        private void MenuSuppressionMateriel(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void MenuModificationCategorie(object sender, RoutedEventArgs e)
+        {
+        }
+        private void MenuSuppressionCategorie(object sender, RoutedEventArgs e)
+        {
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e) // AJOUT PERSONNEL
         {
-            pageajout = new Ajout();
-            pageajout.Show();
+            pageAjout = new Ajout();
+            pageAjout.Show();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e) // AJOUT ATTRIBUTION
         {
-            pageajout = new Ajout();
-            pageajout.Show();
+            pageAjout = new Ajout();
+            pageAjout.Show();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e) // AJOUT MATERIEL
         {
-            pageajout = new Ajout();
-            pageajout.Show();
+            pageAjout = new Ajout();
+            pageAjout.Show();
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e) // AJOUT CATEGORIE
         {
-            pageajout = new Ajout();
-            pageajout.Show();
+            pageAjout = new Ajout();
+            pageAjout.Show();
         }
     }
 }

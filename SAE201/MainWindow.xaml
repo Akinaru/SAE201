@@ -78,6 +78,12 @@
                             <GridViewColumn DisplayMemberBinding="{Binding Nom}" Header="Nom" />
                         </GridView>
                     </ListView.View>
+                    <ListBox.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Click="MenuModificationCategorie" Header="Modifier" />
+                            <MenuItem Click="MenuSuppressionCategorie" Header="Supprimer" />
+                        </ContextMenu>
+                    </ListBox.ContextMenu>
                 </ListView>
 
                 <Button
@@ -165,6 +171,12 @@
                             <GridViewColumn DisplayMemberBinding="{Binding RefConstructeur}" Header="RefConstructeur" />
                         </GridView>
                     </ListView.View>
+                    <ListBox.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Click="MenuModificationMateriel" Header="Modifier" />
+                            <MenuItem Click="MenuSuppressionMateriel" Header="Supprimer" />
+                        </ContextMenu>
+                    </ListBox.ContextMenu>
                 </ListView>
                 <Button
                     Width="148"
@@ -208,7 +220,7 @@
                     x:Name="btResetSelecMateriel"
                     Width="28"
                     Height="20"
-                    Margin="0,77,10,0"
+                    Margin="0,35,10,0"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Top"
                     Click="btResetSelecMateriel_Click"
@@ -239,6 +251,12 @@
                             <GridViewColumn DisplayMemberBinding="{Binding NomMat}" Header="Nom Mat" />
                         </GridView>
                     </ListView.View>
+                    <ListBox.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Click="MenuModificationAttribution" Header="Modifier" />
+                            <MenuItem Click="MenuSuppressionAttribution" Header="Supprimer" />
+                        </ContextMenu>
+                    </ListBox.ContextMenu>
                 </ListView>
 
                 <Button
