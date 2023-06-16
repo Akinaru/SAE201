@@ -108,6 +108,7 @@ namespace SAE201
         public Modification(CategorieMateriel materiel)
         {
             InitializeComponent();
+
             this.Title += "Categorie Materiel";
             dataGrid.AutoGenerateColumns = false;
             actuel = materiel;
