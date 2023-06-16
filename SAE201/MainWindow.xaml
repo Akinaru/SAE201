@@ -70,7 +70,7 @@
                             <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
                             <Setter Property="Foreground" Value="#226F54" />
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
-                            <Setter Property="FontSize" Value="18" />
+                            <Setter Property="FontSize" Value="14" />
                         </Style>
                     </ListView.Resources>
                     <ListView.View>
@@ -142,11 +142,7 @@
                             <Setter Property="Template">
                                 <Setter.Value>
                                     <ControlTemplate TargetType="Button">
-                                        <Border
-                                            Background="{TemplateBinding Background}"
-                                            BorderBrush="{TemplateBinding BorderBrush}"
-                                            BorderThickness="{TemplateBinding BorderThickness}"
-                                            CornerRadius="14">
+                                        <Border Background="{TemplateBinding Background}" CornerRadius="14">
                                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                         </Border>
                                     </ControlTemplate>
@@ -170,7 +166,7 @@
                             <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
                             <Setter Property="Foreground" Value="#226F54" />
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
-                            <Setter Property="FontSize" Value="18" />
+                            <Setter Property="FontSize" Value="14" />
                         </Style>
                     </ListView.Resources>
                     <ListView.View>
@@ -243,11 +239,7 @@
                             <Setter Property="Template">
                                 <Setter.Value>
                                     <ControlTemplate TargetType="Button">
-                                        <Border
-                                            Background="{TemplateBinding Background}"
-                                            BorderBrush="{TemplateBinding BorderBrush}"
-                                            BorderThickness="{TemplateBinding BorderThickness}"
-                                            CornerRadius="14">
+                                        <Border Background="{TemplateBinding Background}" CornerRadius="14">
                                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                         </Border>
                                     </ControlTemplate>
@@ -359,9 +351,16 @@
                 <ListView
                     x:Name="listViewPersonnel"
                     Margin="10,64,10,90"
-                    BorderBrush="#FF849082"
-                    Foreground="#ff4757"
                     ItemsSource="{Binding Path=LesPersonnels}">
+                    <ListView.Resources>
+                        <Style TargetType="ListView">
+                            <Setter Property="BorderThickness" Value="0" />
+                            <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
+                            <Setter Property="Foreground" Value="#226F54" />
+                            <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
+                            <Setter Property="FontSize" Value="18" />
+                        </Style>
+                    </ListView.Resources>
                     <ListView.View>
                         <GridView>
                             <GridViewColumn DisplayMemberBinding="{Binding Nom}" Header="Nom" />
