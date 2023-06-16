@@ -174,9 +174,18 @@
                     </ListView.Resources>
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn DisplayMemberBinding="{Binding Nom}" Header="Nom" />
-                            <GridViewColumn DisplayMemberBinding="{Binding CodeBarre}" Header="CodeBarre" />
-                            <GridViewColumn DisplayMemberBinding="{Binding RefConstructeur}" Header="RefConstructeur" />
+                            <GridViewColumn
+                                Width="Auto"
+                                DisplayMemberBinding="{Binding Nom}"
+                                Header="Nom" />
+                            <GridViewColumn
+                                Width="Auto"
+                                DisplayMemberBinding="{Binding CodeBarre}"
+                                Header="CodeBarre" />
+                            <GridViewColumn
+                                Width="Auto"
+                                DisplayMemberBinding="{Binding RefConstructeur}"
+                                Header="RefConstructeur" />
                         </GridView>
                     </ListView.View>
                     <ListBox.ContextMenu>
@@ -282,11 +291,11 @@
                     </ListView.Resources>
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn DisplayMemberBinding="{Binding Date, StringFormat=d}" Header="Date" />
-                            <GridViewColumn DisplayMemberBinding="{Binding Commentaire}" Header="Commentaire" />
                             <GridViewColumn DisplayMemberBinding="{Binding PrenomPerso}" Header="Prenom Perso" />
                             <GridViewColumn DisplayMemberBinding="{Binding NomPerso}" Header="Nom Perso" />
                             <GridViewColumn DisplayMemberBinding="{Binding NomMat}" Header="Nom Mat" />
+                            <GridViewColumn DisplayMemberBinding="{Binding Commentaire}" Header="Commentaire" />
+                            <GridViewColumn DisplayMemberBinding="{Binding Date, StringFormat=d}" Header="Date" />
                         </GridView>
                     </ListView.View>
                     <ListBox.ContextMenu>

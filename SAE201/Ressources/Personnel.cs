@@ -131,7 +131,7 @@ namespace SAE201.Ressources
         public int GetId()
         {
             DataAccess accesBD = new DataAccess();
-            String requete = $"select id from personnel where nom = '{this.Nom}' and prenom = '{this.Prenom}' and email = '{this.Email}';";
+            String requete = $"select id from personnel where nom = '{this.Nom}' and prenom = '{this.Prenom}';";
             DataTable datas = accesBD.GetData(requete);
             int id = 0;
             if (datas != null)
@@ -161,6 +161,11 @@ namespace SAE201.Ressources
                 }
             }
             return lesPersonnels;
+        }
+
+        public override string? ToString()
+        {
+            return this.Nom + " " + this.Prenom;
         }
 
         public Personnel()

@@ -96,6 +96,21 @@ namespace SAE201
         }
         private void MenuSuppressionAttribution(object sender, RoutedEventArgs e)
         {
+            if (listViewAttribution.SelectedItem != null)
+            {
+
+                MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de supprimer l'attribution: \"" + ((Attribution)listViewAttribution.SelectedItem).PrenomPerso + " " + ((Attribution)listViewAttribution.SelectedItem).NomPerso + " -> " + ((Attribution)listViewAttribution.SelectedItem).NomMat + "\" ?", "Suppression", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.Yes)
+                {
+                    if (((Attribution)listViewAttribution.SelectedItem).Delete())
+                        ApplicationData.LesAttributions.Remove((Attribution)listViewAttribution.SelectedItem);
+                }
+                foreach (Materiel lesMateriels in ApplicationData.LesMateriels)
+                    if (lesMateriels.Id == ((Materiel)listViewMateriel.SelectedItem).Id)
+                        lesMateriels.LesAttributions = new ObservableCollection<Attribution>(ApplicationData.LesAttributions.ToList().FindAll(g => g.IdMateriel == lesMateriels.Id));
+                listViewAttribution.DataContext = listViewMateriel.SelectedItem;
+                listViewAttribution.ItemsSource = ((Materiel)listViewMateriel.SelectedItem).LesAttributions;
+            }
         }
 
 
@@ -169,7 +184,14 @@ namespace SAE201
 
         private void btAjouterAttribution_Click(object sender, RoutedEventArgs e)
         {
-
+            Materiel m = new Materiel();
+            Personnel p = new Personnel();
+            if (listViewMateriel.SelectedItem != null)
+                m = (Materiel)listViewMateriel.SelectedItem;
+            if (listViewPersonnel.SelectedItem != null)
+                p = (Personnel)listViewPersonnel.SelectedItem;
+            pageAjout = new AjoutAttribution(m, p, this);
+            pageAjout.Show();
         }
 
         private void btAjouterMateriel_Click(object sender, RoutedEventArgs e)

@@ -168,7 +168,6 @@ namespace SAE201
                     MessageBox.Show("La modification a été refusée.", "Modification Categorie", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             this.Close();
-            this.Owner.Focus();
             
         }
 

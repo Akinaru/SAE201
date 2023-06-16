@@ -167,7 +167,6 @@ namespace SAE201.Ressources
         }
 
 
-
         public ObservableCollection<Attribution> FindAll()
         {
             ObservableCollection<Attribution> lesAttributions = new ObservableCollection<Attribution>();
