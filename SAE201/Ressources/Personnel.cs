@@ -83,9 +83,21 @@ namespace SAE201.Ressources
 
 
 
-        public bool Read()
+        public Personnel Read(int id)
         {
-            throw new NotImplementedException();
+            DataAccess accesBD = new DataAccess();
+            String requete = $"select nom,prenom,email from personnel where id = {id};";
+            DataTable datas = accesBD.GetData(requete);
+            Personnel perso = null;
+            if (datas != null)
+            {
+                foreach (DataRow row in datas.Rows)
+                {
+                    perso = new Personnel(id, (string)row["nom"], (string)row["prenom"], (string)row["email"]);
+                }
+                
+            }
+            return perso;
         }
 
 

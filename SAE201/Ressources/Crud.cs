@@ -13,7 +13,7 @@ namespace SAE201.Ressources
         bool Create();
 
 
-        bool Read();
+        T Read(int id);
 
 
         bool Update();

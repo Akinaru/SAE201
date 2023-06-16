@@ -134,7 +134,7 @@ namespace SAE201.Ressources
 
 
 
-        public bool Read()
+        public Attribution Read(int id)
         {
             throw new NotImplementedException();
         }
