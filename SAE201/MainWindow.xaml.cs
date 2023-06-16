@@ -37,6 +37,7 @@ namespace SAE201
             {
                 listViewAttribution.DataContext = listViewMateriel.SelectedItem;
                 listViewAttribution.ItemsSource = ((Materiel)listViewMateriel.SelectedItem).LesAttributions;
+                
             }
         }
 
@@ -58,7 +59,7 @@ namespace SAE201
         private void btResetSelecMateriel_Click(object sender, RoutedEventArgs e)
         {
             listViewMateriel.SelectedItem = null;
-            listViewAttribution.ItemsSource = applicationData.LesAttributions;
+            listViewAttribution.ItemsSource = ApplicationData.LesAttributions;
         }
 
         private void MenuModificationPersonnel(object sender, RoutedEventArgs e)
@@ -66,7 +67,6 @@ namespace SAE201
             if(listViewPersonnel.SelectedItem != null)
             {
                 pageModif = new Modification((Personnel)listViewPersonnel.SelectedItem);
-                pageModif.Owner = this;
                 pageModif.Show();
             }
         }
@@ -80,8 +80,8 @@ namespace SAE201
                 {
                     ((Personnel)listViewPersonnel.SelectedItem).Delete();
 
-                    applicationData.LesPersonnels = new Personnel().FindAll();
-                    listViewPersonnel.ItemsSource = applicationData.LesPersonnels;
+                    ApplicationData.LesPersonnels = new Personnel().FindAll();
+                    listViewPersonnel.ItemsSource = ApplicationData.LesPersonnels;
 
                     MessageBox.Show("Bien supprimé", "Suppression", MessageBoxButton.OK);
                 }
@@ -97,7 +97,6 @@ namespace SAE201
             if (listViewAttribution.SelectedItem != null)
             {
                 pageModif = new Modification((Attribution)listViewAttribution.SelectedItem);
-                pageModif.Owner = this;
                 pageModif.Show();
             }
         }
@@ -111,10 +110,10 @@ namespace SAE201
                     ((Attribution)listViewAttribution.SelectedItem).Delete();
 
 
-                    applicationData.LesAttributions = new Attribution().FindAll();
+                    ApplicationData.LesAttributions = new Attribution().FindAll();
 
-                    foreach (Materiel unMat in applicationData.LesMateriels.ToList())
-                        unMat.LesAttributions = new ObservableCollection<Attribution>(applicationData.LesAttributions.ToList().FindAll(e => e.IdMateriel == unMat.Id));
+                    foreach (Materiel unMat in ApplicationData.LesMateriels.ToList())
+                        unMat.LesAttributions = new ObservableCollection<Attribution>(ApplicationData.LesAttributions.ToList().FindAll(e => e.IdMateriel == unMat.Id));
 
                     listViewAttribution.DataContext = listViewMateriel.SelectedItem;
                     listViewAttribution.ItemsSource = ((Materiel)listViewMateriel.SelectedItem).LesAttributions;
@@ -133,7 +132,6 @@ namespace SAE201
             if (listViewMateriel.SelectedItem != null)
             {
                 pageModif = new Modification((Materiel)listViewMateriel.SelectedItem);
-                pageModif.Owner = this;
                 pageModif.Show();
             }
         }
@@ -147,10 +145,10 @@ namespace SAE201
                     ((Materiel)listViewMateriel.SelectedItem).Delete();
 
 
-                    applicationData.LesMateriels = new Materiel().FindAll();
+                    ApplicationData.LesMateriels = new Materiel().FindAll();
                     
-                    foreach (CategorieMateriel uneCat in applicationData.LesCategories.ToList())
-                        uneCat.LesMateriels = new ObservableCollection<Materiel>(applicationData.LesMateriels.ToList().FindAll(g => g.IdCategorie == uneCat.Id));
+                    foreach (CategorieMateriel uneCat in ApplicationData.LesCategories.ToList())
+                        uneCat.LesMateriels = new ObservableCollection<Materiel>(ApplicationData.LesMateriels.ToList().FindAll(g => g.IdCategorie == uneCat.Id));
 
                     listViewMateriel.DataContext = listViewCategorie.SelectedItem;
                     listViewMateriel.ItemsSource = ((CategorieMateriel)listViewCategorie.SelectedItem).LesMateriels;
@@ -170,7 +168,6 @@ namespace SAE201
             if (listViewCategorie.SelectedItem != null)
             {
                 pageModif = new Modification((CategorieMateriel)listViewCategorie.SelectedItem);
-                pageModif.Owner = this;
                 pageModif.Show();
             }
         }
@@ -183,10 +180,8 @@ namespace SAE201
                 {
                     ((CategorieMateriel)listViewCategorie.SelectedItem).Delete();
 
-                    applicationData.LesCategories = new CategorieMateriel().FindAll();
-                    listViewCategorie.ItemsSource = applicationData.LesCategories;
-
-
+                    ApplicationData.LesCategories = new CategorieMateriel().FindAll();
+                    listViewCategorie.ItemsSource = ApplicationData.LesCategories;
 
                     MessageBox.Show("Bien supprimé", "Suppression", MessageBoxButton.OK);
                 }
@@ -197,35 +192,25 @@ namespace SAE201
             }
         }
 
-        // AJOUT PERSONNEL
-        private void Button_Click(object sender, RoutedEventArgs e) 
+        private void btAjouterPersonnel_Click(object sender, RoutedEventArgs e)
         {
             pageAjout = new Ajout(new Personnel());
-            pageAjout.Owner = this;
             pageAjout.Show();
         }
 
-        // AJOUT ATTRIBUTION
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void btAjouterAttribution_Click(object sender, RoutedEventArgs e)
         {
-            pageAjout = new Ajout();
-            pageAjout.Owner = this;
-            pageAjout.Show();
+
         }
 
-        // AJOUT MATERIEL
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void btAjouterMateriel_Click(object sender, RoutedEventArgs e)
         {
-            pageAjout = new Ajout();
-            pageAjout.Owner = this;
-            pageAjout.Show();
+
         }
 
-        // AJOUT CATEGORIE
-        private void Button_Click_3(object sender, RoutedEventArgs e)
+        private void btAjouterCategorie_Click(object sender, RoutedEventArgs e)
         {
-            pageAjout = new Ajout();
-            pageAjout.Owner = this;
+            pageAjout = new Ajout(new CategorieMateriel());
             pageAjout.Show();
         }
     }

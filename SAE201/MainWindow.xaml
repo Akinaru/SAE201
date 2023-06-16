@@ -94,10 +94,9 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Bottom"
                     Background="#FF14213D"
-                    Click="Button_Click_3"
                     Content="+ Ajouter"
                     Cursor="Hand"
-                    Foreground="White">
+                    Foreground="White" Click="btAjouterCategorie_Click">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
@@ -194,10 +193,9 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Bottom"
                     Background="#FF14213D"
-                    Click="Button_Click_2"
                     Content="+ Ajouter"
                     Cursor="Hand"
-                    Foreground="White">
+                    Foreground="White" Click="btAjouterMateriel_Click">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
@@ -305,10 +303,9 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Bottom"
                     Background="#FF14213D"
-                    Click="Button_Click_1"
                     Content="+ Ajouter"
                     Cursor="Hand"
-                    Foreground="White">
+                    Foreground="White" Click="btAjouterAttribution_Click">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
@@ -383,10 +380,9 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Bottom"
                     Background="#FF14213D"
-                    Click="Button_Click"
                     Content="+ Ajouter"
                     Cursor="Hand"
-                    Foreground="White">
+                    Foreground="White" Click="btAjouterPersonnel_Click">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />

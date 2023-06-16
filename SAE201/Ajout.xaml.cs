@@ -28,7 +28,6 @@ namespace SAE201
         public Ajout()
         {
             InitializeComponent();
-
         }
         public Ajout(Personnel perso)
         {
@@ -36,7 +35,7 @@ namespace SAE201
             this.Title += "Personnel";
             dataGrid.AutoGenerateColumns = false;
             actuel = perso;
-
+            
 
             ObservableCollection<Personnel> listePerso = new ObservableCollection<Personnel>();
             listePerso.Add(perso);
@@ -61,6 +60,27 @@ namespace SAE201
             dataGrid.SelectedIndex = 0;
         }
 
+        public Ajout(CategorieMateriel categorie)
+        {
+            InitializeComponent();
+            this.Title += "Categorie";
+            dataGrid.AutoGenerateColumns = false;
+            actuel = categorie;
+
+
+            ObservableCollection<CategorieMateriel> listeCategorie = new ObservableCollection<CategorieMateriel>();
+            listeCategorie.Add(categorie);
+
+            DataGridTextColumn nomColumn = new DataGridTextColumn();
+            nomColumn.Header = "Nom";
+            nomColumn.Binding = new Binding("Nom");
+
+            dataGrid.Columns.Add(nomColumn);
+
+            dataGrid.ItemsSource = listeCategorie;
+            dataGrid.SelectedIndex = 0;
+        }
+
         private void btCreer_Click(object sender, RoutedEventArgs e)
         {
             dataGrid.SelectedIndex = 0;
@@ -70,7 +90,31 @@ namespace SAE201
                 if (result == MessageBoxResult.Yes)
                 {
                     Personnel p = dataGrid.SelectedItem as Personnel;
-                    p.Create();
+                    if (p.Create())
+                       MessageBox.Show("La création a été validée.", "Ajout Personnel", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                    else
+                       MessageBox.Show("La création a été refusée.", "Ajout Personnel", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    this.Close();
+                    
+                    ApplicationData.LesPersonnels.Add(p);
+
+                }
+
+            }
+
+            if (actuel is CategorieMateriel)
+            {
+                MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de vouloir créer la catégorie ?", "Ajouter Categorie", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.Yes)
+                {
+                    CategorieMateriel p = dataGrid.SelectedItem as CategorieMateriel;
+                    if (p.Create())
+                        MessageBox.Show("La création a été validée.", "Ajout Categorie", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                    else
+                        MessageBox.Show("La création a été refusée.", "Ajout Categorie", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    this.Close();
+
+                    ApplicationData.LesCategories.Add(p);
 
                 }
 

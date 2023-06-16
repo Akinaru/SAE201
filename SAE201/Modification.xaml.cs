@@ -123,6 +123,7 @@ namespace SAE201
 
             dataGrid.Columns.Add(nomColumn);
             dataGrid.ItemsSource = listeCategorie;
+            
         }
 
 
@@ -134,6 +135,7 @@ namespace SAE201
 
         private void btValider_Click(object sender, RoutedEventArgs e)
         {
+            
             if(actuel is Personnel)
             {
                 if (((Personnel)actuel).Update())
@@ -166,6 +168,7 @@ namespace SAE201
             }
             this.Close();
             this.Owner.Focus();
+            
         }
 
         private void btAnnuler_Click(object sender, RoutedEventArgs e)

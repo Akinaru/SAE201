@@ -11,10 +11,10 @@ namespace SAE201.Ressources
     internal class ApplicationData
     {
 
-        public ObservableCollection<Attribution> LesAttributions { get; set; }
-        public ObservableCollection<Personnel> LesPersonnels { get; set; }
-        public ObservableCollection<CategorieMateriel> LesCategories { get; set; }
-        public ObservableCollection<Materiel> LesMateriels { get; set; }
+        public static ObservableCollection<Attribution> LesAttributions { get; set; }
+        public static ObservableCollection<Personnel> LesPersonnels { get; set; }
+        public static ObservableCollection<CategorieMateriel> LesCategories { get; set; }
+        public static ObservableCollection<Materiel> LesMateriels { get; set; }
 
         public ApplicationData()
         {
