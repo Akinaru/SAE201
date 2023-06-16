@@ -76,7 +76,6 @@ namespace SAE201.Ressources
             DataTable datas = accesBD.GetData(requete);
             if (datas != null)
             {
-                ApplicationData.LesPersonnels.Add(this);
                 return true;
             }
             return false;
@@ -108,7 +107,7 @@ namespace SAE201.Ressources
         public bool Delete()
         {
             DataAccess accesBD = new DataAccess();
-            string requete = $"DELETE from personnel WHERE Id = {this.Id};";
+            string requete = $"DELETE from personnel WHERE id = '{this.Id}';";
             DataTable datas = accesBD.GetData(requete);
             if (datas != null)
             {

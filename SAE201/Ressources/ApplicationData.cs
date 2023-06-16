@@ -28,7 +28,7 @@ namespace SAE201.Ressources
             LesMateriels = m.FindAll();
 
             foreach (CategorieMateriel uneCat in LesCategories.ToList())
-                uneCat.LesMateriels = new ObservableCollection<Materiel>(LesMateriels.ToList().FindAll(g => g.IdCategorie == uneCat.Id));
+                uneCat.LesMateriels = new ObservableCollection<Materiel>(LesMateriels.ToList().FindAll(g => g.IdCategorie == uneCat.Id)); 
 
             foreach (Materiel unMat in LesMateriels.ToList())
                 unMat.LesAttributions = new ObservableCollection<Attribution>(LesAttributions.ToList().FindAll(e => e.IdMateriel == unMat.Id));

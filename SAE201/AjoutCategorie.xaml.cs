@@ -1,14 +1,11 @@
 ﻿using SAE201.Ressources;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -19,11 +16,11 @@ using System.Windows.Shapes;
 namespace SAE201
 {
     /// <summary>
-    /// Logique d'interaction pour Ajout.xaml
+    /// Logique d'interaction pour AjoutCategorie.xaml
     /// </summary>
-    public partial class AjoutPersonnel : Window
+    public partial class AjoutCategorie : Window
     {
-        public AjoutPersonnel()
+        public AjoutCategorie()
         {
             InitializeComponent();
             this.Title += "Personnel";
@@ -32,16 +29,6 @@ namespace SAE201
 
         private void btCreer_Click(object sender, RoutedEventArgs e)
         {
-            Personnel p = new Personnel(0, tbNom.Text, tbPrenom.Text, tbEmail.Text);
-            
-            if (p.Create())
-            {
-                ApplicationData.LesPersonnels.Add(p);
-
-            }
-            else
-               MessageBox.Show("La création a été refusée.", "Ajout Personnel", MessageBoxButton.OK, MessageBoxImage.Warning);
-            this.Close();
         }
 
         private void btAnnuler_Click(object sender, RoutedEventArgs e)
