@@ -120,7 +120,6 @@ namespace SAE201
             nomColumn.Header = "Nom";
             nomColumn.Binding = new Binding("Nom");
 
-
             dataGrid.Columns.Add(nomColumn);
             dataGrid.ItemsSource = listeCategorie;
             
