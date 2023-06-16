@@ -40,10 +40,24 @@
             VerticalContentAlignment="Center"
             Background="#FFEA0101"
             Content="Ajout Matériel" />
+
+        <Label
+            x:Name="lbNom_Copy"
+            Width="190"
+            Margin="242,78,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Nom:" />
+        <ComboBox
+            x:Name="cbCategorie"
+            Width="245"
+            Margin="242,107,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" />
         <Label
             x:Name="lbNom"
             Width="190"
-            Margin="242,172,0,0"
+            Margin="242,147,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Nom:" />
@@ -51,10 +65,43 @@
             x:Name="tbNom"
             Width="314"
             Height="25"
-            Margin="0,203,0,0"
+            Margin="0,178,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap" />
+        <Label
+            x:Name="lbCodeBarre"
+            Width="190"
+            Margin="242,221,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Code Barre:" />
+        <TextBox
+            x:Name="tbCodeBarre"
+            Width="314"
+            Height="25"
+            Margin="0,252,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Text=""
+            TextWrapping="Wrap" />
+        <Label
+            x:Name="lbRefConstructeur"
+            Width="190"
+            Margin="242,289,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Ref Constructeur:" />
+        <TextBox
+            x:Name="tbRefConstructeur"
+            Width="314"
+            Height="25"
+            Margin="0,320,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Text=""
+            TextWrapping="Wrap" />
+
     </Grid>
 </Window>

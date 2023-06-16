@@ -83,10 +83,6 @@ namespace SAE201
                         ApplicationData.LesPersonnels.Remove((Personnel)listViewPersonnel.SelectedItem);
 
                 }
-                else
-                {
-                    MessageBox.Show("Operation annulée", "Annulation", MessageBoxButton.OK);
-                }
             }
         }
 
@@ -102,6 +98,10 @@ namespace SAE201
         {
         }
 
+
+
+
+
         private void MenuModificationMateriel(object sender, RoutedEventArgs e)
         {
             if (listViewMateriel.SelectedItem != null)
@@ -112,7 +112,27 @@ namespace SAE201
         }
         private void MenuSuppressionMateriel(object sender, RoutedEventArgs e)
         {
+            if (listViewMateriel.SelectedItem != null)
+            {
+
+                MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de supprimer \"" + ((Materiel)listViewMateriel.SelectedItem).Nom + "\" ?", "Suppression", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.Yes)
+                {
+                    if (((Materiel)listViewMateriel.SelectedItem).Delete())
+                        ApplicationData.LesMateriels.Remove((Materiel)listViewMateriel.SelectedItem);
+                }
+                foreach (CategorieMateriel lesCategories in ApplicationData.LesCategories)
+                    if (lesCategories.Id == ((CategorieMateriel)listViewCategorie.SelectedItem).Id)
+                        lesCategories.LesMateriels = new ObservableCollection<Materiel>(ApplicationData.LesMateriels.ToList().FindAll(g => g.IdCategorie == lesCategories.Id));
+                listViewMateriel.DataContext = listViewCategorie.SelectedItem;
+                listViewMateriel.ItemsSource = ((CategorieMateriel)listViewCategorie.SelectedItem).LesMateriels;
+            }
         }
+
+
+
+
+
 
         private void MenuModificationCategorie(object sender, RoutedEventArgs e)
         {
@@ -134,12 +154,12 @@ namespace SAE201
                         ApplicationData.LesCategories.Remove((CategorieMateriel)listViewCategorie.SelectedItem);
 
                 }
-                else
-                {
-                    MessageBox.Show("Operation annulée", "Annulation", MessageBoxButton.OK);
-                }
             }
         }
+
+
+
+
 
         private void btAjouterPersonnel_Click(object sender, RoutedEventArgs e)
         {
@@ -154,7 +174,11 @@ namespace SAE201
 
         private void btAjouterMateriel_Click(object sender, RoutedEventArgs e)
         {
-
+            CategorieMateriel c = new CategorieMateriel();
+            if (listViewCategorie.SelectedItem != null)
+                c = (CategorieMateriel)listViewCategorie.SelectedItem;
+            pageAjout = new AjoutMateriel(c, this);
+            pageAjout.Show();
         }
 
         private void btAjouterCategorie_Click(object sender, RoutedEventArgs e)

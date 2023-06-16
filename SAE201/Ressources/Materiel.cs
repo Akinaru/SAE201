@@ -143,7 +143,21 @@ namespace SAE201.Ressources
             return false;
         }
 
-
+        public int GetId()
+        {
+            DataAccess accesBD = new DataAccess();
+            String requete = $"select id from materiel where nom = '{this.Nom}';";
+            DataTable datas = accesBD.GetData(requete);
+            int id = 0;
+            if (datas != null)
+            {
+                foreach (DataRow row in datas.Rows)
+                {
+                    id = int.Parse(row["id"].ToString());
+                }
+            }
+            return id;
+        }
 
         public ObservableCollection<Materiel> FindAll()
         {

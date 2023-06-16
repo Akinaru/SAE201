@@ -117,6 +117,7 @@ namespace SAE201.Ressources
             return id;
         }
 
+
         public ObservableCollection<CategorieMateriel> FindAll()
         {
             ObservableCollection<CategorieMateriel> lesCategories = new ObservableCollection<CategorieMateriel>();
