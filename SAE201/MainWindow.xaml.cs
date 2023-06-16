@@ -121,7 +121,7 @@ namespace SAE201
 
         private void MenuModificationMateriel(object sender, RoutedEventArgs e)
         {
-            if (listViewAttribution.SelectedItem != null)
+            if (listViewMateriel.SelectedItem != null)
             {
                 pageModif = new Modification((Materiel)listViewMateriel.SelectedItem);
                 pageModif.Owner = this;
@@ -134,6 +134,12 @@ namespace SAE201
 
         private void MenuModificationCategorie(object sender, RoutedEventArgs e)
         {
+            if (listViewCategorie.SelectedItem != null)
+            {
+                pageModif = new Modification((CategorieMateriel)listViewCategorie.SelectedItem);
+                pageModif.Owner = this;
+                pageModif.Show();
+            }
         }
         private void MenuSuppressionCategorie(object sender, RoutedEventArgs e)
         {
