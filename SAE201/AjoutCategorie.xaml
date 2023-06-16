@@ -15,12 +15,43 @@
         <Button
             x:Name="btCreer"
             Width="89"
-            Height="24"
-            Margin="534,376,0,0"
+            Height="39"
+            Margin="534,361,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            Background="#FF14213D"
             Click="btCreer_Click"
-            Content="Créer" />
+            Content="Créer"
+            Cursor="Hand"
+            Foreground="#f1f2f6">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
+                    <Setter Property="FontSize" Value="18" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border
+                                    x:Name="border"
+                                    Padding="10,6"
+                                    Background="{TemplateBinding Background}"
+                                    CornerRadius="10">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#FF0C192F" />
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#FF05142B" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
         <Button
             x:Name="btAnnuler"
             Width="89"
@@ -29,7 +60,36 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="btAnnuler_Click"
-            Content="Annuler" />
+            Content="Annuler"
+            Foreground="#FF14213D">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
+                    <Setter Property="FontSize" Value="18" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border
+                                    x:Name="border"
+                                    Padding="10,6"
+                                    Background="{TemplateBinding Background}"
+                                    CornerRadius="10">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#FF0C192F" />
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#FF05142B" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
 
         <Label
             Width="800"
@@ -38,8 +98,11 @@
             VerticalAlignment="Top"
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center"
-            Background="#FFEA0101"
-            Content="Ajout Categorie" />
+            Background="#226F54"
+            Content="Ajout Categorie"
+            FontFamily="Cascadia Mono SemiBold"
+            FontSize="24"
+            Foreground="#f1f2f6" />
         <Label
             x:Name="lbNom"
             Width="190"
