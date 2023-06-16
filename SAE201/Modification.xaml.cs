@@ -21,7 +21,6 @@ namespace SAE201
     /// </summary>
     public partial class Modification : Window
     {
-        public ObservableCollection<Personnel> LesPersonnels { get; set; }
         public Object actuel;
 
         public Modification(Personnel perso)
@@ -106,6 +105,26 @@ namespace SAE201
             dataGrid.ItemsSource = listeMateriel;
         }
 
+        public Modification(CategorieMateriel materiel)
+        {
+            InitializeComponent();
+            this.Title += "Categorie Materiel";
+            dataGrid.AutoGenerateColumns = false;
+            actuel = materiel;
+
+
+            ObservableCollection<CategorieMateriel> listeCategorie = new ObservableCollection<CategorieMateriel>();
+            listeCategorie.Add(materiel);
+
+            DataGridTextColumn nomColumn = new DataGridTextColumn();
+            nomColumn.Header = "Nom";
+            nomColumn.Binding = new Binding("Nom");
+
+
+            dataGrid.Columns.Add(nomColumn);
+            dataGrid.ItemsSource = listeCategorie;
+        }
+
 
         public Modification()
         {
@@ -118,43 +137,35 @@ namespace SAE201
             if(actuel is Personnel)
             {
                 if (((Personnel)actuel).Update())
-                {
                     MessageBox.Show("La modification a été validée.", "Modification Personnel", MessageBoxButton.OK, MessageBoxImage.Exclamation); 
-                    this.Close();
-                }
                 else
-                {
                     MessageBox.Show("La modification a été refusée.", "Modification Personnel", MessageBoxButton.OK, MessageBoxImage.Warning);
-                    this.Close();
-                }
             }
             if (actuel is Attribution)
             {
                 if (((Attribution)actuel).Update())
-                {
                     MessageBox.Show("La modification a été validée.", "Modification Attribution", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                    this.Close();
-                }
                 else
-                {
                     MessageBox.Show("La modification a été refusée.", "Modification Attribution", MessageBoxButton.OK, MessageBoxImage.Warning);
-                    this.Close();
-                }
             }
 
             if (actuel is Materiel)
             {
                 if (((Materiel)actuel).Update())
-                {
                     MessageBox.Show("La modification a été validée.", "Modification Materiel", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                    this.Close();
-                }
                 else
-                {
                     MessageBox.Show("La modification a été refusée.", "Modification Materiel", MessageBoxButton.OK, MessageBoxImage.Warning);
-                    this.Close();
-                }
             }
+
+            if (actuel is CategorieMateriel)
+            {
+                if (((CategorieMateriel)actuel).Update())
+                    MessageBox.Show("La modification a été validée.", "Modification Categorie", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                else
+                    MessageBox.Show("La modification a été refusée.", "Modification Categorie", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            this.Close();
+            this.Owner.Focus();
         }
 
         private void btAnnuler_Click(object sender, RoutedEventArgs e)

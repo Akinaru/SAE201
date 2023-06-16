@@ -21,13 +21,41 @@ namespace SAE201
     /// </summary>
     public partial class Ajout : Window
     {
-        public ObservableCollection<Personnel> LesPersonnels { get; set; }
+        public Object actuel;
 
         public Ajout()
         {
             InitializeComponent();
-            
 
+        }
+        public Ajout(Personnel perso)
+        {
+            InitializeComponent();
+            this.Title += "Personnel";
+            dataGrid.AutoGenerateColumns = false;
+            actuel = perso;
+
+
+            ObservableCollection<Personnel> listePerso = new ObservableCollection<Personnel>();
+            listePerso.Add(perso);
+
+            DataGridTextColumn nomColumn = new DataGridTextColumn();
+            nomColumn.Header = "Nom";
+            nomColumn.Binding = new Binding("Nom");
+
+            DataGridTextColumn prenomColumn = new DataGridTextColumn();
+            prenomColumn.Header = "Prenom";
+            prenomColumn.Binding = new Binding("Prenom");
+
+            DataGridTextColumn emailColumn = new DataGridTextColumn();
+            emailColumn.Header = "Email";
+            emailColumn.Binding = new Binding("Email");
+
+            dataGrid.Columns.Add(nomColumn);
+            dataGrid.Columns.Add(prenomColumn);
+            dataGrid.Columns.Add(emailColumn);
+
+            dataGrid.ItemsSource = listePerso;
         }
     }
 }

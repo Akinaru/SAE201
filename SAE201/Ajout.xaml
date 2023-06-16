@@ -13,14 +13,20 @@
         <DataGrid
             x:Name="dataGrid"
             Margin="177,155,177,155"
-            d:ItemsSource="{d:SampleData ItemCount=5}"
             CanUserAddRows="False" />
-        <Button
+        <Button x:Name="btCreer"
             Width="89"
             Height="24"
             Margin="534,376,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Valider" />
+            Content="Créer" />
+        <Button x:Name="btAnnuler"
+            Width="89"
+            Height="24"
+            Margin="177,376,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Annuler" />
     </Grid>
 </Window>
