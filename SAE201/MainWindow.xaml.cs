@@ -37,7 +37,6 @@ namespace SAE201
             {
                 listViewAttribution.DataContext = listViewMateriel.SelectedItem;
                 listViewAttribution.ItemsSource = ((Materiel)listViewMateriel.SelectedItem).LesAttributions;
-                lbSelection.Content = ((Materiel)listViewMateriel.SelectedItem).ToString();
             }
         }
 
@@ -60,7 +59,6 @@ namespace SAE201
         {
             listViewMateriel.SelectedItem = null;
             listViewAttribution.ItemsSource = applicationData.LesAttributions;
-            lbSelection.Content = "";
         }
 
         private void MenuModificationPersonnel(object sender, RoutedEventArgs e)
@@ -112,8 +110,14 @@ namespace SAE201
                 {
                     ((Attribution)listViewAttribution.SelectedItem).Delete();
 
+
                     applicationData.LesAttributions = new Attribution().FindAll();
-                    listViewAttribution.ItemsSource = applicationData.LesAttributions;
+
+                    foreach (Materiel unMat in applicationData.LesMateriels.ToList())
+                        unMat.LesAttributions = new ObservableCollection<Attribution>(applicationData.LesAttributions.ToList().FindAll(e => e.IdMateriel == unMat.Id));
+
+                    listViewAttribution.DataContext = listViewMateriel.SelectedItem;
+                    listViewAttribution.ItemsSource = ((Materiel)listViewMateriel.SelectedItem).LesAttributions;
 
                     MessageBox.Show("Bien supprimé", "Suppression", MessageBoxButton.OK);
                 }
@@ -145,7 +149,9 @@ namespace SAE201
 
                     applicationData.LesMateriels = new Materiel().FindAll();
                     
-                    
+                    foreach (CategorieMateriel uneCat in applicationData.LesCategories.ToList())
+                        uneCat.LesMateriels = new ObservableCollection<Materiel>(applicationData.LesMateriels.ToList().FindAll(g => g.IdCategorie == uneCat.Id));
+
                     listViewMateriel.DataContext = listViewCategorie.SelectedItem;
                     listViewMateriel.ItemsSource = ((CategorieMateriel)listViewCategorie.SelectedItem).LesMateriels;
 
@@ -191,27 +197,35 @@ namespace SAE201
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e) // AJOUT PERSONNEL
+        // AJOUT PERSONNEL
+        private void Button_Click(object sender, RoutedEventArgs e) 
         {
-            pageAjout = new Ajout();
+            pageAjout = new Ajout(new Personnel());
+            pageAjout.Owner = this;
             pageAjout.Show();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e) // AJOUT ATTRIBUTION
+        // AJOUT ATTRIBUTION
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             pageAjout = new Ajout();
+            pageAjout.Owner = this;
             pageAjout.Show();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e) // AJOUT MATERIEL
+        // AJOUT MATERIEL
+        private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             pageAjout = new Ajout();
+            pageAjout.Owner = this;
             pageAjout.Show();
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e) // AJOUT CATEGORIE
+        // AJOUT CATEGORIE
+        private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             pageAjout = new Ajout();
+            pageAjout.Owner = this;
             pageAjout.Show();
         }
     }

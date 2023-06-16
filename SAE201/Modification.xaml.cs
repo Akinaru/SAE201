@@ -21,7 +21,6 @@ namespace SAE201
     /// </summary>
     public partial class Modification : Window
     {
-        public ObservableCollection<Personnel> LesPersonnels { get; set; }
         public Object actuel;
 
         public Modification(Personnel perso)

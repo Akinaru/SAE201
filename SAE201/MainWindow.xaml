@@ -86,7 +86,7 @@
                     </ListBox.ContextMenu>
                 </ListView>
 
-                <Button
+                <Button x:Name="btAjouterCategorie"
                     Width="148"
                     Height="32"
                     Margin="0,0,0,32"
@@ -183,7 +183,7 @@
                         </ContextMenu>
                     </ListBox.ContextMenu>
                 </ListView>
-                <Button
+                <Button x:Name="btAjouterMateriel"
                     Width="148"
                     Height="32"
                     Margin="0,0,0,32"
@@ -291,7 +291,7 @@
                     </ListBox.ContextMenu>
                 </ListView>
 
-                <Button
+                <Button x:Name="btAjouterAttribution"
                     Width="148"
                     Height="32"
                     Margin="0,0,0,32"
@@ -338,14 +338,6 @@
                     FontFamily="72 Black"
                     FontSize="36"
                     Foreground="#226F54" />
-                <Label
-                    x:Name="lbSelection"
-                    Width="359"
-                    Height="26"
-                    Margin="10,33,0,0"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Top"
-                    Content="" />
             </Grid>
             <Grid Grid.Column="3">
                 <ListView
@@ -375,7 +367,7 @@
                         </ContextMenu>
                     </ListBox.ContextMenu>
                 </ListView>
-                <Button
+                <Button x:Name="btAjouterPersonnel"
                     Width="148"
                     Height="32"
                     Margin="0,0,0,32"
