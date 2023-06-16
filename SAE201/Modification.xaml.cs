@@ -112,7 +112,6 @@ namespace SAE201
             dataGrid.AutoGenerateColumns = false;
             actuel = materiel;
 
-
             ObservableCollection<CategorieMateriel> listeCategorie = new ObservableCollection<CategorieMateriel>();
             listeCategorie.Add(materiel);
 
