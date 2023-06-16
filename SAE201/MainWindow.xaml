@@ -25,7 +25,7 @@
         </Grid.RowDefinitions>
 
 
-        <Border Background="#226F54" CornerRadius="0,0,30,30">
+        <Border Background="#226F54" >
             <Grid Grid.Row="0">
                 <Label
                     Height="67"
