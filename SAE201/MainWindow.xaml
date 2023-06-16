@@ -49,7 +49,7 @@
             <Grid Grid.Column="0">
                 <Label
                     Height="56"
-                    Margin="10,53,0,0"
+                    Margin="10,15,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Content="Catégorie"
@@ -59,7 +59,7 @@
 
                 <ListView
                     x:Name="listViewCategorie"
-                    Margin="10,102,10,52"
+                    Margin="10,64,10,90"
                     ItemsSource="{Binding Path=LesCategories}"
                     SelectionChanged="listViewCategorie_SelectionChanged">
                     <ListView.Resources>
@@ -80,13 +80,12 @@
 
                 <Button
                     Width="148"
-                    Height="32"
-                    Margin="0,752,0,10"
+                    Margin="0,0,0,32"
                     HorizontalAlignment="Center"
                     Background="#FF14213D"
                     Click="Button_Click_3"
                     Content="+ Ajouter"
-                    Foreground="White">
+                    Foreground="White" Height="32" VerticalAlignment="Bottom">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
@@ -130,7 +129,7 @@
             <Grid Grid.Column="1" Margin="10,0,10,0">
                 <ListView
                     x:Name="listViewMateriel"
-                    Margin="0,102,0,52"
+                    Margin="0,64,0,90"
                     SelectionChanged="listViewMateriel_SelectionChanged">
                     <ListView.View>
                         <GridView>
@@ -143,7 +142,7 @@
                 <Button
                     Width="148"
                     Height="32"
-                    Margin="0,752,0,10"
+                    Margin="0,730,0,32"
                     HorizontalAlignment="Center"
                     Background="#FF14213D"
                     Click="Button_Click_2"
@@ -188,7 +187,7 @@
                     Content="X" />
                 <Label
                     Height="56"
-                    Margin="0,53,0,0"
+                    Margin="0,15,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Content="Matériel"
@@ -200,7 +199,7 @@
             <Grid Grid.Column="2">
                 <ListView
                     x:Name="listViewAttribution"
-                    Margin="10,102,10,52"
+                    Margin="10,64,10,90"
                     BorderBrush="#FF849082"
                     ItemsSource="{Binding Path=LesAttributions}">
                     <ListView.View>
@@ -217,7 +216,7 @@
                 <Button
                     Width="148"
                     Height="32"
-                    Margin="0,752,0,10"
+                    Margin="0,730,0,32"
                     HorizontalAlignment="Center"
                     Background="#FF14213D"
                     Click="Button_Click_1"
@@ -253,7 +252,7 @@
                 </Button>
                 <Label
                     Height="50"
-                    Margin="10,54,0,0"
+                    Margin="10,16,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Content="Attribution"
@@ -264,7 +263,7 @@
                     x:Name="lbSelection"
                     Width="359"
                     Height="26"
-                    Margin="10,71,0,0"
+                    Margin="10,33,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Content="" />
@@ -272,7 +271,7 @@
             <Grid Grid.Column="3">
                 <ListView
                     x:Name="listViewPersonnel"
-                    Margin="10,102,10,52"
+                    Margin="10,64,10,90"
                     BorderBrush="#FF849082"
                     Foreground="#ff4757"
                     ItemsSource="{Binding Path=LesPersonnels}">
@@ -293,7 +292,7 @@
                 <Button
                     Width="148"
                     Height="32"
-                    Margin="0,752,0,10"
+                    Margin="0,730,0,32"
                     HorizontalAlignment="Center"
                     Background="#FF14213D"
                     Click="Button_Click"
@@ -329,7 +328,7 @@
                 </Button>
                 <Label
                     Height="49"
-                    Margin="10,53,0,0"
+                    Margin="10,15,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Content="Personnel"
