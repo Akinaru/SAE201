@@ -225,7 +225,7 @@
                     x:Name="btResetSelecMateriel"
                     Width="28"
                     Height="28"
-                    Margin="0,27,10,0"
+                    Margin="0,27,0,0"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Top"
                     Click="btResetSelecMateriel_Click"
@@ -271,7 +271,7 @@
                             <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
                             <Setter Property="Foreground" Value="#226F54" />
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
-                            <Setter Property="FontSize" Value="18" />
+                            <Setter Property="FontSize" Value="14" />
                         </Style>
                     </ListView.Resources>
                     <ListView.View>
@@ -358,7 +358,7 @@
                             <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
                             <Setter Property="Foreground" Value="#226F54" />
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
-                            <Setter Property="FontSize" Value="18" />
+                            <Setter Property="FontSize" Value="14" />
                         </Style>
                     </ListView.Resources>
                     <ListView.View>

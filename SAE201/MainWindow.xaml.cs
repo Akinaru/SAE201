@@ -81,7 +81,8 @@ namespace SAE201
                 if (result == MessageBoxResult.Yes)
                 {
                     ((Personnel)listViewPersonnel.SelectedItem).Delete();
-                    
+                    CollectionViewSource.GetDefaultView(listViewPersonnel.ItemsSource).Refresh();
+
                     MessageBox.Show("Bien supprimé", "Suppression", MessageBoxButton.OK);
                 }
                 else
@@ -102,6 +103,20 @@ namespace SAE201
         }
         private void MenuSuppressionAttribution(object sender, RoutedEventArgs e)
         {
+            if (listViewAttribution.SelectedItem != null)
+            {
+                MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de supprimer cette attribution : \n" + ((Attribution)listViewAttribution.SelectedItem).NomPerso + " " + ((Attribution)listViewAttribution.SelectedItem).PrenomPerso + "\n" + ((Attribution)listViewAttribution.SelectedItem).NomMat + "\n" + ((Attribution)listViewAttribution.SelectedItem).Date.Date, "Suppression", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.Yes)
+                {
+                    ((Attribution)listViewAttribution.SelectedItem).Delete();
+
+                    MessageBox.Show("Bien supprimé", "Suppression", MessageBoxButton.OK);
+                }
+                else
+                {
+                    MessageBox.Show("Operation annulée", "Annulation", MessageBoxButton.OK);
+                }
+            }
         }
 
         private void MenuModificationMateriel(object sender, RoutedEventArgs e)
