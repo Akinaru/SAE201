@@ -120,32 +120,12 @@
             Margin="0,203,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Background="#FF14213D"
             BorderBrush="#FF0C192F"
             FontFamily="Cascadia Mono SemiBold"
             FontSize="18"
-            Foreground="#f1f2f6"
+            Foreground="#FF14213D"
             Text=""
-            TextWrapping="Wrap">
-            <TextBox.Style>
-                <Style TargetType="TextBox">
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="TextBox">
-                                <Border
-                                    x:Name="border"
-                                    Background="{TemplateBinding Background}"
-                                    BorderBrush="{TemplateBinding BorderBrush}"
-                                    BorderThickness="1"
-                                    CornerRadius="10">
-                                    <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
-                                </Border>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
-            </TextBox.Style>
-        </TextBox>
+            TextWrapping="Wrap" />
 
     </Grid>
 </Window>
