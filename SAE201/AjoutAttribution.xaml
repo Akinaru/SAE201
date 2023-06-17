@@ -15,15 +15,13 @@
         <Button
             x:Name="btCreer"
             Width="89"
-            Height="39"
-            Margin="534,405,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
+            Margin="0,0,177,30"
+            HorizontalAlignment="Right"
             Background="#FF14213D"
             Click="btCreer_Click"
             Content="Créer"
             Cursor="Hand"
-            Foreground="#f1f2f6">
+            Foreground="#f1f2f6" IsDefault="True" Height="39" VerticalAlignment="Bottom">
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
@@ -55,13 +53,11 @@
         <Button
             x:Name="btAnnuler"
             Width="99"
-            Height="39"
-            Margin="177,405,0,0"
+            Margin="177,0,0,30"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top"
             Background="Transparent"
             Click="btAnnuler_Click"
-            Content="Annuler">
+            Content="Annuler" Cursor="Hand" Height="39" VerticalAlignment="Bottom">
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
@@ -92,9 +88,7 @@
         </Button>
 
         <Label
-            Width="800"
             Height="69"
-            HorizontalAlignment="Center"
             VerticalAlignment="Top"
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center"
@@ -105,15 +99,16 @@
             Foreground="#f1f2f6" />
         <Label
             x:Name="lbCommentaire"
-            Width="190"
-            Margin="242,221,0,0"
-            HorizontalAlignment="Left"
+            Width="314"
+            Margin="0,221,0,0"
+            HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Content="Commentaire:" />
+            Content="Commentaire:"      FontFamily="Cascadia Mono SemiBold"
+            FontSize="18" />
         <TextBox
             x:Name="tbCommentaire"
             Width="314"
-            Height="25"
+            Height="59"
             Margin="0,252,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
@@ -121,40 +116,82 @@
             TextWrapping="Wrap" />
         <Label
             x:Name="lbDate"
-            Width="190"
-            Margin="242,289,0,0"
-            HorizontalAlignment="Left"
+            Width="314"
+            Margin="0,319,0,0"
+            HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Content="Date:" />
+            Content="Date:"      FontFamily="Cascadia Mono SemiBold"
+            FontSize="18" />
         <Label
             x:Name="lbMateriel"
-            Width="190"
-            Margin="242,80,0,0"
-            HorizontalAlignment="Left"
+            Width="314"
+            Margin="0,81,0,0"
+            HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Content="Matériel:" />
+            Content="Matériel:"
+            FontFamily="Cascadia Mono SemiBold"
+            FontSize="18" />
         <ComboBox
             x:Name="cbMateriel"
             Width="316"
             Margin="0,112,0,0"
             HorizontalAlignment="Center"
-            VerticalAlignment="Top" />
+            VerticalAlignment="Top"
+            Background="#FF14213D"
+            BorderBrush="#FF0C192F"
+            FontFamily="Cascadia Mono SemiBold"
+            FontSize="18"
+            Foreground="#FF14213D">
+            <ComboBox.ItemContainerStyle>
+                <Style TargetType="ComboBoxItem">
+                    <Setter Property="Foreground" Value="#f1f2f6" />
+                    <Setter Property="Background" Value="#FF14213D" />
+                    <Setter Property="Padding" Value="6" />
+                    <Style.Triggers>
+                        <Trigger Property="IsHighlighted" Value="True">
+                            <Setter Property="Foreground" Value="#f1f2f6" />
+                            <Setter Property="Background" Value="#FF0C192F" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ComboBox.ItemContainerStyle>
+        </ComboBox>
         <Label
             x:Name="lbPersonnel"
-            Width="190"
-            Margin="242,154,0,0"
-            HorizontalAlignment="Left"
+            Width="314"
+            Margin="0,155,0,0"
+            HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Content="Personnel:" />
+            Content="Personnel:"      FontFamily="Cascadia Mono SemiBold"
+            FontSize="18" />
         <ComboBox
             x:Name="cbPersonnel"
             Width="316"
             Margin="0,186,0,0"
             HorizontalAlignment="Center"
-            VerticalAlignment="Top" />
+            VerticalAlignment="Top"
+            Background="#FF14213D"
+            BorderBrush="#FF0C192F"
+            FontFamily="Cascadia Mono SemiBold"
+            FontSize="18"
+            Foreground="#FF14213D">
+            <ComboBox.ItemContainerStyle>
+                <Style TargetType="ComboBoxItem">
+                    <Setter Property="Foreground" Value="#f1f2f6" />
+                    <Setter Property="Background" Value="#FF14213D" />
+                    <Setter Property="Padding" Value="6" />
+                    <Style.Triggers>
+                        <Trigger Property="IsHighlighted" Value="True">
+                            <Setter Property="Foreground" Value="#f1f2f6" />
+                            <Setter Property="Background" Value="#FF0C192F" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ComboBox.ItemContainerStyle>
+        </ComboBox>
         <DatePicker x:Name="datePicker"
-            Margin="242,320,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top" />
+            Margin="0,350,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top" Width="314" />
     </Grid>
 </Window>

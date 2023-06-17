@@ -57,6 +57,7 @@
                     Content="Catégorie"
                     FontFamily="72 Black"
                     FontSize="36"
+                    FontWeight="Bold"
                     Foreground="#226F54" />
 
                 <ListView
@@ -354,6 +355,7 @@
                     Content="Attribution"
                     FontFamily="72 Black"
                     FontSize="36"
+                    FontWeight="Bold"
                     Foreground="#226F54" />
             </Grid>
             <Grid Grid.Column="3">

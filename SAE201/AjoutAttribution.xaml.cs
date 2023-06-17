@@ -28,6 +28,7 @@ namespace SAE201
         {
             InitializeComponent();
             this.fenetre = fenetre;
+            tbCommentaire.Focus();
             foreach (Materiel mat in ApplicationData.LesMateriels)
             {
                 cbMateriel.Items.Add(mat.Nom);

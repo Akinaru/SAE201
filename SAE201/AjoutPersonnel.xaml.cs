@@ -26,6 +26,7 @@ namespace SAE201
         public AjoutPersonnel()
         {
             InitializeComponent();
+            tbPrenom.Focus();
         }
 
 

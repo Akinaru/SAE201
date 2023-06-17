@@ -15,15 +15,13 @@
         <Button
             x:Name="btCreer"
             Width="89"
-            Height="39"
-            Margin="534,405,0,0"
+            Margin="534,0,0,40"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top"
             Background="#FF14213D"
             Click="btCreer_Click"
             Content="Créer"
             Cursor="Hand"
-            Foreground="#f1f2f6">
+            Foreground="#f1f2f6" IsDefault="True" Height="39" VerticalAlignment="Bottom">
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
@@ -55,13 +53,11 @@
         <Button
             x:Name="btAnnuler"
             Width="99"
-            Height="39"
-            Margin="177,405,0,0"
+            Margin="177,0,0,40"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top"
             Background="Transparent"
             Click="btAnnuler_Click"
-            Content="Annuler">
+            Content="Annuler" Cursor="Hand" Height="39" VerticalAlignment="Bottom">
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
@@ -92,9 +88,7 @@
         </Button>
 
         <Label
-            Width="800"
             Height="69"
-            HorizontalAlignment="Center"
             VerticalAlignment="Top"
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center"
@@ -105,9 +99,9 @@
             Foreground="#f1f2f6" />
         <Label
             x:Name="lbNom"
-            Width="190"
-            Margin="242,147,0,0"
-            HorizontalAlignment="Left"
+            Width="314"
+            Margin="0,147,0,0"
+            HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Content="Nom:"
             FontFamily="Cascadia Mono SemiBold"
@@ -127,9 +121,9 @@
             TextWrapping="Wrap" />
         <Label
             x:Name="lbCodeBarre"
-            Width="190"
-            Margin="242,221,0,0"
-            HorizontalAlignment="Left"
+            Width="314"
+            Margin="0,221,0,0"
+            HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Content="Code Barre:"
             FontFamily="Cascadia Mono SemiBold"
@@ -149,9 +143,9 @@
             TextWrapping="Wrap" />
         <Label
             x:Name="lbRefConstructeur"
-            Width="190"
-            Margin="242,289,0,0"
-            HorizontalAlignment="Left"
+            Width="314"
+            Margin="0,289,0,0"
+            HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Content="Ref Constructeur:"
             FontFamily="Cascadia Mono SemiBold"
@@ -171,9 +165,9 @@
             TextWrapping="Wrap" />
         <Label
             x:Name="lbCategorie"
-            Width="190"
-            Margin="242,80,0,0"
-            HorizontalAlignment="Left"
+            Width="314"
+            Margin="0,81,0,0"
+            HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Content="Categorie:"
             FontFamily="Cascadia Mono SemiBold"

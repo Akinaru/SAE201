@@ -23,6 +23,7 @@ namespace SAE201
         public AjoutCategorie()
         {
             InitializeComponent();
+            tbNom.Focus();
         }
 
 
@@ -49,5 +50,6 @@ namespace SAE201
         {
             this.Close();
         }
+
     }
 }

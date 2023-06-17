@@ -28,6 +28,7 @@ namespace SAE201
         {
             InitializeComponent();
             this.fenetre = fenetre;
+            tbNom.Focus();
             foreach (CategorieMateriel cat in ApplicationData.LesCategories)
             {
                 cbCategorie.Items.Add(cat.Nom);
