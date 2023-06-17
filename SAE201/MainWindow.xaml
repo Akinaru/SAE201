@@ -36,6 +36,33 @@
                     FontFamily="Cascadia Mono SemiBold"
                     FontSize="24"
                     Foreground="#f1f2f6" />
+                <Button
+                    x:Name="btAide"
+                    Height="50"
+                    Margin="0,0,26,0"
+                    VerticalAlignment="Center"
+                    Click="btAide_Click"
+                    Content="?"
+                    FontSize="35"
+                    Cursor="Hand" HorizontalAlignment="Right" Width="48">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#FF14213D" />
+                            <Setter Property="Foreground" Value="#f1f2f6" />
+                            <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
+                            <Setter Property="FontSize" Value="12" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}" CornerRadius="14">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
             </Grid>
         </Border>
 
@@ -436,6 +463,34 @@
                     FontSize="36"
                     FontWeight="Bold"
                     Foreground="#226F54" />
+                <Button
+                    x:Name="btResetSelecMateriel_Copy"
+                    Width="28"
+                    Height="28"
+                    Margin="0,27,20,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Click="btResetSelecPersonnel_Click"
+                    Content="X"
+                    Cursor="Hand">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="#FF14213D" />
+                            <Setter Property="Foreground" Value="#f1f2f6" />
+                            <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
+                            <Setter Property="FontSize" Value="12" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border Background="{TemplateBinding Background}" CornerRadius="14">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
             </Grid>
 
 

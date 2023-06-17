@@ -25,6 +25,7 @@ namespace SAE201
     {
 
         private Window pageAjout;
+        private Window pageAide;
         private Window pageModif;
         public MainWindow()
         {
@@ -60,6 +61,12 @@ namespace SAE201
         {
             listViewMateriel.SelectedItem = null;
             listViewAttribution.ItemsSource = ApplicationData.LesAttributions;
+        }
+
+        private void btResetSelecPersonnel_Click(object sender, RoutedEventArgs e)
+        {
+            listViewPersonnel.SelectedItem = null;
+            
         }
 
         private void MenuModificationPersonnel(object sender, RoutedEventArgs e)
@@ -207,6 +214,12 @@ namespace SAE201
         {
             pageAjout = new AjoutCategorie();
             pageAjout.Show();
+        }
+
+        private void btAide_Click(object sender, RoutedEventArgs e)
+        {
+            pageAide = new Aide();
+            pageAide.Show();
         }
     }
 }
