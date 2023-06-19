@@ -54,8 +54,11 @@ namespace SAE201.Ressources
             }
         }
 
-        //Cette fonction permet d'insérer la catégorie matériel dans la base de données
-        //Renvoie true si l'insertion réussie, false sinon
+        /// <summary>
+        /// Cette fonction permet d'insérer la catégorie matériel dans la base de données
+        /// Renvoie true si l'insertion réussie, false sinon
+        /// </summary>
+        /// <returns></returns>
         public bool Create()
         {
             DataAccess accesBD = new DataAccess();
@@ -75,9 +78,11 @@ namespace SAE201.Ressources
             throw new NotImplementedException();
         }
 
-
-        //Cette fonction permet de mettre à jour la catégorie matériel dans la base de données
-        //Renvoie true si la modification réussie, false sinon
+        /// <summary>
+        /// Cette fonction permet de mettre à jour la catégorie matériel dans la base de données
+        /// Renvoie true si la modification réussie, false sinon
+        /// </summary>
+        /// <returns></returns>
         public bool Update()
         {
             DataAccess accesBD = new DataAccess();
@@ -90,9 +95,11 @@ namespace SAE201.Ressources
             return false;
         }
 
-
-        //Cette fonction permet de supprimer la catégorie matériel de la base de données
-        //Renvoie true si la suppréssion réussie, false sinon
+        /// <summary>
+        /// Cette fonction permet de supprimer la catégorie matériel de la base de données
+        /// Renvoie true si la suppréssion réussie, false sinon
+        /// </summary>
+        /// <returns></returns>
         public bool Delete()
         {
             DataAccess accesBD = new DataAccess();
@@ -105,8 +112,11 @@ namespace SAE201.Ressources
             return false;
         }
 
-        //Cette fonction permet de récupérer l'id de la categorie materiel dans la base de donnée
-        //Renvoie l'id
+        /// <summary>
+        /// Cette fonction permet de récupérer l'id de la categorie materiel dans la base de donnée
+        /// Renvoie l'id
+        /// </summary>
+        /// <returns></returns>
         public int GetId()
         {
             DataAccess accesBD = new DataAccess();

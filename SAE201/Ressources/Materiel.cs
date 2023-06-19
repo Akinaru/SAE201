@@ -96,8 +96,11 @@ namespace SAE201.Ressources
             }
         }
 
-        //Cette fonction permet d'insérer le matériel dans la base de données
-        //Renvoie true si l'insertion réussie, false sinon
+        /// <summary>
+        /// Cette fonction permet d'insérer le matériel dans la base de données
+        /// Renvoie true si l'insertion réussie, false sinon
+        /// </summary>
+        /// <returns></returns>
         public bool Create()
         {
             DataAccess accesBD = new DataAccess(); 
@@ -111,15 +114,22 @@ namespace SAE201.Ressources
         }
 
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
         public Materiel Read(int id)
         {
             throw new NotImplementedException();
         }
 
-
-        //Cette fonction permet de mettre à jour le matériel dans la base de données
-        //Renvoie true si la modification réussie, false sinon
+        /// <summary>
+        /// Cette fonction permet de mettre à jour le matériel dans la base de données
+        /// Renvoie true si la modification réussie, false sinon
+        /// </summary>
+        /// <returns></returns>
         public bool Update()
         {
             DataAccess accesBD = new DataAccess();
@@ -132,9 +142,11 @@ namespace SAE201.Ressources
             return false;
         }
 
-
-        //Cette fonction permet de supprimer le matériel de la base de données
-        //Renvoie true si la suppréssion réussie, false sinon
+        /// <summary>
+        /// Cette fonction permet de supprimer le matériel de la base de données
+        /// Renvoie true si la suppréssion réussie, false sinon
+        /// </summary>
+        /// <returns></returns>
         public bool Delete()
         {
             DataAccess accesBD = new DataAccess();
@@ -147,8 +159,11 @@ namespace SAE201.Ressources
             return false;
         }
 
-        //Cette fonction permet de récupérer l'id du matériel dans la base de donnée
-        //Renvoie l'id
+        /// <summary>
+        /// Cette fonction permet de récupérer l'id du matériel dans la base de donnée
+        /// Renvoie l'id
+        /// </summary>
+        /// <returns></returns>
         public int GetId()
         {
             DataAccess accesBD = new DataAccess();
