@@ -197,7 +197,7 @@
                 <ListView
                     x:Name="listViewMateriel"
                     Margin="-162,64,154,90"
-                    SelectionChanged="listViewMateriel_SelectionChanged">
+                    SelectionChanged="listView_SelectionChanged">
                     <ListView.Resources>
                         <Style TargetType="ListView">
                             <Setter Property="BorderThickness" Value="0" />
