@@ -64,7 +64,6 @@ namespace SAE201
                 int idMateriel = m.GetId();
 
                 Attribution a = new Attribution(idPersonnel, idMateriel, (DateTime)datePicker.SelectedDate, tbCommentaire.Text, pFinal.Prenom, pFinal.Nom, m.Nom);
-                MessageBox.Show(datePicker.SelectedDate + "");
 
                 if (a.Create())
                 {
@@ -75,8 +74,15 @@ namespace SAE201
                         if (lesMateriels.Id == idMateriel)
                             lesMateriels.LesAttributions = new ObservableCollection<Attribution>(ApplicationData.LesAttributions.ToList().FindAll(g => g.IdMateriel == lesMateriels.Id));
 
-                    fenetre.listViewAttribution.DataContext = fenetre.listViewMateriel.SelectedItem;
-                    fenetre.listViewAttribution.ItemsSource = ((Materiel)fenetre.listViewMateriel.SelectedItem).LesAttributions;
+                    if(fenetre.listViewMateriel.SelectedItem != null)
+                    {
+                        fenetre.listViewAttribution.DataContext = fenetre.listViewMateriel.SelectedItem;
+                        fenetre.listViewAttribution.ItemsSource = ((Materiel)fenetre.listViewMateriel.SelectedItem).LesAttributions;
+                    }
+                    else
+                    {
+                        fenetre.listViewAttribution.ItemsSource = ApplicationData.LesAttributions;
+                    }
                 }
                 else
                     MessageBox.Show("La création a été refusée.", "Ajout Materiel", MessageBoxButton.OK, MessageBoxImage.Warning);

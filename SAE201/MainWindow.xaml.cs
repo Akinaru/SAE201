@@ -36,9 +36,28 @@ namespace SAE201
         {
             if (listViewMateriel.SelectedItem != null)
             {
-                listViewAttribution.DataContext = listViewMateriel.SelectedItem;
-                listViewAttribution.ItemsSource = ((Materiel)listViewMateriel.SelectedItem).LesAttributions;
+
+                if(listViewPersonnel.SelectedItem == null)
+                {
+                    listViewAttribution.DataContext = listViewMateriel.SelectedItem;
+                    listViewAttribution.ItemsSource = ((Materiel)listViewMateriel.SelectedItem).LesAttributions;
+                }
+
                 
+            }
+        }
+        private void listViewPersonnel_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (listViewPersonnel.SelectedItem != null)
+            {
+
+                if (listViewMateriel.SelectedItem == null)
+                {
+                    listViewAttribution.DataContext = listViewPersonnel.SelectedItem;
+                    listViewAttribution.ItemsSource = ((Personnel)listViewPersonnel.SelectedItem).LesAttributions;
+                }
+
+
             }
         }
 
@@ -66,6 +85,7 @@ namespace SAE201
         private void btResetSelecPersonnel_Click(object sender, RoutedEventArgs e)
         {
             listViewPersonnel.SelectedItem = null;
+            listViewAttribution.ItemsSource = ApplicationData.LesAttributions;
             
         }
 

@@ -33,6 +33,8 @@ namespace SAE201.Ressources
             foreach (Materiel unMat in LesMateriels.ToList())
                 unMat.LesAttributions = new ObservableCollection<Attribution>(LesAttributions.ToList().FindAll(e => e.IdMateriel == unMat.Id));
 
+            foreach (Personnel unPerso in LesPersonnels.ToList())
+                unPerso.LesAttributions = new ObservableCollection<Attribution>(LesAttributions.ToList().FindAll(e => e.IdPersonnel == unPerso.Id));
         }
 
     }
