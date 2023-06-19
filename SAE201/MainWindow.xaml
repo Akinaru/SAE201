@@ -410,8 +410,8 @@
                     </ListView.Resources>
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn DisplayMemberBinding="{Binding Nom}" Header="Nom" />
                             <GridViewColumn DisplayMemberBinding="{Binding Prenom}" Header="Prenom" />
+                            <GridViewColumn DisplayMemberBinding="{Binding Nom}" Header="Nom" />
                             <GridViewColumn DisplayMemberBinding="{Binding Email}" Header="Email" />
                         </GridView>
                     </ListView.View>
