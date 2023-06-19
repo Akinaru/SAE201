@@ -17,6 +17,9 @@ namespace SAE201.Ressources
         private int idCategorie;
         private ObservableCollection<Attribution> lesAttributions;
 
+        /// <summary>
+        /// Getter et Setter de Id
+        /// </summary>
         public int Id
         {
             get
@@ -30,6 +33,9 @@ namespace SAE201.Ressources
             }
         }
 
+        /// <summary>
+        /// Getter et Setter de Nom
+        /// </summary>
         public string Nom
         {
             get
@@ -42,7 +48,9 @@ namespace SAE201.Ressources
                 nom = value;
             }
         }
-
+        /// <summary>
+        /// Getter et Setter de CodeBarre
+        /// </summary>
         public string CodeBarre
         {
             get
@@ -55,7 +63,9 @@ namespace SAE201.Ressources
                 codeBarre = value;
             }
         }
-
+        /// <summary>
+        /// Getter et Setter de RefConstructeur
+        /// </summary>
         public string RefConstructeur
         {
             get
@@ -68,7 +78,9 @@ namespace SAE201.Ressources
                 refConstructeur = value;
             }
         }
-
+        /// <summary>
+        /// Getter et Setter de  IdCategorie
+        /// </summary>
         public int IdCategorie
         {
             get
@@ -82,7 +94,9 @@ namespace SAE201.Ressources
             }
         }
 
-
+        /// <summary>
+        /// Getter et Setter de LesAttributions
+        /// </summary>
         public ObservableCollection<Attribution> LesAttributions
         {
             get
@@ -180,6 +194,11 @@ namespace SAE201.Ressources
             return id;
         }
 
+        /// <summary>
+        /// Cette méthode renvoie tous les matériel de la base de donnée
+        /// Renvoie une liste de materiel
+        /// </summary>
+        /// <returns></returns>
         public ObservableCollection<Materiel> FindAll()
         {
             ObservableCollection<Materiel> lesMateriels = new ObservableCollection<Materiel>();
@@ -196,13 +215,27 @@ namespace SAE201.Ressources
             }
             return lesMateriels;
         }
-
+        /// <summary>
+        /// ToString
+        /// </summary>
+        /// <returns></returns>
         public override string? ToString()
         {
             return this.Nom;
         }
-
+        /// <summary>
+        /// Constructeur vide de materiel
+        /// </summary>
         public Materiel() { }
+
+        /// <summary>
+        /// Constructeur de materiel
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nom"></param>
+        /// <param name="codeBarre"></param>
+        /// <param name="refConstructeur"></param>
+        /// <param name="idCategorie"></param>
         public Materiel(int id, string nom, string codeBarre, string refConstructeur, int idCategorie)
         {
             this.Id = id;

@@ -15,6 +15,9 @@ namespace SAE201.Ressources
         private string nom;
         private ObservableCollection<Materiel> lesMateriels;
 
+        /// <summary>
+        /// Getter et Setter de Id
+        /// </summary>
         public int Id
         {
             get
@@ -28,6 +31,9 @@ namespace SAE201.Ressources
             }
         }
 
+        /// <summary>
+        /// Getter et Setter de Nom
+        /// </summary>
         public string Nom
         {
             get
@@ -41,6 +47,9 @@ namespace SAE201.Ressources
             }
         }
 
+        /// <summary>
+        /// Getter et Setter de LesMateriels
+        /// </summary>
         public ObservableCollection<Materiel> LesMateriels
         {
             get
@@ -72,7 +81,12 @@ namespace SAE201.Ressources
         }
 
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
         public CategorieMateriel Read(int id)
         {
             throw new NotImplementedException();
@@ -133,7 +147,11 @@ namespace SAE201.Ressources
             return id;
         }
 
-
+        /// <summary>
+        /// Cette méthode renvoie toutes les categories materiels de la base de donnée
+        /// Renvoie une liste de categoriemateriel
+        /// </summary>
+        /// <returns></returns>
         public ObservableCollection<CategorieMateriel> FindAll()
         {
             ObservableCollection<CategorieMateriel> lesCategories = new ObservableCollection<CategorieMateriel>();
@@ -150,10 +168,17 @@ namespace SAE201.Ressources
             }
             return lesCategories;
         }
-
+        /// <summary>
+        /// Constructeur vide de CategorieMateriel
+        /// </summary>
         public CategorieMateriel()
         {
         }
+        /// <summary>
+        /// Constructuer de CategorieMateriel
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nom"></param>
         public CategorieMateriel(int id, string nom)
         {
             this.Id = id;
