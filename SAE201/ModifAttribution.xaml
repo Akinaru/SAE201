@@ -14,14 +14,14 @@
     <Grid>
         <Button
             x:Name="btCreer"
-            Width="89"
+            Width="101"
             Height="39"
-            Margin="0,0,177,30"
+            Margin="0,0,165,30"
             HorizontalAlignment="Right"
             VerticalAlignment="Bottom"
             Background="#FF14213D"
             Click="btCreer_Click"
-            Content="Créer"
+            Content="Valider"
             Cursor="Hand"
             Foreground="#f1f2f6"
             IsDefault="True">

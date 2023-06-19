@@ -21,26 +21,35 @@ namespace SAE201
     /// </summary>
     public partial class ModifAttribution : Window
     {
-        Attribution attriTempo;
-        public ModifAttribution(Attribution attribution)
+        Attribution attribution;
+        Materiel materiel;
+        Personnel personnel;
+        MainWindow fenetre;
+        public ModifAttribution(Attribution attrib, MainWindow window)
         {
             InitializeComponent();
-            attriTempo = new Attribution(attribution.IdPersonnel, attribution.IdMateriel, attribution.Date, attribution.Commentaire, attribution.PrenomPerso, attribution.NomPerso, attribution.NomMat);
             tbCommentaire.Focus();
-            Materiel materiel = ApplicationData.LesMateriels.ToList().Find(g => g.Id == attribution.IdMateriel);
-            Personnel personnel = ApplicationData.LesPersonnels.ToList().Find(p => p.Id == attribution.IdPersonnel);
+            attribution = attrib;
+            fenetre = window;
+            materiel = ApplicationData.LesMateriels.ToList().Find(g => g.Id == attribution.IdMateriel);
+            personnel = ApplicationData.LesPersonnels.ToList().Find(p => p.Id == attribution.IdPersonnel);
             foreach (Materiel mat in ApplicationData.LesMateriels)
             {
-                cbMateriel.Items.Add(mat.Nom);
+                cbMateriel.Items.Add(mat);
                 if (mat.Nom == materiel.Nom)
-                    cbMateriel.SelectedItem = mat.Nom;
+                {
+                    cbMateriel.SelectedItem = mat;
+                }
             }
 
             foreach (Personnel pers in ApplicationData.LesPersonnels)
             {
                 cbPersonnel.Items.Add(pers);
                 if (pers == personnel)
+                {
                     cbPersonnel.SelectedItem = pers;
+                }
+
             }
             tbCommentaire.Text = attribution.Commentaire;
             datePicker.SelectedDate = attribution.Date;
@@ -48,6 +57,19 @@ namespace SAE201
 
         private void btCreer_Click(object sender, RoutedEventArgs e)
         {
+
+            var index = ApplicationData.LesAttributions.ToList().FindIndex(c => c.IdPersonnel == personnel.Id && c.IdMateriel == materiel.Id);
+            Personnel p = cbPersonnel.SelectedItem as Personnel;
+            Materiel m = cbMateriel.SelectedItem as Materiel;
+            ApplicationData.LesAttributions[index].Commentaire = tbCommentaire.Text;
+            ApplicationData.LesAttributions[index].Date = (DateTime)datePicker.SelectedDate;
+            ApplicationData.LesAttributions[index].PrenomPerso = p.Prenom;
+            ApplicationData.LesAttributions[index].NomPerso = p.Nom;
+            ApplicationData.LesAttributions[index].NomMat = m.Nom;
+            fenetre.listViewAttribution.Items.Refresh();
+            if (!attribution.Update())
+                MessageBox.Show("La création a été refusée.", "Ajout Categorie", MessageBoxButton.OK, MessageBoxImage.Warning);
+
             this.Close();
 
         }

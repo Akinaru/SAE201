@@ -143,7 +143,7 @@ namespace SAE201
         {
             if (listViewAttribution.SelectedItem != null)
             {
-                pageModif = new ModifAttribution((Attribution)listViewAttribution.SelectedItem);
+                pageModif = new ModifAttribution((Attribution)listViewAttribution.SelectedItem, this);
                 pageModif.Show();
             }
         }
