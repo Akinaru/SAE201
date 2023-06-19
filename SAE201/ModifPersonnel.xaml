@@ -73,7 +73,8 @@
             Click="btAnnuler_Click"
             Content="Annuler"
             Cursor="Hand"
-            Foreground="#FF14213D">
+            Foreground="#FF14213D"
+            IsCancel="true">
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />

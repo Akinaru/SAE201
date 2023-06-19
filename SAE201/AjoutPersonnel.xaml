@@ -64,7 +64,8 @@
             Click="btAnnuler_Click"
             Content="Annuler"
             Cursor="Hand"
-            Foreground="#FF14213D">
+            Foreground="#FF14213D"
+            IsCancel="true">
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
@@ -126,7 +127,8 @@
             FontSize="18"
             Foreground="#FF14213D"
             Text=""
-            TextWrapping="Wrap" TextChanged="tbPrenom_TextChanged" />
+            TextChanged="tbPrenom_TextChanged"
+            TextWrapping="Wrap" />
         <Label
             x:Name="lbNom"
             Width="314"
@@ -149,7 +151,8 @@
             FontSize="18"
             Foreground="#FF14213D"
             Text=""
-            TextWrapping="Wrap" TextChanged="tbNom_TextChanged" />
+            TextChanged="tbNom_TextChanged"
+            TextWrapping="Wrap" />
         <Label
             x:Name="lbEmail"
             Width="314"
@@ -172,6 +175,7 @@
             FontSize="18"
             Foreground="#FF14213D"
             Text=""
-            TextWrapping="Wrap" TextChanged="tbEmail_TextChanged" />
+            TextChanged="tbEmail_TextChanged"
+            TextWrapping="Wrap" />
     </Grid>
 </Window>

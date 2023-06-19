@@ -23,7 +23,9 @@
             Click="btCreer_Click"
             Content="Créer"
             Cursor="Hand"
-            Foreground="#f1f2f6" IsDefault="True">
+            Foreground="#f1f2f6"
+            IsCancel="true"
+            IsDefault="True">
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
@@ -62,7 +64,8 @@
             Background="Transparent"
             Click="btAnnuler_Click"
             Content="Annuler"
-            Foreground="#FF14213D" Cursor="Hand">
+            Cursor="Hand"
+            Foreground="#FF14213D">
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
@@ -125,8 +128,7 @@
             FontSize="18"
             Foreground="#FF14213D"
             Text=""
-            TextWrapping="Wrap"
-            />
+            TextWrapping="Wrap" />
 
     </Grid>
 </Window>

@@ -24,6 +24,7 @@
             Content="Créer"
             Cursor="Hand"
             Foreground="#f1f2f6"
+            IsCancel="true"
             IsDefault="True">
             <Button.Style>
                 <Style TargetType="Button">
