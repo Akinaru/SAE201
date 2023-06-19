@@ -61,7 +61,7 @@ namespace SAE201
 
             }
             else
-            {
+            { 
                 Personnel p = new Personnel(0, tbNom.Text, tbPrenom.Text, tbEmail.Text);
 
                 if (p.Create())

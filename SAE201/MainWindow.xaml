@@ -13,6 +13,7 @@
     MinWidth="1600"
     MinHeight="900"
     Background="#B0DDCE"
+    Icon="Ressources/image/logo.ico"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Window.DataContext>
