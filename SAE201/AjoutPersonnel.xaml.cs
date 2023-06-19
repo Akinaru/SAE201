@@ -47,10 +47,12 @@ namespace SAE201
                     tbNom.BorderBrush = Brushes.Red;
                 else
                     tbNom.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
+                
                 if (tbPrenom.Text.Trim() == "")
                     tbPrenom.BorderBrush = Brushes.Red;
                 else
                     tbPrenom.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
+                
                 if (!Regex.IsMatch(tbEmail.Text, paterne))
                     tbEmail.BorderBrush = Brushes.Red;
                 else
@@ -80,6 +82,21 @@ namespace SAE201
         private void btAnnuler_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void tbPrenom_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            tbPrenom.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
+        }
+
+        private void tbNom_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            tbNom.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
+        }
+
+        private void tbEmail_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            tbEmail.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
         }
     }
 }
