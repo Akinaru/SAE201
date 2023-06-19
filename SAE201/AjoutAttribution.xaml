@@ -15,13 +15,16 @@
         <Button
             x:Name="btCreer"
             Width="89"
+            Height="39"
             Margin="0,0,177,30"
             HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
             Background="#FF14213D"
             Click="btCreer_Click"
             Content="Créer"
             Cursor="Hand"
-            Foreground="#f1f2f6" IsDefault="True" Height="39" VerticalAlignment="Bottom">
+            Foreground="#f1f2f6"
+            IsDefault="True">
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
@@ -53,11 +56,14 @@
         <Button
             x:Name="btAnnuler"
             Width="99"
+            Height="39"
             Margin="177,0,0,30"
             HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
             Background="Transparent"
             Click="btAnnuler_Click"
-            Content="Annuler" Cursor="Hand" Height="39" VerticalAlignment="Bottom">
+            Content="Annuler"
+            Cursor="Hand">
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
@@ -103,7 +109,8 @@
             Margin="0,221,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Content="Commentaire:"      FontFamily="Cascadia Mono SemiBold"
+            Content="Commentaire:"
+            FontFamily="Cascadia Mono SemiBold"
             FontSize="18" />
         <TextBox
             x:Name="tbCommentaire"
@@ -113,6 +120,7 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Text=""
+            TextChanged="tbCommentaire_TextChanged"
             TextWrapping="Wrap" />
         <Label
             x:Name="lbDate"
@@ -120,7 +128,8 @@
             Margin="0,319,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Content="Date:"      FontFamily="Cascadia Mono SemiBold"
+            Content="Date:"
+            FontFamily="Cascadia Mono SemiBold"
             FontSize="18" />
         <Label
             x:Name="lbMateriel"
@@ -162,7 +171,8 @@
             Margin="0,155,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Content="Personnel:"      FontFamily="Cascadia Mono SemiBold"
+            Content="Personnel:"
+            FontFamily="Cascadia Mono SemiBold"
             FontSize="18" />
         <ComboBox
             x:Name="cbPersonnel"
@@ -189,9 +199,11 @@
                 </Style>
             </ComboBox.ItemContainerStyle>
         </ComboBox>
-        <DatePicker x:Name="datePicker"
+        <DatePicker
+            x:Name="datePicker"
+            Width="314"
             Margin="0,350,0,0"
             HorizontalAlignment="Center"
-            VerticalAlignment="Top" Width="314" />
+            VerticalAlignment="Top" />
     </Grid>
 </Window>
