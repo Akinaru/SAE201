@@ -158,7 +158,7 @@ namespace SAE201.Ressources
 
 
         //Cette fonction permet de supprimer l'attribution de la base de données
-        //Renvoie true si l'insertion réussie, false sinon
+        //Renvoie true si la suppréssion réussie, false sinon
         public bool Delete()
         {
             DataAccess accesBD = new DataAccess();

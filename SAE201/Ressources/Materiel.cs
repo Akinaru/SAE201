@@ -96,9 +96,10 @@ namespace SAE201.Ressources
             }
         }
 
+
         public bool Create()
         {
-            DataAccess accesBD = new DataAccess();
+            DataAccess accesBD = new DataAccess(); 
             string requete = $"INSERT INTO materiel (nom, codebarre, refconstructeur, idcategorie) VALUES ('{this.Nom}','{this.CodeBarre}','{this.RefConstructeur}','{this.IdCategorie}');";
             DataTable datas = accesBD.GetData(requete);
             if (datas != null)

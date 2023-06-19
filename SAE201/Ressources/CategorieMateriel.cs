@@ -54,6 +54,8 @@ namespace SAE201.Ressources
             }
         }
 
+        //Cette fonction permet d'insérer la catégorie matériel dans la base de données
+        //Renvoie true si l'insertion réussie, false sinon
         public bool Create()
         {
             DataAccess accesBD = new DataAccess();
@@ -74,7 +76,8 @@ namespace SAE201.Ressources
         }
 
 
-
+        //Cette fonction permet de mettre à jour la catégorie matériel dans la base de données
+        //Renvoie true si la modification réussie, false sinon
         public bool Update()
         {
             DataAccess accesBD = new DataAccess();
@@ -88,7 +91,8 @@ namespace SAE201.Ressources
         }
 
 
-
+        //Cette fonction permet de supprimer la catégorie matériel de la base de données
+        //Renvoie true si la suppréssion réussie, false sinon
         public bool Delete()
         {
             DataAccess accesBD = new DataAccess();
@@ -101,6 +105,8 @@ namespace SAE201.Ressources
             return false;
         }
 
+        //Cette fonction permet de récupérer l'id de la categoriemateriel dans la base de donnée
+        //Renvoie l'id
         public int GetId()
         {
             DataAccess accesBD = new DataAccess();
