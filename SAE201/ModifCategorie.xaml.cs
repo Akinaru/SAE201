@@ -24,7 +24,7 @@ namespace SAE201
         MainWindow fenetre;
 
         /// <summary>
-        /// 
+        /// Constructeur de la fenêtre modification categorie, activé lors du clic droit et modification d'une catégorie.
         /// </summary>
         /// <param name="categorie"></param>
         /// <param name="window"></param>
@@ -35,6 +35,7 @@ namespace SAE201
             tbNom.Text = categorie.Nom;
             fenetre = window;
         }
+
 
         private void btCreer_Click(object sender, RoutedEventArgs e)
         {
