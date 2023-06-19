@@ -32,20 +32,28 @@ namespace SAE201
 
         private void btCreer_Click(object sender, RoutedEventArgs e)
         {
-
-
-
-            Personnel p = new Personnel(0, tbNom.Text, tbPrenom.Text, tbEmail.Text);
-            
-            if (p.Create())
+            if (tbEmail.Text.Trim() == "" || tbNom.Text == "" || tbPrenom.Text == "")
             {
-                Personnel pFinal = new Personnel(p.GetId(), p.Nom, p.Prenom, p.Email);
-                ApplicationData.LesPersonnels.Add(pFinal);
-
+                
+                MessageBoxResult result = MessageBox.Show("Champs nom et prenom obligatoires", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
-               MessageBox.Show("La création a été refusée.", "Ajout Personnel", MessageBoxButton.OK, MessageBoxImage.Warning);
-            this.Close();
+            {
+                Personnel p = new Personnel(0, tbNom.Text, tbPrenom.Text, tbEmail.Text);
+
+                if (p.Create())
+                {
+                    Personnel pFinal = new Personnel(p.GetId(), p.Nom, p.Prenom, p.Email);
+                    ApplicationData.LesPersonnels.Add(pFinal);
+
+                }
+                else
+                    MessageBox.Show("La création a été refusée.", "Ajout Personnel", MessageBoxButton.OK, MessageBoxImage.Warning);
+                this.Close();
+            }
+
+
+            
         }
 
         private void btAnnuler_Click(object sender, RoutedEventArgs e)
