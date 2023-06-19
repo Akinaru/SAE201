@@ -78,6 +78,10 @@
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="754*" />
+                    <RowDefinition Height="41*" />
+                </Grid.RowDefinitions>
                 <Label
                     Height="56"
                     Margin="10,15,0,0"
@@ -91,7 +95,7 @@
 
                 <ListView
                     x:Name="listViewCategorie"
-                    Margin="10,64,164,90"
+                    Margin="10,64,164,49"
                     ItemsSource="{Binding Path=LesCategories}"
                     SelectionChanged="listViewCategorie_SelectionChanged">
                     <ListView.Resources>
@@ -118,14 +122,15 @@
 
                 <Button
                     x:Name="btAjouterCategorie"
-                    Width="264"
+                    Grid.RowSpan="2"
+                    Width="200"
                     Height="32"
-                    Margin="0,0,0,32"
-                    HorizontalAlignment="Center"
+                    Margin="23,0,0,31"
+                    HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
                     Background="#FF14213D"
                     Click="btAjouterCategorie_Click"
-                    Content="+ Ajouter Categorie"
+                    Content="+ Categorie"
                     Cursor="Hand"
                     Foreground="#f1f2f6">
                     <Button.Style>
@@ -161,7 +166,7 @@
                     x:Name="btResetSelecCategorie"
                     Width="28"
                     Height="28"
-                    Margin="0,27,10,0"
+                    Margin="0,29,164,0"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Top"
                     Click="btResetSelecCategorie_Click"
@@ -191,7 +196,7 @@
             <Grid Grid.Column="1" Margin="10,0,10,0">
                 <ListView
                     x:Name="listViewMateriel"
-                    Margin="0,64,0,90"
+                    Margin="-162,64,154,90"
                     SelectionChanged="listViewMateriel_SelectionChanged">
                     <ListView.Resources>
                         <Style TargetType="ListView">
@@ -227,14 +232,14 @@
                 </ListView>
                 <Button
                     x:Name="btAjouterMateriel"
-                    Width="264"
+                    Width="200"
                     Height="32"
-                    Margin="0,0,0,32"
-                    HorizontalAlignment="Center"
+                    Margin="-64,0,0,32"
+                    HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
                     Background="#FF14213D"
                     Click="btAjouterMateriel_Click"
-                    Content="+ Ajouter Materiel"
+                    Content="+ Materiel"
                     Cursor="Hand"
                     Foreground="#f1f2f6">
                     <Button.Style>
@@ -269,7 +274,7 @@
                     x:Name="btResetSelecMateriel"
                     Width="28"
                     Height="28"
-                    Margin="0,27,0,0"
+                    Margin="0,27,154,0"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Top"
                     Click="btResetSelecMateriel_Click"
@@ -294,8 +299,9 @@
                     </Button.Style>
                 </Button>
                 <Label
-                    Height="56"
-                    Margin="0,15,0,0"
+                    Width="156"
+                    Height="49"
+                    Margin="-162,15,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Content="Matériel"
@@ -307,7 +313,7 @@
             <Grid Grid.Column="2">
                 <ListView
                     x:Name="listViewAttribution"
-                    Margin="10,64,10,90"
+                    Margin="-151,64,0,90"
                     BorderBrush="#FF849082"
                     ItemsSource="{Binding Path=LesAttributions}">
                     <ListView.Resources>
@@ -338,14 +344,14 @@
 
                 <Button
                     x:Name="btAjouterAttribution"
-                    Width="264"
+                    Width="200"
                     Height="32"
-                    Margin="0,0,0,32"
-                    HorizontalAlignment="Center"
+                    Margin="15,0,0,32"
+                    HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
                     Background="#FF14213D"
                     Click="btAjouterAttribution_Click"
-                    Content="+ Ajouter Attribution"
+                    Content="+ Attribution"
                     Cursor="Hand"
                     Foreground="#f1f2f6">
                     <Button.Style>
@@ -378,7 +384,7 @@
                 </Button>
                 <Label
                     Height="50"
-                    Margin="10,16,0,0"
+                    Margin="-151,14,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Content="Attribution"
@@ -418,14 +424,14 @@
                 </ListView>
                 <Button
                     x:Name="btAjouterPersonnel"
-                    Width="264"
+                    Width="200"
                     Height="32"
                     Margin="0,0,0,32"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Bottom"
                     Background="#FF14213D"
                     Click="btAjouterPersonnel_Click"
-                    Content="+ Ajouter Personnel"
+                    Content="+ Personnel"
                     Cursor="Hand"
                     Foreground="#f1f2f6">
                     <Button.Style>
