@@ -89,8 +89,7 @@
                     VerticalAlignment="Top"
                     Content="Catégorie"
                     FontFamily="72 Black"
-                    FontSize="34
-                    "
+                    FontSize="34                     "
                     FontWeight="Bold"
                     Foreground="#226F54" />
 
@@ -411,8 +410,8 @@
                     </ListView.Resources>
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn DisplayMemberBinding="{Binding Nom}" Header="Nom" />
                             <GridViewColumn DisplayMemberBinding="{Binding Prenom}" Header="Prenom" />
+                            <GridViewColumn DisplayMemberBinding="{Binding Nom}" Header="Nom" />
                             <GridViewColumn DisplayMemberBinding="{Binding Email}" Header="Email" />
                         </GridView>
                     </ListView.View>
