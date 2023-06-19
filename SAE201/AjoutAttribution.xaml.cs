@@ -76,7 +76,6 @@ namespace SAE201
                 {
                     ApplicationData.LesAttributions.Add(a);
 
-
                     foreach (Materiel lesMateriels in ApplicationData.LesMateriels)
                         if (lesMateriels.Id == idMateriel)
                             lesMateriels.LesAttributions = new ObservableCollection<Attribution>(ApplicationData.LesAttributions.ToList().FindAll(g => g.IdMateriel == lesMateriels.Id));
@@ -86,6 +85,7 @@ namespace SAE201
 
                     foreach (Personnel unPerso in ApplicationData.LesPersonnels.ToList())
                         unPerso.LesAttributions = new ObservableCollection<Attribution>(ApplicationData.LesAttributions.ToList().FindAll(e => e.IdPersonnel == unPerso.Id));
+
 
                     ApplicationData.UpdateAttribution(fenetre);
                 }
