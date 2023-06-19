@@ -17,7 +17,9 @@ namespace SAE201.Ressources
         private string prenom;
         private string email;
         private ObservableCollection<Attribution> lesAttributions;
-
+        /// <summary>
+        /// Getter et Setter de Id
+        /// </summary>
         public int Id
         {
             get
@@ -30,7 +32,9 @@ namespace SAE201.Ressources
                 id = value;
             }
         }
-
+        /// <summary>
+        /// Getter et Setter de Nom
+        /// </summary>
         public string Nom
         {
             get
@@ -43,7 +47,9 @@ namespace SAE201.Ressources
                 nom = value;
             }
         }
-
+        /// <summary>
+        /// Getter et Setter de Prenom
+        /// </summary>
         public string Prenom
         {
             get
@@ -56,7 +62,9 @@ namespace SAE201.Ressources
                 prenom = value;
             }
         }
-
+        /// <summary>
+        /// Getter et Setter de Email
+        /// </summary>
         public string Email
         {
             get
@@ -69,7 +77,9 @@ namespace SAE201.Ressources
                 email = value;
             }
         }
-
+        /// <summary>
+        /// Getter et Setter de LesAttributions
+        /// </summary>
         public ObservableCollection<Attribution> LesAttributions
         {
             get
@@ -178,8 +188,12 @@ namespace SAE201.Ressources
         }
 
 
-
-            public ObservableCollection<Personnel> FindAll()
+        /// <summary>
+        /// Cette méthode renvoie tous les personnel de la base de donnée
+        /// Renvoie une liste de personnel
+        /// </summary>
+        /// <returns></returns>
+        public ObservableCollection<Personnel> FindAll()
         {
             ObservableCollection<Personnel> lesPersonnels = new ObservableCollection<Personnel>();
             DataAccess accesBD = new DataAccess();
@@ -195,17 +209,29 @@ namespace SAE201.Ressources
             }
             return lesPersonnels;
         }
-
+        /// <summary>
+        /// ToString de personnel
+        /// </summary>
+        /// <returns></returns>
         public override string? ToString()
         {
             return this.Nom + " " + this.Prenom;
         }
 
+        /// <summary>
+        /// Constructeur vide de personnel
+        /// </summary>
         public Personnel()
         {
 
         }
-
+        /// <summary>
+        /// Constructeur de personnel
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nom"></param>
+        /// <param name="prenom"></param>
+        /// <param name="email"></param>
         public Personnel(int id, string nom, string prenom, string email)
         {
             this.Id = id;

@@ -194,6 +194,11 @@ namespace SAE201.Ressources
             return id;
         }
 
+        /// <summary>
+        /// Cette méthode renvoie tous les matériel de la base de donnée
+        /// Renvoie une liste de materiel
+        /// </summary>
+        /// <returns></returns>
         public ObservableCollection<Materiel> FindAll()
         {
             ObservableCollection<Materiel> lesMateriels = new ObservableCollection<Materiel>();
@@ -210,13 +215,27 @@ namespace SAE201.Ressources
             }
             return lesMateriels;
         }
-
+        /// <summary>
+        /// ToString
+        /// </summary>
+        /// <returns></returns>
         public override string? ToString()
         {
             return this.Nom;
         }
-
+        /// <summary>
+        /// Constructeur vide de materiel
+        /// </summary>
         public Materiel() { }
+
+        /// <summary>
+        /// Constructeur de materiel
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nom"></param>
+        /// <param name="codeBarre"></param>
+        /// <param name="refConstructeur"></param>
+        /// <param name="idCategorie"></param>
         public Materiel(int id, string nom, string codeBarre, string refConstructeur, int idCategorie)
         {
             this.Id = id;
