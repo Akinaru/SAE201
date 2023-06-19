@@ -18,12 +18,17 @@ using System.Windows.Shapes;
 namespace SAE201
 {
     /// <summary>
-    /// Logique d'interaction pour ModifPersonnel.xaml
+    /// Fenêtre pour modifier un personnel existant
     /// </summary>
     public partial class ModifPersonnel : Window
     {
         Personnel perso;
         MainWindow fenetre;
+        /// <summary>
+        /// Constructeur de la fenêtre modification personnel, activé lors du clic droit et modification d'un personnel.
+        /// </summary>
+        /// <param name="personnel"></param>
+        /// <param name="fenetre">Pour pouvoir récupérer les listview,...</param>
         public ModifPersonnel(Personnel personnel, MainWindow fenetre)
         {
             InitializeComponent();
