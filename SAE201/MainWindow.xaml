@@ -91,7 +91,7 @@
 
                 <ListView
                     x:Name="listViewCategorie"
-                    Margin="10,64,10,90"
+                    Margin="10,64,164,90"
                     ItemsSource="{Binding Path=LesCategories}"
                     SelectionChanged="listViewCategorie_SelectionChanged">
                     <ListView.Resources>

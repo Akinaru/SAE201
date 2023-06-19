@@ -73,11 +73,22 @@ namespace SAE201
                 {
                     Materiel pFinal = new Materiel(p.GetId(), p.Nom, p.CodeBarre, p.RefConstructeur, p.IdCategorie);
                     ApplicationData.LesMateriels.Add(pFinal);
-                    foreach (CategorieMateriel lesCategories in ApplicationData.LesCategories)
-                        if (lesCategories.Id == id)
+
+
+                    //Rafraichissement des listes de materiels internes
+                    foreach(CategorieMateriel lesCategories in ApplicationData.LesCategories)
+                        if(lesCategories.Id == id)
                             lesCategories.LesMateriels = new ObservableCollection<Materiel>(ApplicationData.LesMateriels.ToList().FindAll(g => g.IdCategorie == lesCategories.Id));
-                    fenetre.listViewMateriel.DataContext = fenetre.listViewCategorie.SelectedItem;
-                    fenetre.listViewMateriel.ItemsSource = ((CategorieMateriel)fenetre.listViewCategorie.SelectedItem).LesMateriels;
+
+                    foreach (CategorieMateriel uneCat in ApplicationData.LesCategories.ToList())
+                        uneCat.LesMateriels = new ObservableCollection<Materiel>(ApplicationData.LesMateriels.ToList().FindAll(g => g.IdCategorie == uneCat.Id));
+
+
+                    if(fenetre.listViewCategorie.SelectedItem != null)
+                    {
+                        fenetre.listViewMateriel.DataContext = fenetre.listViewCategorie.SelectedItem;
+                        fenetre.listViewMateriel.ItemsSource = ((CategorieMateriel)fenetre.listViewCategorie.SelectedItem).LesMateriels;
+                    }
                 }
                 else
                     MessageBox.Show("La création a été refusée.", "Ajout Materiel", MessageBoxButton.OK, MessageBoxImage.Warning);
