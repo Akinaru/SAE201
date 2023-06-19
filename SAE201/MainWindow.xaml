@@ -38,13 +38,15 @@
                     Foreground="#f1f2f6" />
                 <Button
                     x:Name="btAide"
+                    Width="48"
                     Height="50"
                     Margin="0,0,26,0"
+                    HorizontalAlignment="Right"
                     VerticalAlignment="Center"
                     Click="btAide_Click"
                     Content="?"
-                    FontSize="35"
-                    Cursor="Hand" HorizontalAlignment="Right" Width="48">
+                    Cursor="Hand"
+                    FontSize="35">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Background" Value="#FF14213D" />
@@ -116,14 +118,14 @@
 
                 <Button
                     x:Name="btAjouterCategorie"
-                    Width="148"
+                    Width="264"
                     Height="32"
-                    Margin="0,0,0,32"
+                    Margin="0,730,0,0"
                     HorizontalAlignment="Center"
-                    VerticalAlignment="Bottom"
+                    VerticalAlignment="Top"
                     Background="#FF14213D"
                     Click="btAjouterCategorie_Click"
-                    Content="+ Ajouter"
+                    Content="+ Ajouter Categorie"
                     Cursor="Hand"
                     Foreground="#f1f2f6">
                     <Button.Style>
@@ -225,14 +227,14 @@
                 </ListView>
                 <Button
                     x:Name="btAjouterMateriel"
-                    Width="148"
+                    Width="264"
                     Height="32"
-                    Margin="0,0,0,32"
+                    Margin="0,730,0,0"
                     HorizontalAlignment="Center"
-                    VerticalAlignment="Bottom"
+                    VerticalAlignment="Top"
                     Background="#FF14213D"
                     Click="btAjouterMateriel_Click"
-                    Content="+ Ajouter"
+                    Content="+ Ajouter Materiel"
                     Cursor="Hand"
                     Foreground="#f1f2f6">
                     <Button.Style>
@@ -336,14 +338,14 @@
 
                 <Button
                     x:Name="btAjouterAttribution"
-                    Width="148"
+                    Width="264"
                     Height="32"
                     Margin="0,0,0,32"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Bottom"
                     Background="#FF14213D"
                     Click="btAjouterAttribution_Click"
-                    Content="+ Ajouter"
+                    Content="+ Ajouter Attribution"
                     Cursor="Hand"
                     Foreground="#f1f2f6">
                     <Button.Style>
@@ -415,14 +417,14 @@
                 </ListView>
                 <Button
                     x:Name="btAjouterPersonnel"
-                    Width="148"
+                    Width="264"
                     Height="32"
                     Margin="0,0,0,32"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Bottom"
                     Background="#FF14213D"
                     Click="btAjouterPersonnel_Click"
-                    Content="+ Ajouter"
+                    Content="+ Ajouter Personnel"
                     Cursor="Hand"
                     Foreground="#f1f2f6">
                     <Button.Style>
