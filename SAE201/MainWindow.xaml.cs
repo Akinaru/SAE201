@@ -163,9 +163,12 @@ namespace SAE201
                     if (((Materiel)listViewMateriel.SelectedItem).Delete())
                         ApplicationData.LesMateriels.Remove((Materiel)listViewMateriel.SelectedItem);
                 }
+                if(listViewCategorie.SelectedItem != null)
+                {
                 foreach (CategorieMateriel lesCategories in ApplicationData.LesCategories)
                     if (lesCategories.Id == ((CategorieMateriel)listViewCategorie.SelectedItem).Id)
                         lesCategories.LesMateriels = new ObservableCollection<Materiel>(ApplicationData.LesMateriels.ToList().FindAll(g => g.IdCategorie == lesCategories.Id));
+                }
                 listViewMateriel.DataContext = listViewCategorie.SelectedItem;
                 listViewMateriel.ItemsSource = ((CategorieMateriel)listViewCategorie.SelectedItem).LesMateriels;
             }

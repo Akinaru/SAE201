@@ -74,7 +74,13 @@ namespace SAE201
                         if (lesMateriels.Id == idMateriel)
                             lesMateriels.LesAttributions = new ObservableCollection<Attribution>(ApplicationData.LesAttributions.ToList().FindAll(g => g.IdMateriel == lesMateriels.Id));
 
-                    if(fenetre.listViewMateriel.SelectedItem != null)
+                    foreach (Materiel unMat in ApplicationData.LesMateriels.ToList())
+                        unMat.LesAttributions = new ObservableCollection<Attribution>(ApplicationData.LesAttributions.ToList().FindAll(e => e.IdMateriel == unMat.Id));
+
+                    foreach (Personnel unPerso in ApplicationData.LesPersonnels.ToList())
+                        unPerso.LesAttributions = new ObservableCollection<Attribution>(ApplicationData.LesAttributions.ToList().FindAll(e => e.IdPersonnel == unPerso.Id));
+
+                    if (fenetre.listViewMateriel.SelectedItem != null)
                     {
                         fenetre.listViewAttribution.DataContext = fenetre.listViewMateriel.SelectedItem;
                         fenetre.listViewAttribution.ItemsSource = ((Materiel)fenetre.listViewMateriel.SelectedItem).LesAttributions;
