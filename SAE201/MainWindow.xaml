@@ -104,7 +104,7 @@
                             <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
                             <Setter Property="Foreground" Value="#226F54" />
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
-                            <Setter Property="FontSize" Value="14" />
+                            <Setter Property="FontSize" Value="11" />
                         </Style>
                     </ListView.Resources>
                     <ListView.View>
@@ -204,7 +204,7 @@
                             <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
                             <Setter Property="Foreground" Value="#226F54" />
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
-                            <Setter Property="FontSize" Value="14" />
+                            <Setter Property="FontSize" Value="11" />
                         </Style>
                     </ListView.Resources>
                     <ListView.View>
@@ -322,7 +322,7 @@
                             <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
                             <Setter Property="Foreground" Value="#226F54" />
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
-                            <Setter Property="FontSize" Value="14" />
+                            <Setter Property="FontSize" Value="11" />
                         </Style>
                     </ListView.Resources>
                     <ListView.View>
@@ -405,7 +405,7 @@
                             <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
                             <Setter Property="Foreground" Value="#226F54" />
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
-                            <Setter Property="FontSize" Value="14" />
+                            <Setter Property="FontSize" Value="11" />
                         </Style>
                     </ListView.Resources>
                     <ListView.View>
