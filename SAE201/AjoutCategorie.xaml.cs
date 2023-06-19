@@ -44,6 +44,7 @@ namespace SAE201
                     CategorieMateriel pFinal = new CategorieMateriel(p.GetId(), p.Nom);
                     ApplicationData.LesCategories.Add(pFinal);
 
+
                 }
                 else
                     MessageBox.Show("La création a été refusée.", "Ajout Categorie", MessageBoxButton.OK, MessageBoxImage.Warning);

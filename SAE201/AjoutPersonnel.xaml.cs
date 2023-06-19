@@ -56,7 +56,7 @@ namespace SAE201
                 if (!Regex.IsMatch(tbEmail.Text, paterne))
                     tbEmail.BorderBrush = Brushes.Red;
                 else
-                    tbPrenom.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
+                    tbEmail.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
                 MessageBox.Show("L'un des champs est incorrect.", "Format", MessageBoxButton.OK, MessageBoxImage.Warning);
 
             }
