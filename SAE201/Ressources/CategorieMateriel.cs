@@ -105,7 +105,7 @@ namespace SAE201.Ressources
             return false;
         }
 
-        //Cette fonction permet de récupérer l'id de la categoriemateriel dans la base de donnée
+        //Cette fonction permet de récupérer l'id de la categorie materiel dans la base de donnée
         //Renvoie l'id
         public int GetId()
         {
