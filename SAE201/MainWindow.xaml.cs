@@ -36,9 +36,28 @@ namespace SAE201
         {
             if (listViewMateriel.SelectedItem != null)
             {
-                listViewAttribution.DataContext = listViewMateriel.SelectedItem;
-                listViewAttribution.ItemsSource = ((Materiel)listViewMateriel.SelectedItem).LesAttributions;
+
+                if(listViewPersonnel.SelectedItem == null)
+                {
+                    listViewAttribution.DataContext = listViewMateriel.SelectedItem;
+                    listViewAttribution.ItemsSource = ((Materiel)listViewMateriel.SelectedItem).LesAttributions;
+                }
+
                 
+            }
+        }
+        private void listViewPersonnel_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (listViewPersonnel.SelectedItem != null)
+            {
+
+                if (listViewMateriel.SelectedItem == null)
+                {
+                    listViewAttribution.DataContext = listViewPersonnel.SelectedItem;
+                    listViewAttribution.ItemsSource = ((Personnel)listViewPersonnel.SelectedItem).LesAttributions;
+                }
+
+
             }
         }
 
@@ -66,6 +85,7 @@ namespace SAE201
         private void btResetSelecPersonnel_Click(object sender, RoutedEventArgs e)
         {
             listViewPersonnel.SelectedItem = null;
+            listViewAttribution.ItemsSource = ApplicationData.LesAttributions;
             
         }
 
@@ -73,7 +93,7 @@ namespace SAE201
         {
             if(listViewPersonnel.SelectedItem != null)
             {
-                pageModif = new Modification((Personnel)listViewPersonnel.SelectedItem);
+                pageModif = new ModifPersonnel((Personnel)listViewPersonnel.SelectedItem);
                 pageModif.Show();
             }
         }
@@ -97,7 +117,7 @@ namespace SAE201
         {
             if (listViewAttribution.SelectedItem != null)
             {
-                pageModif = new Modification((Attribution)listViewAttribution.SelectedItem);
+                pageModif = new ModifAttribution((Attribution)listViewAttribution.SelectedItem);
                 pageModif.Show();
             }
         }
@@ -143,9 +163,12 @@ namespace SAE201
                     if (((Materiel)listViewMateriel.SelectedItem).Delete())
                         ApplicationData.LesMateriels.Remove((Materiel)listViewMateriel.SelectedItem);
                 }
+                if(listViewCategorie.SelectedItem != null)
+                {
                 foreach (CategorieMateriel lesCategories in ApplicationData.LesCategories)
                     if (lesCategories.Id == ((CategorieMateriel)listViewCategorie.SelectedItem).Id)
                         lesCategories.LesMateriels = new ObservableCollection<Materiel>(ApplicationData.LesMateriels.ToList().FindAll(g => g.IdCategorie == lesCategories.Id));
+                }
                 listViewMateriel.DataContext = listViewCategorie.SelectedItem;
                 listViewMateriel.ItemsSource = ((CategorieMateriel)listViewCategorie.SelectedItem).LesMateriels;
             }
@@ -160,7 +183,7 @@ namespace SAE201
         {
             if (listViewCategorie.SelectedItem != null)
             {
-                pageModif = new Modification((CategorieMateriel)listViewCategorie.SelectedItem);
+                pageModif = new ModifCategorie((CategorieMateriel)listViewCategorie.SelectedItem);
                 pageModif.Show();
             }
         }

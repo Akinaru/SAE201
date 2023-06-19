@@ -50,7 +50,13 @@ namespace SAE201
         private void btCreer_Click(object sender, RoutedEventArgs e)
         {
             if (cbMateriel.SelectedItem != null && cbPersonnel.SelectedItem != null && datePicker.SelectedDate != null)
+            
+            
+            
             {
+
+
+
                 Materiel m = new Materiel(0, (string)cbMateriel.SelectedItem, "", "", 0);
                 Personnel p = new Personnel(0, ((Personnel)cbPersonnel.SelectedItem).Nom, ((Personnel)cbPersonnel.SelectedItem).Prenom, "");
                 Personnel pFinal = p.Read(p.GetId());
@@ -58,7 +64,6 @@ namespace SAE201
                 int idMateriel = m.GetId();
 
                 Attribution a = new Attribution(idPersonnel, idMateriel, (DateTime)datePicker.SelectedDate, tbCommentaire.Text, pFinal.Prenom, pFinal.Nom, m.Nom);
-                MessageBox.Show(datePicker.SelectedDate + "");
 
                 if (a.Create())
                 {
@@ -69,8 +74,21 @@ namespace SAE201
                         if (lesMateriels.Id == idMateriel)
                             lesMateriels.LesAttributions = new ObservableCollection<Attribution>(ApplicationData.LesAttributions.ToList().FindAll(g => g.IdMateriel == lesMateriels.Id));
 
-                    fenetre.listViewAttribution.DataContext = fenetre.listViewMateriel.SelectedItem;
-                    fenetre.listViewAttribution.ItemsSource = ((Materiel)fenetre.listViewMateriel.SelectedItem).LesAttributions;
+                    foreach (Materiel unMat in ApplicationData.LesMateriels.ToList())
+                        unMat.LesAttributions = new ObservableCollection<Attribution>(ApplicationData.LesAttributions.ToList().FindAll(e => e.IdMateriel == unMat.Id));
+
+                    foreach (Personnel unPerso in ApplicationData.LesPersonnels.ToList())
+                        unPerso.LesAttributions = new ObservableCollection<Attribution>(ApplicationData.LesAttributions.ToList().FindAll(e => e.IdPersonnel == unPerso.Id));
+
+                    if (fenetre.listViewMateriel.SelectedItem != null)
+                    {
+                        fenetre.listViewAttribution.DataContext = fenetre.listViewMateriel.SelectedItem;
+                        fenetre.listViewAttribution.ItemsSource = ((Materiel)fenetre.listViewMateriel.SelectedItem).LesAttributions;
+                    }
+                    else
+                    {
+                        fenetre.listViewAttribution.ItemsSource = ApplicationData.LesAttributions;
+                    }
                 }
                 else
                     MessageBox.Show("La création a été refusée.", "Ajout Materiel", MessageBoxButton.OK, MessageBoxImage.Warning);

@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -15,6 +16,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Xml.Schema;
 
 namespace SAE201
 {
@@ -31,11 +33,31 @@ namespace SAE201
 
 
         private void btCreer_Click(object sender, RoutedEventArgs e)
-        {
-            if (tbEmail.Text.Trim() == "" || tbNom.Text.Trim() == "" || tbPrenom.Text.Trim() == "")
+        { 
+            string paterne = @"@";
+            
+            if (tbEmail.Text.Trim() == "" || tbNom.Text.Trim() == "" || tbPrenom.Text.Trim() == "" || !Regex.IsMatch(tbEmail.Text, paterne))
             {
+                if (tbEmail.Text.Trim() == "")
+                    tbEmail.BorderBrush = Brushes.Red;
+                else
+                    tbEmail.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
+
+                if (tbNom.Text.Trim() == "")
+                    tbNom.BorderBrush = Brushes.Red;
+                else
+                    tbNom.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
                 
-                MessageBoxResult result = MessageBox.Show("Champs nom et prenom obligatoires", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                if (tbPrenom.Text.Trim() == "")
+                    tbPrenom.BorderBrush = Brushes.Red;
+                else
+                    tbPrenom.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
+                
+                if (!Regex.IsMatch(tbEmail.Text, paterne))
+                    tbEmail.BorderBrush = Brushes.Red;
+                else
+                    tbPrenom.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
+                MessageBox.Show("L'un des champs est incorrect.", "Format", MessageBoxButton.OK, MessageBoxImage.Warning);
 
             }
             else
@@ -60,6 +82,21 @@ namespace SAE201
         private void btAnnuler_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void tbPrenom_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            tbPrenom.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
+        }
+
+        private void tbNom_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            tbNom.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
+        }
+
+        private void tbEmail_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            tbEmail.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
         }
     }
 }

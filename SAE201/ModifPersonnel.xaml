@@ -1,5 +1,5 @@
 ﻿<Window
-    x:Class="SAE201.AjoutPersonnel"
+    x:Class="SAE201.ModifPersonnel"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -11,17 +11,26 @@
     MinWidth="800"
     MinHeight="450"
     mc:Ignorable="d">
+
+    <Window.Resources>
+
+        <Style x:Key="Obligatoire" TargetType="TextBox">
+            <Setter Property="Control.BorderBrush" Value="Red" />
+        </Style>
+
+    </Window.Resources>
+
     <Grid>
         <Button
             x:Name="btCreer"
-            Width="89"
+            Width="99"
             Height="39"
-            Margin="0,0,177,34"
+            Margin="0,0,167,34"
             HorizontalAlignment="Right"
             VerticalAlignment="Bottom"
             Background="#FF14213D"
             Click="btCreer_Click"
-            Content="Créer"
+            Content="Valider"
             Cursor="Hand"
             Foreground="#f1f2f6"
             IsDefault="True">
@@ -100,7 +109,7 @@
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center"
             Background="#226F54"
-            Content="Ajout Personnel"
+            Content="Modification Personnel"
             FontFamily="Cascadia Mono SemiBold"
             FontSize="24"
             Foreground="#f1f2f6" />
@@ -125,8 +134,9 @@
             FontFamily="Cascadia Mono SemiBold"
             FontSize="18"
             Foreground="#FF14213D"
+            Style="{StaticResource Obligatoire}"
             Text=""
-            TextWrapping="Wrap" TextChanged="tbPrenom_TextChanged" />
+            TextWrapping="Wrap" />
         <Label
             x:Name="lbNom"
             Width="314"
@@ -149,7 +159,7 @@
             FontSize="18"
             Foreground="#FF14213D"
             Text=""
-            TextWrapping="Wrap" TextChanged="tbNom_TextChanged" />
+            TextWrapping="Wrap" />
         <Label
             x:Name="lbEmail"
             Width="314"
@@ -162,7 +172,7 @@
             FontSize="18" />
         <TextBox
             x:Name="tbEmail"
-            Width="314"
+            Width="427"
             Height="25"
             Margin="0,274,0,0"
             HorizontalAlignment="Center"
@@ -172,6 +182,6 @@
             FontSize="18"
             Foreground="#FF14213D"
             Text=""
-            TextWrapping="Wrap" TextChanged="tbEmail_TextChanged" />
+            TextWrapping="Wrap" />
     </Grid>
 </Window>
