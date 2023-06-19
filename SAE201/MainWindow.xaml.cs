@@ -32,31 +32,36 @@ namespace SAE201
             InitializeComponent();
         }
 
-        private void listViewMateriel_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            //Si on selectionne un materiel
             if (listViewMateriel.SelectedItem != null)
             {
 
-                if(listViewPersonnel.SelectedItem == null)
+                //Si on selectionne un personnel
+                if(listViewPersonnel.SelectedItem != null)
                 {
-                    listViewAttribution.DataContext = listViewMateriel.SelectedItem;
-                    listViewAttribution.ItemsSource = ((Materiel)listViewMateriel.SelectedItem).LesAttributions;
+                    ObservableCollection<Attribution> listeFinalCroise = new ObservableCollection<Attribution>();
+                    foreach(Attribution attri in ApplicationData.LesAttributions)
+                    {
+                        if(attri.IdPersonnel == ((Personnel)listViewPersonnel.SelectedItem).Id && attri.IdMateriel == ((Materiel)listViewMateriel.SelectedItem).Id)
+                        {
+                            listeFinalCroise.Add(attri);
+                            
+                        }
+                    }
+                    listViewAttribution.ItemsSource = listeFinalCroise;
                 }
-
-                
+                //Si on ne selectionne pas de personnel
+                else
+                {
+                    //listViewAttribution.DataContext = listViewMateriel.SelectedItem;
+                    //listViewAttribution.ItemsSource = ((Materiel)listViewMateriel.SelectedItem).LesAttributions;
+                }
             }
-        }
-        private void listViewPersonnel_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (listViewPersonnel.SelectedItem != null)
+            //Si on ne selectionne pas de materiel
+            else
             {
-
-                if (listViewMateriel.SelectedItem == null)
-                {
-                    listViewAttribution.DataContext = listViewPersonnel.SelectedItem;
-                    listViewAttribution.ItemsSource = ((Personnel)listViewPersonnel.SelectedItem).LesAttributions;
-                }
-
 
             }
         }
@@ -158,16 +163,22 @@ namespace SAE201
             {
 
                 MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de supprimer \"" + ((Materiel)listViewMateriel.SelectedItem).Nom + "\" ?", "Suppression", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                
                 if (result == MessageBoxResult.Yes)
                 {
                     if (((Materiel)listViewMateriel.SelectedItem).Delete())
                         ApplicationData.LesMateriels.Remove((Materiel)listViewMateriel.SelectedItem);
                 }
+                
                 if(listViewCategorie.SelectedItem != null)
                 {
-                foreach (CategorieMateriel lesCategories in ApplicationData.LesCategories)
-                    if (lesCategories.Id == ((CategorieMateriel)listViewCategorie.SelectedItem).Id)
-                        lesCategories.LesMateriels = new ObservableCollection<Materiel>(ApplicationData.LesMateriels.ToList().FindAll(g => g.IdCategorie == lesCategories.Id));
+                    foreach (CategorieMateriel lesCategories in ApplicationData.LesCategories)
+                    {
+                        if (lesCategories.Id == ((CategorieMateriel)listViewCategorie.SelectedItem).Id)
+                        {
+                            lesCategories.LesMateriels = new ObservableCollection<Materiel>(ApplicationData.LesMateriels.ToList().FindAll(g => g.IdCategorie == lesCategories.Id));
+                        }
+                    }
                 }
                 listViewMateriel.DataContext = listViewCategorie.SelectedItem;
                 listViewMateriel.ItemsSource = ((CategorieMateriel)listViewCategorie.SelectedItem).LesMateriels;

@@ -192,7 +192,7 @@
                 <ListView
                     x:Name="listViewMateriel"
                     Margin="0,64,0,90"
-                    SelectionChanged="listViewMateriel_SelectionChanged">
+                    SelectionChanged="listView_SelectionChanged">
                     <ListView.Resources>
                         <Style TargetType="ListView">
                             <Setter Property="BorderThickness" Value="0" />
@@ -392,7 +392,7 @@
                     x:Name="listViewPersonnel"
                     Margin="10,64,10,90"
                     ItemsSource="{Binding Path=LesPersonnels}"
-                    SelectionChanged="listViewPersonnel_SelectionChanged">
+                    SelectionChanged="listView_SelectionChanged">
                     <ListView.Resources>
                         <Style TargetType="ListView">
                             <Setter Property="BorderThickness" Value="0" />
