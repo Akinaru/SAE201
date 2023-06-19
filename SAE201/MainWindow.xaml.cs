@@ -34,35 +34,38 @@ namespace SAE201
 
         private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //Si on selectionne un materiel
-            if (listViewMateriel.SelectedItem != null)
-            {
 
-                //Si on selectionne un personnel
-                if(listViewPersonnel.SelectedItem != null)
+            //Si on selectionne un personnel et un materiel
+            if(listViewPersonnel.SelectedItem != null && listViewMateriel.SelectedItem != null)
+            {
+                ObservableCollection<Attribution> listeFinalCroise = new ObservableCollection<Attribution>();
+                foreach(Attribution attri in ApplicationData.LesAttributions)
                 {
-                    ObservableCollection<Attribution> listeFinalCroise = new ObservableCollection<Attribution>();
-                    foreach(Attribution attri in ApplicationData.LesAttributions)
+                    if(attri.IdPersonnel == ((Personnel)listViewPersonnel.SelectedItem).Id && attri.IdMateriel == ((Materiel)listViewMateriel.SelectedItem).Id)
                     {
-                        if(attri.IdPersonnel == ((Personnel)listViewPersonnel.SelectedItem).Id && attri.IdMateriel == ((Materiel)listViewMateriel.SelectedItem).Id)
-                        {
-                            listeFinalCroise.Add(attri);
-                            
-                        }
+                        listeFinalCroise.Add(attri);
+                        
                     }
-                    listViewAttribution.ItemsSource = listeFinalCroise;
                 }
-                //Si on ne selectionne pas de personnel
-                else
-                {
-                    //listViewAttribution.DataContext = listViewMateriel.SelectedItem;
-                    //listViewAttribution.ItemsSource = ((Materiel)listViewMateriel.SelectedItem).LesAttributions;
-                }
+                listViewAttribution.ItemsSource = listeFinalCroise;
             }
-            //Si on ne selectionne pas de materiel
+
+            //Si on selectionne un personnel
+            else if(listViewPersonnel.SelectedItem != null && listViewMateriel.SelectedItem == null)
+            {
+                listViewAttribution.DataContext = listViewPersonnel.SelectedItem;
+                listViewAttribution.ItemsSource = ((Personnel)listViewPersonnel.SelectedItem).LesAttributions;
+            }
+
+            //Si on selectionne un materiel
+            else if (listViewPersonnel.SelectedItem == null && listViewMateriel.SelectedItem != null)
+            {
+                listViewAttribution.DataContext = listViewMateriel.SelectedItem;
+                listViewAttribution.ItemsSource = ((Materiel)listViewMateriel.SelectedItem).LesAttributions;
+            }
             else
             {
-
+                listViewAttribution.ItemsSource = ApplicationData.LesAttributions;
             }
         }
 
@@ -84,14 +87,32 @@ namespace SAE201
         private void btResetSelecMateriel_Click(object sender, RoutedEventArgs e)
         {
             listViewMateriel.SelectedItem = null;
-            listViewAttribution.ItemsSource = ApplicationData.LesAttributions;
+            //Si on selectionne un personnel
+            if (listViewPersonnel.SelectedItem != null)
+            {
+                listViewAttribution.DataContext = listViewPersonnel.SelectedItem;
+                listViewAttribution.ItemsSource = ((Personnel)listViewPersonnel.SelectedItem).LesAttributions;
+            }
+            else
+            {
+                listViewAttribution.ItemsSource = ApplicationData.LesAttributions;
+            }
         }
 
         private void btResetSelecPersonnel_Click(object sender, RoutedEventArgs e)
         {
             listViewPersonnel.SelectedItem = null;
-            listViewAttribution.ItemsSource = ApplicationData.LesAttributions;
-            
+            //Si on selectionne un materiel
+            if (listViewMateriel.SelectedItem != null)
+            {
+                listViewAttribution.DataContext = listViewMateriel.SelectedItem;
+                listViewAttribution.ItemsSource = ((Materiel)listViewMateriel.SelectedItem).LesAttributions;
+            }
+            else
+            {
+                listViewAttribution.ItemsSource = ApplicationData.LesAttributions;
+            }
+
         }
 
         private void MenuModificationPersonnel(object sender, RoutedEventArgs e)
