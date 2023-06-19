@@ -30,20 +30,28 @@ namespace SAE201
 
         private void btCreer_Click(object sender, RoutedEventArgs e)
         {
-
-
-
-            CategorieMateriel p = new CategorieMateriel(0, tbNom.Text);
-
-            if (p.Create())
+            if (tbNom.Text.Trim() == "")
             {
-                CategorieMateriel pFinal = new CategorieMateriel(p.GetId(), p.Nom);
-                ApplicationData.LesCategories.Add(pFinal);
-
+                tbNom.BorderBrush = Brushes.Red;
+                MessageBox.Show("Champs incorrect.", "Format", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             else
-                MessageBox.Show("La création a été refusée.", "Ajout Categorie", MessageBoxButton.OK, MessageBoxImage.Warning);
-            this.Close();
+            {
+                CategorieMateriel p = new CategorieMateriel(0, tbNom.Text);
+
+                if (p.Create())
+                {
+                    CategorieMateriel pFinal = new CategorieMateriel(p.GetId(), p.Nom);
+                    ApplicationData.LesCategories.Add(pFinal);
+
+                }
+                else
+                    MessageBox.Show("La création a été refusée.", "Ajout Categorie", MessageBoxButton.OK, MessageBoxImage.Warning);
+                this.Close();
+            }
+
+
+            
         }
 
         private void btAnnuler_Click(object sender, RoutedEventArgs e)
