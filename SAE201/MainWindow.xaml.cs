@@ -151,18 +151,64 @@ namespace SAE201
         {
             if (listViewAttribution.SelectedItem != null)
             {
-
+                Attribution a = new Attribution();
+                //Affichage d'une fenetre de vérification
                 MessageBoxResult result = MessageBox.Show("Êtes-vous sûr de supprimer l'attribution: \"" + ((Attribution)listViewAttribution.SelectedItem).PrenomPerso + " " + ((Attribution)listViewAttribution.SelectedItem).NomPerso + " -> " + ((Attribution)listViewAttribution.SelectedItem).NomMat + "\" ?", "Suppression", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                 if (result == MessageBoxResult.Yes)
                 {
+                    //On essaye de supprimer l'objet et en meme temps on vérifie si l'action a bien été efféctuée.
                     if (((Attribution)listViewAttribution.SelectedItem).Delete())
+                    {
+                        a = (Attribution)listViewAttribution.SelectedItem;
+                        //On supprime l'attribution de la liste.
                         ApplicationData.LesAttributions.Remove((Attribution)listViewAttribution.SelectedItem);
+                    }
                 }
+
+                //On change pour tous les Materiels la liste d'attribution en reprenant les bonnes valeurs.
                 foreach (Materiel lesMateriels in ApplicationData.LesMateriels)
-                    if (lesMateriels.Id == ((Materiel)listViewMateriel.SelectedItem).Id)
+                {
+                    if (lesMateriels.Id == a.IdMateriel)
                         lesMateriels.LesAttributions = new ObservableCollection<Attribution>(ApplicationData.LesAttributions.ToList().FindAll(g => g.IdMateriel == lesMateriels.Id));
-                listViewAttribution.DataContext = listViewMateriel.SelectedItem;
-                listViewAttribution.ItemsSource = ((Materiel)listViewMateriel.SelectedItem).LesAttributions;
+                }
+                //On change pour tous les Personnels la liste d'attribution en reprenant les bonnes valeurs.
+                foreach (Personnel lesPersonnels in ApplicationData.LesPersonnels)
+                    if (lesPersonnels.Id == a.IdPersonnel)
+                        lesPersonnels.LesAttributions = new ObservableCollection<Attribution>(ApplicationData.LesAttributions.ToList().FindAll(g => g.IdPersonnel == lesPersonnels.Id));
+
+                //Si on selectionne un personnel et un materiel
+                if (listViewPersonnel.SelectedItem != null && listViewMateriel.SelectedItem != null)
+                {
+                    ObservableCollection<Attribution> listeFinalCroise = new ObservableCollection<Attribution>();
+                    foreach (Attribution attri in ApplicationData.LesAttributions)
+                    {
+                        if (attri.IdPersonnel == ((Personnel)listViewPersonnel.SelectedItem).Id && attri.IdMateriel == ((Materiel)listViewMateriel.SelectedItem).Id)
+                        {
+                            listeFinalCroise.Add(attri);
+
+                        }
+                    }
+                    listViewAttribution.ItemsSource = listeFinalCroise;
+                }
+
+                //Si on selectionne un personnel
+                else if (listViewPersonnel.SelectedItem != null && listViewMateriel.SelectedItem == null)
+                {
+                    listViewAttribution.DataContext = listViewPersonnel.SelectedItem;
+                    listViewAttribution.ItemsSource = ((Personnel)listViewPersonnel.SelectedItem).LesAttributions;
+                }
+
+                //Si on selectionne un materiel
+                else if (listViewPersonnel.SelectedItem == null && listViewMateriel.SelectedItem != null)
+                {
+                    listViewAttribution.DataContext = listViewMateriel.SelectedItem;
+                    listViewAttribution.ItemsSource = ((Materiel)listViewMateriel.SelectedItem).LesAttributions;
+                }
+                else
+                {
+                    listViewAttribution.ItemsSource = ApplicationData.LesAttributions;
+                }
+
             }
         }
 

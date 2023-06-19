@@ -87,7 +87,29 @@ namespace SAE201
                     foreach (Personnel unPerso in ApplicationData.LesPersonnels.ToList())
                         unPerso.LesAttributions = new ObservableCollection<Attribution>(ApplicationData.LesAttributions.ToList().FindAll(e => e.IdPersonnel == unPerso.Id));
 
-                    if (fenetre.listViewMateriel.SelectedItem != null)
+                    //Si on selectionne un personnel et un materiel
+                    if (fenetre.listViewPersonnel.SelectedItem != null && fenetre.listViewMateriel.SelectedItem != null)
+                    {
+                        ObservableCollection<Attribution> listeFinalCroise = new ObservableCollection<Attribution>();
+                        foreach (Attribution attri in ApplicationData.LesAttributions)
+                        {
+                            if (attri.IdPersonnel == ((Personnel)fenetre.listViewPersonnel.SelectedItem).Id && attri.IdMateriel == ((Materiel)fenetre.listViewMateriel.SelectedItem).Id)
+                            {
+                                listeFinalCroise.Add(attri);
+                            }
+                        }
+                        fenetre.listViewAttribution.ItemsSource = listeFinalCroise;
+                    }
+
+                    //Si on selectionne un personnel
+                    if (fenetre.listViewPersonnel.SelectedItem != null && fenetre.listViewMateriel.SelectedItem == null)
+                    {
+                        fenetre.listViewAttribution.DataContext = fenetre.listViewPersonnel.SelectedItem;
+                        fenetre.listViewAttribution.ItemsSource = ((Personnel)fenetre.listViewPersonnel.SelectedItem).LesAttributions;
+                    }
+
+                    //Si on selectionne un materiel
+                    else if (fenetre.listViewPersonnel.SelectedItem == null && fenetre.listViewMateriel.SelectedItem != null)
                     {
                         fenetre.listViewAttribution.DataContext = fenetre.listViewMateriel.SelectedItem;
                         fenetre.listViewAttribution.ItemsSource = ((Materiel)fenetre.listViewMateriel.SelectedItem).LesAttributions;
