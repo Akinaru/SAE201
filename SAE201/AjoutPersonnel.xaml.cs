@@ -32,7 +32,7 @@ namespace SAE201
 
         private void btCreer_Click(object sender, RoutedEventArgs e)
         {
-            if (tbEmail.Text.Trim() == "" || tbNom.Text == "" || tbPrenom.Text == "")
+            if (tbEmail.Text.Trim() == "" || tbNom.Text.Trim() == "" || tbPrenom.Text.Trim() == "")
             {
                 
                 MessageBoxResult result = MessageBox.Show("Champs nom et prenom obligatoires", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
