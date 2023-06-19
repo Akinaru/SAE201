@@ -27,7 +27,8 @@ namespace SAE201.Ressources
         private string prenomPerso;
         private string nomPerso;
         private string nomMat;
-
+        
+        
         public int IdMateriel
         {
             get
@@ -119,6 +120,8 @@ namespace SAE201.Ressources
             }
         }
 
+        //Cette fonction permet d'insérer l'attribution dans la base de données
+        //Renvoie true si l'insertion réussie, false sinon
         public bool Create()
         {
             DataAccess accesBD = new DataAccess();
@@ -139,7 +142,8 @@ namespace SAE201.Ressources
         }
 
 
-
+        //Cette fonction permet de mettre à jour l'attribution dans la base de données
+        //Renvoie true si la modification réussie, false sinon
         public bool Update()
         {
             DataAccess accesBD = new DataAccess();
@@ -153,7 +157,8 @@ namespace SAE201.Ressources
         }
 
 
-
+        //Cette fonction permet de supprimer l'attribution de la base de données
+        //Renvoie true si l'insertion réussie, false sinon
         public bool Delete()
         {
             DataAccess accesBD = new DataAccess();
