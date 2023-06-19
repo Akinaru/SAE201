@@ -36,6 +36,7 @@ namespace SAE201
             {
                 
                 MessageBoxResult result = MessageBox.Show("Champs nom et prenom obligatoires", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+
             }
             else
             {
