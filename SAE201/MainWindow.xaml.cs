@@ -74,7 +74,6 @@ namespace SAE201
             if(listViewPersonnel.SelectedItem != null)
             {
                 pageModif = new ModifPersonnel((Personnel)listViewPersonnel.SelectedItem);
-                //pageModif = new Modification((Personnel)listViewPersonnel.SelectedItem);
                 pageModif.Show();
             }
         }
@@ -98,7 +97,7 @@ namespace SAE201
         {
             if (listViewAttribution.SelectedItem != null)
             {
-                pageModif = new Modification((Attribution)listViewAttribution.SelectedItem);
+                pageModif = new ModifAttribution((Attribution)listViewAttribution.SelectedItem);
                 pageModif.Show();
             }
         }
@@ -161,7 +160,7 @@ namespace SAE201
         {
             if (listViewCategorie.SelectedItem != null)
             {
-                pageModif = new Modification((CategorieMateriel)listViewCategorie.SelectedItem);
+                pageModif = new ModifCategorie((CategorieMateriel)listViewCategorie.SelectedItem);
                 pageModif.Show();
             }
         }
