@@ -35,38 +35,7 @@ namespace SAE201
         private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-            //Si on selectionne un personnel et un materiel
-            if(listViewPersonnel.SelectedItem != null && listViewMateriel.SelectedItem != null)
-            {
-                ObservableCollection<Attribution> listeFinalCroise = new ObservableCollection<Attribution>();
-                foreach(Attribution attri in ApplicationData.LesAttributions)
-                {
-                    if(attri.IdPersonnel == ((Personnel)listViewPersonnel.SelectedItem).Id && attri.IdMateriel == ((Materiel)listViewMateriel.SelectedItem).Id)
-                    {
-                        listeFinalCroise.Add(attri);
-                        
-                    }
-                }
-                listViewAttribution.ItemsSource = listeFinalCroise;
-            }
-
-            //Si on selectionne un personnel
-            else if(listViewPersonnel.SelectedItem != null && listViewMateriel.SelectedItem == null)
-            {
-                listViewAttribution.DataContext = listViewPersonnel.SelectedItem;
-                listViewAttribution.ItemsSource = ((Personnel)listViewPersonnel.SelectedItem).LesAttributions;
-            }
-
-            //Si on selectionne un materiel
-            else if (listViewPersonnel.SelectedItem == null && listViewMateriel.SelectedItem != null)
-            {
-                listViewAttribution.DataContext = listViewMateriel.SelectedItem;
-                listViewAttribution.ItemsSource = ((Materiel)listViewMateriel.SelectedItem).LesAttributions;
-            }
-            else
-            {
-                listViewAttribution.ItemsSource = ApplicationData.LesAttributions;
-            }
+            ApplicationData.UpdateAttribution(this);
         }
 
         private void listViewCategorie_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -135,6 +104,7 @@ namespace SAE201
                     if (((Personnel)listViewPersonnel.SelectedItem).Delete())
                         ApplicationData.LesPersonnels.Remove((Personnel)listViewPersonnel.SelectedItem);
 
+                    ApplicationData.UpdateAttribution(this);
                 }
             }
         }
@@ -176,39 +146,7 @@ namespace SAE201
                     if (lesPersonnels.Id == a.IdPersonnel)
                         lesPersonnels.LesAttributions = new ObservableCollection<Attribution>(ApplicationData.LesAttributions.ToList().FindAll(g => g.IdPersonnel == lesPersonnels.Id));
 
-                //Si on selectionne un personnel et un materiel
-                if (listViewPersonnel.SelectedItem != null && listViewMateriel.SelectedItem != null)
-                {
-                    ObservableCollection<Attribution> listeFinalCroise = new ObservableCollection<Attribution>();
-                    foreach (Attribution attri in ApplicationData.LesAttributions)
-                    {
-                        if (attri.IdPersonnel == ((Personnel)listViewPersonnel.SelectedItem).Id && attri.IdMateriel == ((Materiel)listViewMateriel.SelectedItem).Id)
-                        {
-                            listeFinalCroise.Add(attri);
-
-                        }
-                    }
-                    listViewAttribution.ItemsSource = listeFinalCroise;
-                }
-
-                //Si on selectionne un personnel
-                else if (listViewPersonnel.SelectedItem != null && listViewMateriel.SelectedItem == null)
-                {
-                    listViewAttribution.DataContext = listViewPersonnel.SelectedItem;
-                    listViewAttribution.ItemsSource = ((Personnel)listViewPersonnel.SelectedItem).LesAttributions;
-                }
-
-                //Si on selectionne un materiel
-                else if (listViewPersonnel.SelectedItem == null && listViewMateriel.SelectedItem != null)
-                {
-                    listViewAttribution.DataContext = listViewMateriel.SelectedItem;
-                    listViewAttribution.ItemsSource = ((Materiel)listViewMateriel.SelectedItem).LesAttributions;
-                }
-                else
-                {
-                    listViewAttribution.ItemsSource = ApplicationData.LesAttributions;
-                }
-
+                ApplicationData.UpdateAttribution(this);
             }
         }
 
@@ -249,6 +187,8 @@ namespace SAE201
                 }
                 listViewMateriel.DataContext = listViewCategorie.SelectedItem;
                 listViewMateriel.ItemsSource = ((CategorieMateriel)listViewCategorie.SelectedItem).LesMateriels;
+
+                ApplicationData.UpdateAttribution(this);
             }
         }
 
@@ -276,6 +216,8 @@ namespace SAE201
                     if (((CategorieMateriel)listViewCategorie.SelectedItem).Delete())
                         ApplicationData.LesCategories.Remove((CategorieMateriel)listViewCategorie.SelectedItem);
 
+                    listViewMateriel.ItemsSource = null;
+                    ApplicationData.UpdateAttribution(this);
                 }
             }
         }
