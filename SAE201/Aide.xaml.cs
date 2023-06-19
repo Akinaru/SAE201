@@ -19,6 +19,9 @@ namespace SAE201
     /// </summary>
     public partial class Aide : Window
     {
+        /// <summary>
+        /// Initialise la fenêtre d'aide lors du clic sur le bouton
+        /// </summary>
         public Aide()
         {
             InitializeComponent();
