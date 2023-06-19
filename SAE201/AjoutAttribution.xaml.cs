@@ -50,7 +50,13 @@ namespace SAE201
         private void btCreer_Click(object sender, RoutedEventArgs e)
         {
             if (cbMateriel.SelectedItem != null && cbPersonnel.SelectedItem != null && datePicker.SelectedDate != null)
+            
+            
+            
             {
+
+
+
                 Materiel m = new Materiel(0, (string)cbMateriel.SelectedItem, "", "", 0);
                 Personnel p = new Personnel(0, ((Personnel)cbPersonnel.SelectedItem).Nom, ((Personnel)cbPersonnel.SelectedItem).Prenom, "");
                 Personnel pFinal = p.Read(p.GetId());

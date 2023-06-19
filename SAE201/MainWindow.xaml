@@ -119,15 +119,13 @@
                 <Button
                     x:Name="btAjouterCategorie"
                     Width="264"
-                    Height="32"
-                    Margin="0,730,0,0"
+                    Margin="0,0,0,32"
                     HorizontalAlignment="Center"
-                    VerticalAlignment="Top"
                     Background="#FF14213D"
                     Click="btAjouterCategorie_Click"
                     Content="+ Ajouter Categorie"
                     Cursor="Hand"
-                    Foreground="#f1f2f6">
+                    Foreground="#f1f2f6" Height="32" VerticalAlignment="Bottom">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
@@ -228,15 +226,13 @@
                 <Button
                     x:Name="btAjouterMateriel"
                     Width="264"
-                    Height="32"
-                    Margin="0,730,0,0"
+                    Margin="0,0,0,32"
                     HorizontalAlignment="Center"
-                    VerticalAlignment="Top"
                     Background="#FF14213D"
                     Click="btAjouterMateriel_Click"
                     Content="+ Ajouter Materiel"
                     Cursor="Hand"
-                    Foreground="#f1f2f6">
+                    Foreground="#f1f2f6" Height="32" VerticalAlignment="Bottom">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />

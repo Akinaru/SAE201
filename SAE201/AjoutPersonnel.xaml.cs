@@ -39,38 +39,23 @@ namespace SAE201
             if (tbEmail.Text.Trim() == "" || tbNom.Text.Trim() == "" || tbPrenom.Text.Trim() == "" || !Regex.IsMatch(tbEmail.Text, paterne))
             {
                 if (tbEmail.Text.Trim() == "")
-                {
                     tbEmail.BorderBrush = Brushes.Red;
-                }
                 else
-                {
                     tbEmail.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
-                }
+
                 if (tbNom.Text.Trim() == "")
-                {
                     tbNom.BorderBrush = Brushes.Red;
-                }
                 else
-                {
                     tbNom.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
-                }
                 if (tbPrenom.Text.Trim() == "")
-                {
                     tbPrenom.BorderBrush = Brushes.Red;
-                }
                 else
-                {
                     tbPrenom.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
-                }
                 if (!Regex.IsMatch(tbEmail.Text, paterne))
-                {
-                    MessageBox.Show("mauvais format de mail\nAttendu : ...@...", "Format", MessageBoxButton.OK, MessageBoxImage.Warning);
                     tbEmail.BorderBrush = Brushes.Red;
-                }
                 else
-                {
                     tbPrenom.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
-                }
+                MessageBox.Show("L'un des champs est incorrect.", "Format", MessageBoxButton.OK, MessageBoxImage.Warning);
 
             }
             else
