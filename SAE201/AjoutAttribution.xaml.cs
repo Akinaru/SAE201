@@ -86,6 +86,7 @@ namespace SAE201
                     foreach (Personnel unPerso in ApplicationData.LesPersonnels.ToList())
                         unPerso.LesAttributions = new ObservableCollection<Attribution>(ApplicationData.LesAttributions.ToList().FindAll(e => e.IdPersonnel == unPerso.Id));
 
+
                     ApplicationData.UpdateAttribution(fenetre);
                 }
                 else

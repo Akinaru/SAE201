@@ -104,6 +104,15 @@ namespace SAE201
                     if (((Personnel)listViewPersonnel.SelectedItem).Delete())
                         ApplicationData.LesPersonnels.Remove((Personnel)listViewPersonnel.SelectedItem);
 
+                    //On change pour tous les Materiels la liste d'attribution en reprenant les bonnes valeurs.
+                    foreach (Materiel lesMateriels in ApplicationData.LesMateriels)
+                    {
+                        lesMateriels.LesAttributions = new ObservableCollection<Attribution>(ApplicationData.LesAttributions.ToList().FindAll(g => g.IdMateriel == lesMateriels.Id));
+                    }
+                    //On change pour tous les Personnels la liste d'attribution en reprenant les bonnes valeurs.
+                    foreach (Personnel lesPersonnels in ApplicationData.LesPersonnels)
+                        lesPersonnels.LesAttributions = new ObservableCollection<Attribution>(ApplicationData.LesAttributions.ToList().FindAll(g => g.IdPersonnel == lesPersonnels.Id));
+
                     ApplicationData.UpdateAttribution(this);
                 }
             }
@@ -214,10 +223,21 @@ namespace SAE201
                 if (result == MessageBoxResult.Yes)
                 {
                     if (((CategorieMateriel)listViewCategorie.SelectedItem).Delete())
+                    {
                         ApplicationData.LesCategories.Remove((CategorieMateriel)listViewCategorie.SelectedItem);
 
-                    listViewMateriel.ItemsSource = null;
-                    ApplicationData.UpdateAttribution(this);
+                        //On change pour tous les Materiels la liste d'attribution en reprenant les bonnes valeurs.
+                        foreach (Materiel lesMateriels in ApplicationData.LesMateriels)
+                            lesMateriels.LesAttributions = new ObservableCollection<Attribution>(ApplicationData.LesAttributions.ToList().FindAll(g => g.IdMateriel == lesMateriels.Id));
+                    
+                        //On change pour tous les Personnels la liste d'attribution en reprenant les bonnes valeurs.
+                        foreach (Personnel lesPersonnels in ApplicationData.LesPersonnels)
+                            lesPersonnels.LesAttributions = new ObservableCollection<Attribution>(ApplicationData.LesAttributions.ToList().FindAll(g => g.IdPersonnel == lesPersonnels.Id));
+
+                        listViewMateriel.ItemsSource = null;
+
+                        ApplicationData.UpdateAttribution(this);
+                    }
                 }
             }
         }

@@ -125,7 +125,7 @@
                     Grid.RowSpan="2"
                     Width="200"
                     Height="32"
-                    Margin="16,0,0,31"
+                    Margin="16,0,0,32"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
                     Background="#FF14213D"
