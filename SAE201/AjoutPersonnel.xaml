@@ -11,26 +11,20 @@
     MinWidth="800"
     MinHeight="450"
     mc:Ignorable="d">
-
-    <Window.Resources>
-
-        <Style x:Key="Obligatoire" TargetType="TextBox">
-            <Setter Property="Control.BorderBrush" Value="Red" />
-        </Style>
-
-    </Window.Resources>
-    
     <Grid>
         <Button
             x:Name="btCreer"
             Width="89"
+            Height="39"
             Margin="0,0,177,34"
             HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
             Background="#FF14213D"
             Click="btCreer_Click"
             Content="Créer"
             Cursor="Hand"
-            Foreground="#f1f2f6" IsDefault="True" Height="39" VerticalAlignment="Bottom">
+            Foreground="#f1f2f6"
+            IsDefault="True">
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
@@ -62,12 +56,15 @@
         <Button
             x:Name="btAnnuler"
             Width="99"
+            Height="39"
             Margin="177,0,0,34"
             HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
             Background="Transparent"
             Click="btAnnuler_Click"
             Content="Annuler"
-            Foreground="#FF14213D" Cursor="Hand" Height="39" VerticalAlignment="Bottom">
+            Cursor="Hand"
+            Foreground="#FF14213D">
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
@@ -110,62 +107,71 @@
         <Label
             x:Name="lbprenom"
             Width="314"
+            Height="31"
             Margin="0,83,0,0"
             HorizontalAlignment="Center"
+            VerticalAlignment="Top"
             Content="Prénom:"
             FontFamily="Cascadia Mono SemiBold"
-            FontSize="18" 
-            Height="31" 
-            VerticalAlignment="Top" />
+            FontSize="18" />
         <TextBox
             x:Name="tbPrenom"
             Width="314"
+            Height="25"
             Margin="0,119,0,0"
             HorizontalAlignment="Center"
+            VerticalAlignment="Top"
             BorderBrush="#FF0C192F"
             FontFamily="Cascadia Mono SemiBold"
             FontSize="18"
             Foreground="#FF14213D"
             Text=""
-            Style="{StaticResource Obligatoire}"
-            TextWrapping="Wrap" Height="25" VerticalAlignment="Top" />
+            TextWrapping="Wrap" />
         <Label
             x:Name="lbNom"
             Width="314"
+            Height="31"
             Margin="0,161,0,0"
             HorizontalAlignment="Center"
+            VerticalAlignment="Top"
             Content="Nom:"
             FontFamily="Cascadia Mono SemiBold"
-            FontSize="18" Height="31" VerticalAlignment="Top" />
+            FontSize="18" />
         <TextBox
             x:Name="tbNom"
             Width="314"
+            Height="25"
             Margin="0,192,0,0"
             HorizontalAlignment="Center"
+            VerticalAlignment="Top"
             BorderBrush="#FF0C192F"
             FontFamily="Cascadia Mono SemiBold"
             FontSize="18"
             Foreground="#FF14213D"
             Text=""
-            TextWrapping="Wrap" Height="25" VerticalAlignment="Top" />
+            TextWrapping="Wrap" />
         <Label
             x:Name="lbEmail"
             Width="314"
+            Height="31"
             Margin="0,243,0,0"
             HorizontalAlignment="Center"
+            VerticalAlignment="Top"
             Content="Email:"
             FontFamily="Cascadia Mono SemiBold"
-            FontSize="18" Height="31" VerticalAlignment="Top" />
+            FontSize="18" />
         <TextBox
             x:Name="tbEmail"
             Width="314"
+            Height="25"
             Margin="0,274,0,0"
             HorizontalAlignment="Center"
+            VerticalAlignment="Top"
             BorderBrush="#FF0C192F"
             FontFamily="Cascadia Mono SemiBold"
             FontSize="18"
             Foreground="#FF14213D"
             Text=""
-            TextWrapping="Wrap" Height="25" VerticalAlignment="Top" />
+            TextWrapping="Wrap" />
     </Grid>
 </Window>
