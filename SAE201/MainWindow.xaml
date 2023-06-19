@@ -95,7 +95,7 @@
 
                 <ListView
                     x:Name="listViewCategorie"
-                    Margin="10,64,164,49"
+                    Margin="10,64,178,49"
                     ItemsSource="{Binding Path=LesCategories}"
                     SelectionChanged="listViewCategorie_SelectionChanged">
                     <ListView.Resources>
@@ -104,7 +104,7 @@
                             <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
                             <Setter Property="Foreground" Value="#226F54" />
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
-                            <Setter Property="FontSize" Value="14" />
+                            <Setter Property="FontSize" Value="11" />
                         </Style>
                     </ListView.Resources>
                     <ListView.View>
@@ -125,7 +125,7 @@
                     Grid.RowSpan="2"
                     Width="200"
                     Height="32"
-                    Margin="23,0,0,31"
+                    Margin="16,0,0,31"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
                     Background="#FF14213D"
@@ -166,7 +166,7 @@
                     x:Name="btResetSelecCategorie"
                     Width="28"
                     Height="28"
-                    Margin="0,29,164,0"
+                    Margin="0,29,177,0"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Top"
                     Click="btResetSelecCategorie_Click"
@@ -196,7 +196,7 @@
             <Grid Grid.Column="1" Margin="10,0,10,0">
                 <ListView
                     x:Name="listViewMateriel"
-                    Margin="-162,64,154,90"
+                    Margin="-178,64,177,90"
                     SelectionChanged="listView_SelectionChanged">
                     <ListView.Resources>
                         <Style TargetType="ListView">
@@ -204,7 +204,7 @@
                             <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
                             <Setter Property="Foreground" Value="#226F54" />
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
-                            <Setter Property="FontSize" Value="14" />
+                            <Setter Property="FontSize" Value="11" />
                         </Style>
                     </ListView.Resources>
                     <ListView.View>
@@ -234,7 +234,7 @@
                     x:Name="btAjouterMateriel"
                     Width="200"
                     Height="32"
-                    Margin="-64,0,0,32"
+                    Margin="-88,0,0,32"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
                     Background="#FF14213D"
@@ -274,8 +274,8 @@
                     x:Name="btResetSelecMateriel"
                     Width="28"
                     Height="28"
-                    Margin="0,27,154,0"
-                    HorizontalAlignment="Right"
+                    Margin="0,28,0,0"
+                    HorizontalAlignment="Center"
                     VerticalAlignment="Top"
                     Click="btResetSelecMateriel_Click"
                     Content="X"
@@ -301,7 +301,7 @@
                 <Label
                     Width="156"
                     Height="49"
-                    Margin="-162,15,0,0"
+                    Margin="-178,17,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Content="Matériel"
@@ -313,7 +313,7 @@
             <Grid Grid.Column="2">
                 <ListView
                     x:Name="listViewAttribution"
-                    Margin="-151,64,0,90"
+                    Margin="-176,64,0,90"
                     BorderBrush="#FF849082"
                     ItemsSource="{Binding Path=LesAttributions}">
                     <ListView.Resources>
@@ -322,7 +322,7 @@
                             <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
                             <Setter Property="Foreground" Value="#226F54" />
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
-                            <Setter Property="FontSize" Value="14" />
+                            <Setter Property="FontSize" Value="11" />
                         </Style>
                     </ListView.Resources>
                     <ListView.View>
@@ -346,7 +346,7 @@
                     x:Name="btAjouterAttribution"
                     Width="200"
                     Height="32"
-                    Margin="15,0,0,32"
+                    Margin="1,0,0,32"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
                     Background="#FF14213D"
@@ -405,7 +405,7 @@
                             <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
                             <Setter Property="Foreground" Value="#226F54" />
                             <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
-                            <Setter Property="FontSize" Value="14" />
+                            <Setter Property="FontSize" Value="11" />
                         </Style>
                     </ListView.Resources>
                     <ListView.View>
