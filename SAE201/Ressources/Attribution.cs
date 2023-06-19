@@ -119,9 +119,11 @@ namespace SAE201.Ressources
                 nomMat = value;
             }
         }
-
-        //Cette fonction permet d'insérer l'attribution dans la base de données
-        //Renvoie true si l'insertion réussie, false sinon
+        /// <summary>
+        /// Cette fonction permet d'insérer l'attribution dans la base de données
+        /// Renvoie true si l'insertion réussie, false sinon
+        /// </summary>
+        /// <returns></returns>
         public bool Create()
         {
             DataAccess accesBD = new DataAccess();
@@ -141,9 +143,11 @@ namespace SAE201.Ressources
             throw new NotImplementedException();
         }
 
-
-        //Cette fonction permet de mettre à jour l'attribution dans la base de données
-        //Renvoie true si la modification réussie, false sinon
+        /// <summary>
+        /// Cette fonction permet de mettre à jour l'attribution dans la base de données
+        /// Renvoie true si la modification réussie, false sinon
+        /// </summary>
+        /// <returns></returns>
         public bool Update()
         {
             DataAccess accesBD = new DataAccess();
@@ -156,9 +160,11 @@ namespace SAE201.Ressources
             return false;
         }
 
-
-        //Cette fonction permet de supprimer l'attribution de la base de données
-        //Renvoie true si la suppréssion réussie, false sinon
+        /// <summary>
+        /// Cette fonction permet de supprimer l'attribution de la base de données
+        /// Renvoie true si la suppréssion réussie, false sinon
+        /// </summary>
+        /// <returns></returns>
         public bool Delete()
         {
             DataAccess accesBD = new DataAccess();
@@ -172,6 +178,10 @@ namespace SAE201.Ressources
         }
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public ObservableCollection<Attribution> FindAll()
         {
             ObservableCollection<Attribution> lesAttributions = new ObservableCollection<Attribution>();
@@ -190,7 +200,16 @@ namespace SAE201.Ressources
         }
 
 
-
+        /// <summary>
+        /// Constructeur d'attribution
+        /// </summary>
+        /// <param name="idPersonnel"></param>
+        /// <param name="idMateriel"></param>
+        /// <param name="date"></param>
+        /// <param name="commentaire"></param>
+        /// <param name="prenomPerso"></param>
+        /// <param name="nomPerso"></param>
+        /// <param name="nomMat"></param>
         public Attribution(int idPersonnel, int idMateriel, DateTime date, string commentaire, string prenomPerso, string nomPerso, string nomMat)
         {
             this.IdPersonnel = idPersonnel;
@@ -203,7 +222,9 @@ namespace SAE201.Ressources
         }
 
 
-
+        /// <summary>
+        /// Constructeur vide d'attribution
+        /// </summary>
         public Attribution()
         {
         }
