@@ -27,8 +27,11 @@ namespace SAE201.Ressources
         private string prenomPerso;
         private string nomPerso;
         private string nomMat;
-        
-        
+
+
+        /// <summary>
+        /// Getter et Setter de IdMateriel
+        /// </summary>
         public int IdMateriel
         {
             get
@@ -42,6 +45,9 @@ namespace SAE201.Ressources
             }
         }
 
+        /// <summary>
+        /// Getter et Setter de IdPersonnel
+        /// </summary>
         public int IdPersonnel
         {
             get
@@ -55,6 +61,9 @@ namespace SAE201.Ressources
             }
         }
 
+        /// <summary>
+        /// Getter et Setter de Date
+        /// </summary>
         public DateTime Date
         {
             get
@@ -67,7 +76,9 @@ namespace SAE201.Ressources
                 date = value;
             }
         }
-
+        /// <summary>
+        /// Getter et Setter de Commentaire
+        /// </summary>
         public string Commentaire
         {
             get
@@ -81,6 +92,9 @@ namespace SAE201.Ressources
             }
         }
 
+        /// <summary>
+        /// Getter et Setter de Prenom Perso
+        /// </summary>
         public string PrenomPerso
         {
             get
@@ -94,6 +108,9 @@ namespace SAE201.Ressources
             }
         }
 
+        /// <summary>
+        /// Getter et Setter de NomPerso
+        /// </summary>
         public string NomPerso
         {
             get
@@ -107,6 +124,9 @@ namespace SAE201.Ressources
             }
         }
 
+        /// <summary>
+        /// Getter et Setter de NomMat
+        /// </summary>
         public string NomMat
         {
             get
@@ -137,7 +157,12 @@ namespace SAE201.Ressources
         }
 
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
         public Attribution Read(int id)
         {
             throw new NotImplementedException();
@@ -179,7 +204,8 @@ namespace SAE201.Ressources
 
 
         /// <summary>
-        /// 
+        /// Cette méthode renvoie toutes les attributions de la base de donnée
+        /// Renvoie une liste d'attribution
         /// </summary>
         /// <returns></returns>
         public ObservableCollection<Attribution> FindAll()

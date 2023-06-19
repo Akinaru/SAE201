@@ -15,6 +15,9 @@ namespace SAE201.Ressources
         private string nom;
         private ObservableCollection<Materiel> lesMateriels;
 
+        /// <summary>
+        /// Getter et Setter de Id
+        /// </summary>
         public int Id
         {
             get
@@ -28,6 +31,9 @@ namespace SAE201.Ressources
             }
         }
 
+        /// <summary>
+        /// Getter et Setter de Nom
+        /// </summary>
         public string Nom
         {
             get
@@ -41,6 +47,9 @@ namespace SAE201.Ressources
             }
         }
 
+        /// <summary>
+        /// Getter et Setter de LesMateriels
+        /// </summary>
         public ObservableCollection<Materiel> LesMateriels
         {
             get

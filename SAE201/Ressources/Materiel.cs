@@ -17,6 +17,9 @@ namespace SAE201.Ressources
         private int idCategorie;
         private ObservableCollection<Attribution> lesAttributions;
 
+        /// <summary>
+        /// Getter et Setter de Id
+        /// </summary>
         public int Id
         {
             get
@@ -30,6 +33,9 @@ namespace SAE201.Ressources
             }
         }
 
+        /// <summary>
+        /// Getter et Setter de Nom
+        /// </summary>
         public string Nom
         {
             get
@@ -42,7 +48,9 @@ namespace SAE201.Ressources
                 nom = value;
             }
         }
-
+        /// <summary>
+        /// Getter et Setter de CodeBarre
+        /// </summary>
         public string CodeBarre
         {
             get
@@ -55,7 +63,9 @@ namespace SAE201.Ressources
                 codeBarre = value;
             }
         }
-
+        /// <summary>
+        /// Getter et Setter de RefConstructeur
+        /// </summary>
         public string RefConstructeur
         {
             get
@@ -68,7 +78,9 @@ namespace SAE201.Ressources
                 refConstructeur = value;
             }
         }
-
+        /// <summary>
+        /// Getter et Setter de  IdCategorie
+        /// </summary>
         public int IdCategorie
         {
             get
@@ -82,7 +94,9 @@ namespace SAE201.Ressources
             }
         }
 
-
+        /// <summary>
+        /// Getter et Setter de LesAttributions
+        /// </summary>
         public ObservableCollection<Attribution> LesAttributions
         {
             get
