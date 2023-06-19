@@ -10,12 +10,26 @@ namespace SAE201.Ressources
 {
     internal class ApplicationData
     {
-
+        /// <summary>
+        /// Getter et setter pour la liste observable 'LesAttributions'
+        /// </summary>
         public static ObservableCollection<Attribution> LesAttributions { get; set; }
+        /// <summary>
+        /// Getter et setter pour la liste observable 'LesPersonnels'
+        /// </summary>
         public static ObservableCollection<Personnel> LesPersonnels { get; set; }
+        /// <summary>
+        /// Getter et setter pour la liste observable 'LesCategories'
+        /// </summary>
         public static ObservableCollection<CategorieMateriel> LesCategories { get; set; }
+        /// <summary>
+        /// Getter et setter pour la liste observable 'LesMateriels'
+        /// </summary>
         public static ObservableCollection<Materiel> LesMateriels { get; set; }
 
+        /// <summary>
+        /// Constructeur de la classe, on va chercher les valeurs dans la base de données et on les attribues
+        /// </summary>
         public ApplicationData()
         {
             Attribution a = new Attribution();
