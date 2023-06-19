@@ -90,7 +90,8 @@
                     VerticalAlignment="Top"
                     Content="Catégorie"
                     FontFamily="72 Black"
-                    FontSize="36"
+                    FontSize="34
+                    "
                     FontWeight="Bold"
                     Foreground="#226F54" />
 
@@ -307,7 +308,7 @@
                     VerticalAlignment="Top"
                     Content="Matériel"
                     FontFamily="72 Black"
-                    FontSize="36"
+                    FontSize="34"
                     FontWeight="Bold"
                     Foreground="#226F54" />
             </Grid>
@@ -390,7 +391,7 @@
                     VerticalAlignment="Top"
                     Content="Attribution"
                     FontFamily="72 Black"
-                    FontSize="36"
+                    FontSize="34"
                     FontWeight="Bold"
                     Foreground="#226F54" />
             </Grid>
@@ -470,7 +471,7 @@
                     VerticalAlignment="Top"
                     Content="Personnel"
                     FontFamily="72 Black"
-                    FontSize="36"
+                    FontSize="34"
                     FontWeight="Bold"
                     Foreground="#226F54" />
                 <Button

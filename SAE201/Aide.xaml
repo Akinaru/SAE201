@@ -1,29 +1,75 @@
-﻿<Window x:Class="SAE201.Aide"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SAE201"
-        mc:Ignorable="d"
-        Title="Aide" Height="450" MinHeight="450" MaxHeight="450" Width="592" MinWidth="592" MaxWidth="592">
+﻿<Window
+    x:Class="SAE201.Aide"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:SAE201"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Aide"
+    Width="592"
+    Height="450"
+    MinWidth="592"
+    MinHeight="450"
+    MaxWidth="592"
+    MaxHeight="450"
+    mc:Ignorable="d">
     <Grid>
         <Label
-                    Height="47"
-                    VerticalAlignment="Top"
-                    HorizontalContentAlignment="Center"
-                    VerticalContentAlignment="Center"
-                    Content="Aide"
-                    FontFamily="Cascadia Mono SemiBold"
-                    FontSize="24"
-                    Foreground="#f1f2f6"
-                    Background="#226F54"/>
-        <Label Content="Modification / Supression" HorizontalAlignment="Center" Margin="0,64,0,0" VerticalAlignment="Top" Width="521" FontSize="16" FontWeight="Bold"/>
-        <Label Content="Pour modifier ou supprimer un élément, faites clic droit sur celui-ci pour ouvrir le menu."  HorizontalAlignment="Center" Margin="0,95,0,0" VerticalAlignment="Top" Width="521" Height="70"/>
+            Height="47"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Background="#226F54"
+            Content="Aide"
+            FontFamily="Cascadia Mono SemiBold"
+            FontSize="24"
+            Foreground="#f1f2f6" />
+        <Label
+            Width="521"
+            Margin="0,64,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Content="Modification / Supression"
+            FontSize="16"
+            FontWeight="Bold" />
+        <Label
+            Width="521"
+            Height="70"
+            Margin="0,95,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Content="Pour modifier ou supprimer un élément, faites clic droit sur celui-ci pour ouvrir le menu." />
 
-        <Label Content="Ajouter" HorizontalAlignment="Center" Margin="0,161,0,0" VerticalAlignment="Top" Width="520" FontSize="16" FontWeight="Bold"/>
-        <Label Content="Cliquer sur le bouton 'Ajouter' de la même colonne que le type d'élement souhaité. "  HorizontalAlignment="Center" VerticalAlignment="Top" Width="520" Height="70" Margin="0,197,0,0"/>
-        <Label Content="Ajouter" HorizontalAlignment="Center" Margin="0,265,0,0" VerticalAlignment="Top" Width="520" FontSize="16" FontWeight="Bold"/>
-        <Label Content="Cliquer sur le bouton 'Ajouter' de la même colonne que le type d'élement souhaité. "  HorizontalAlignment="Center" VerticalAlignment="Top" Width="520" Height="70" Margin="0,304,0,0"/>
+        <Label
+            Width="520"
+            Margin="0,161,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Content="Ajouter"
+            FontSize="16"
+            FontWeight="Bold" />
+        <Label
+            Width="520"
+            Height="70"
+            Margin="0,197,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Content="Cliquer sur le bouton 'Ajouter' de la même colonne que le type d'élement souhaité. " />
+        <Label
+            Width="520"
+            Margin="0,265,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Content="Enlever Selection"
+            FontSize="16"
+            FontWeight="Bold" />
+        <Label
+            Width="520"
+            Height="70"
+            Margin="0,304,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Content="Cliquer sur le bouton rond avec un 'X' pour retirer la séléction de la colonne." />
 
     </Grid>
 </Window>

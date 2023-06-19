@@ -119,7 +119,7 @@ namespace SAE201
         {
             if(listViewPersonnel.SelectedItem != null)
             {
-                pageModif = new ModifPersonnel((Personnel)listViewPersonnel.SelectedItem);
+                pageModif = new ModifPersonnel((Personnel)listViewPersonnel.SelectedItem, this);
                 pageModif.Show();
             }
         }
@@ -143,7 +143,7 @@ namespace SAE201
         {
             if (listViewAttribution.SelectedItem != null)
             {
-                pageModif = new ModifAttribution((Attribution)listViewAttribution.SelectedItem);
+                pageModif = new ModifAttribution((Attribution)listViewAttribution.SelectedItem, this);
                 pageModif.Show();
             }
         }
@@ -174,7 +174,7 @@ namespace SAE201
         {
             if (listViewMateriel.SelectedItem != null)
             {
-                pageModif = new Modification((Materiel)listViewMateriel.SelectedItem);
+                pageModif = new ModifMateriel((Materiel)listViewMateriel.SelectedItem, this);
                 pageModif.Show();
             }
         }
@@ -215,7 +215,7 @@ namespace SAE201
         {
             if (listViewCategorie.SelectedItem != null)
             {
-                pageModif = new ModifCategorie((CategorieMateriel)listViewCategorie.SelectedItem);
+                pageModif = new ModifCategorie((CategorieMateriel)listViewCategorie.SelectedItem, this);
                 pageModif.Show();
             }
         }

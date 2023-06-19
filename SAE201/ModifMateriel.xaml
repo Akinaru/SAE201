@@ -1,11 +1,11 @@
 ﻿<Window
-    x:Class="SAE201.ModifAttribution"
+    x:Class="SAE201.ModifMateriel"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:SAE201"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="Ajout - Attribution"
+    Title="Ajout - Matériel"
     Width="800"
     Height="500"
     MinWidth="800"
@@ -16,8 +16,8 @@
             x:Name="btCreer"
             Width="101"
             Height="39"
-            Margin="0,0,165,30"
-            HorizontalAlignment="Right"
+            Margin="534,0,0,40"
+            HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
             Background="#FF14213D"
             Click="btCreer_Click"
@@ -57,7 +57,7 @@
             x:Name="btAnnuler"
             Width="99"
             Height="39"
-            Margin="177,0,0,30"
+            Margin="177,0,0,40"
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom"
             Background="Transparent"
@@ -99,48 +99,87 @@
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center"
             Background="#226F54"
-            Content="Modification Attribution"
+            Content="Modification Matériel"
             FontFamily="Cascadia Mono SemiBold"
             FontSize="24"
             Foreground="#f1f2f6" />
         <Label
-            x:Name="lbCommentaire"
+            x:Name="lbNom"
+            Width="314"
+            Margin="0,147,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Content="Nom:"
+            FontFamily="Cascadia Mono SemiBold"
+            FontSize="18" />
+        <TextBox
+            x:Name="tbNom"
+            Width="314"
+            Height="25"
+            Margin="0,178,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            BorderBrush="#FF0C192F"
+            FontFamily="Cascadia Mono SemiBold"
+            FontSize="18"
+            Foreground="#FF14213D"
+            Text=""
+            TextWrapping="Wrap" />
+        <Label
+            x:Name="lbCodeBarre"
             Width="314"
             Margin="0,221,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Content="Commentaire:"
+            Content="Code Barre:"
             FontFamily="Cascadia Mono SemiBold"
             FontSize="18" />
         <TextBox
-            x:Name="tbCommentaire"
+            x:Name="tbCodeBarre"
             Width="314"
-            Height="59"
+            Height="25"
             Margin="0,252,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
+            BorderBrush="#FF0C192F"
+            FontFamily="Cascadia Mono SemiBold"
+            FontSize="18"
+            Foreground="#FF14213D"
             Text=""
             TextWrapping="Wrap" />
         <Label
-            x:Name="lbDate"
+            x:Name="lbRefConstructeur"
             Width="314"
-            Margin="0,319,0,0"
+            Margin="0,289,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Content="Date:"
+            Content="Ref Constructeur:"
             FontFamily="Cascadia Mono SemiBold"
             FontSize="18" />
+        <TextBox
+            x:Name="tbRefConstructeur"
+            Width="314"
+            Height="25"
+            Margin="0,320,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            BorderBrush="#FF0C192F"
+            FontFamily="Cascadia Mono SemiBold"
+            FontSize="18"
+            Foreground="#FF14213D"
+            Text=""
+            TextWrapping="Wrap" />
         <Label
-            x:Name="lbMateriel"
+            x:Name="lbCategorie"
             Width="314"
             Margin="0,81,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Content="Matériel:"
+            Content="Categorie:"
             FontFamily="Cascadia Mono SemiBold"
             FontSize="18" />
         <ComboBox
-            x:Name="cbMateriel"
+            x:Name="cbCategorie"
             Width="316"
             Margin="0,112,0,0"
             HorizontalAlignment="Center"
@@ -164,45 +203,6 @@
                 </Style>
             </ComboBox.ItemContainerStyle>
         </ComboBox>
-        <Label
-            x:Name="lbPersonnel"
-            Width="314"
-            Margin="0,155,0,0"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Top"
-            Content="Personnel:"
-            FontFamily="Cascadia Mono SemiBold"
-            FontSize="18" />
-        <ComboBox
-            x:Name="cbPersonnel"
-            Width="316"
-            Margin="0,186,0,0"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Top"
-            Background="#FF14213D"
-            BorderBrush="#FF0C192F"
-            FontFamily="Cascadia Mono SemiBold"
-            FontSize="18"
-            Foreground="#FF14213D">
-            <ComboBox.ItemContainerStyle>
-                <Style TargetType="ComboBoxItem">
-                    <Setter Property="Foreground" Value="#f1f2f6" />
-                    <Setter Property="Background" Value="#FF14213D" />
-                    <Setter Property="Padding" Value="6" />
-                    <Style.Triggers>
-                        <Trigger Property="IsHighlighted" Value="True">
-                            <Setter Property="Foreground" Value="#f1f2f6" />
-                            <Setter Property="Background" Value="#FF0C192F" />
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </ComboBox.ItemContainerStyle>
-        </ComboBox>
-        <DatePicker
-            x:Name="datePicker"
-            Width="314"
-            Margin="0,350,0,0"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Top" />
+
     </Grid>
 </Window>
