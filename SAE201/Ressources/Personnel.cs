@@ -16,6 +16,7 @@ namespace SAE201.Ressources
         private string nom;
         private string prenom;
         private string email;
+        private ObservableCollection<Attribution> lesAttributions;
 
         public int Id
         {
@@ -66,6 +67,19 @@ namespace SAE201.Ressources
             set
             {
                 email = value;
+            }
+        }
+
+        public ObservableCollection<Attribution> LesAttributions
+        {
+            get
+            {
+                return lesAttributions;
+            }
+
+            set
+            {
+                lesAttributions = value;
             }
         }
 
