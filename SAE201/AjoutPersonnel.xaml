@@ -126,7 +126,7 @@
             FontSize="18"
             Foreground="#FF14213D"
             Text=""
-            TextWrapping="Wrap" />
+            TextWrapping="Wrap" TextChanged="tbPrenom_TextChanged" />
         <Label
             x:Name="lbNom"
             Width="314"
@@ -149,7 +149,7 @@
             FontSize="18"
             Foreground="#FF14213D"
             Text=""
-            TextWrapping="Wrap" />
+            TextWrapping="Wrap" TextChanged="tbNom_TextChanged" />
         <Label
             x:Name="lbEmail"
             Width="314"
@@ -172,6 +172,6 @@
             FontSize="18"
             Foreground="#FF14213D"
             Text=""
-            TextWrapping="Wrap" />
+            TextWrapping="Wrap" TextChanged="tbEmail_TextChanged" />
     </Grid>
 </Window>

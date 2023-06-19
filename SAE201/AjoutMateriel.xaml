@@ -15,13 +15,16 @@
         <Button
             x:Name="btCreer"
             Width="89"
+            Height="39"
             Margin="534,0,0,40"
             HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
             Background="#FF14213D"
             Click="btCreer_Click"
             Content="Créer"
             Cursor="Hand"
-            Foreground="#f1f2f6" IsDefault="True" Height="39" VerticalAlignment="Bottom">
+            Foreground="#f1f2f6"
+            IsDefault="True">
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
@@ -53,11 +56,14 @@
         <Button
             x:Name="btAnnuler"
             Width="99"
+            Height="39"
             Margin="177,0,0,40"
             HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
             Background="Transparent"
             Click="btAnnuler_Click"
-            Content="Annuler" Cursor="Hand" Height="39" VerticalAlignment="Bottom">
+            Content="Annuler"
+            Cursor="Hand">
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="FontFamily" Value="Cascadia Mono SemiBold" />
@@ -118,6 +124,7 @@
             FontSize="18"
             Foreground="#FF14213D"
             Text=""
+            TextChanged="tbNom_TextChanged"
             TextWrapping="Wrap" />
         <Label
             x:Name="lbCodeBarre"
@@ -140,6 +147,7 @@
             FontSize="18"
             Foreground="#FF14213D"
             Text=""
+            TextChanged="tbCodeBarre_TextChanged"
             TextWrapping="Wrap" />
         <Label
             x:Name="lbRefConstructeur"
@@ -162,6 +170,7 @@
             FontSize="18"
             Foreground="#FF14213D"
             Text=""
+            TextChanged="tbRefConstructeur_TextChanged"
             TextWrapping="Wrap" />
         <Label
             x:Name="lbCategorie"

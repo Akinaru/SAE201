@@ -44,7 +44,26 @@ namespace SAE201
 
         private void btCreer_Click(object sender, RoutedEventArgs e)
         {
-            if (cbCategorie.SelectedItem != null)
+            if (cbCategorie.SelectedItem == null || tbNom.Text.Trim() == "" || tbCodeBarre.Text.Trim() == "" || tbRefConstructeur.Text.Trim() == "")
+            {
+                if (tbNom.Text.Trim() == "")
+                    tbNom.BorderBrush = Brushes.Red;
+                else
+                    tbNom.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
+
+                if (tbCodeBarre.Text.Trim() == "")
+                    tbCodeBarre.BorderBrush = Brushes.Red;
+                else
+                    tbCodeBarre.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
+
+                if (tbRefConstructeur.Text.Trim() == "")
+                    tbRefConstructeur.BorderBrush = Brushes.Red;
+                else
+                    tbRefConstructeur.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
+
+                MessageBox.Show("L'un des champs est incorrect.", "Format", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            else
             {
                 CategorieMateriel c = new CategorieMateriel(0, (string)cbCategorie.SelectedItem);
                 int id = c.GetId();
@@ -54,8 +73,8 @@ namespace SAE201
                 {
                     Materiel pFinal = new Materiel(p.GetId(), p.Nom, p.CodeBarre, p.RefConstructeur, p.IdCategorie);
                     ApplicationData.LesMateriels.Add(pFinal);
-                    foreach(CategorieMateriel lesCategories in ApplicationData.LesCategories)
-                        if(lesCategories.Id == id)
+                    foreach (CategorieMateriel lesCategories in ApplicationData.LesCategories)
+                        if (lesCategories.Id == id)
                             lesCategories.LesMateriels = new ObservableCollection<Materiel>(ApplicationData.LesMateriels.ToList().FindAll(g => g.IdCategorie == lesCategories.Id));
                     fenetre.listViewMateriel.DataContext = fenetre.listViewCategorie.SelectedItem;
                     fenetre.listViewMateriel.ItemsSource = ((CategorieMateriel)fenetre.listViewCategorie.SelectedItem).LesMateriels;
@@ -64,6 +83,9 @@ namespace SAE201
                     MessageBox.Show("La création a été refusée.", "Ajout Materiel", MessageBoxButton.OK, MessageBoxImage.Warning);
                 this.Close();
             }
+            
+            
+            
 
         }
 
@@ -72,5 +94,19 @@ namespace SAE201
             this.Close();
         }
 
+        private void tbNom_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            tbNom.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
+        }
+
+        private void tbCodeBarre_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            tbCodeBarre.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
+        }
+
+        private void tbRefConstructeur_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            tbRefConstructeur.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
+        }
     }
 }
