@@ -17,11 +17,12 @@ namespace SAE201.Ressources.Tests
         public void init()
         {
             p1 = new Personnel(1000,"nomTest","prenomTest","email@test.fr");
+            p1.Create();
+            p1.Id = p1.GetId();
         }
         [TestMethod()]
         public void CreateTest()
         {
-            p1.Create();
             Personnel perso = p1.Read(p1.GetId());
             Assert.AreEqual(p1.Nom, perso.Nom, "Test create nom personnel");
             Assert.AreEqual(p1.Prenom, perso.Prenom, "Test create prenom personnel");
@@ -43,8 +44,11 @@ namespace SAE201.Ressources.Tests
             p1.Nom = "nomTestUpdate";
             p1.Prenom = "prenomTestUpdate";
             p1.Email = "email@Test.Update";
+
             p1.Update();
+            
             Personnel perso = p1.Read(p1.GetId());
+            
             Assert.AreEqual(p1.Nom, perso.Nom, "Test update nom personnel");
             Assert.AreEqual(p1.Prenom, perso.Prenom, "Test update prenom personnel");
             Assert.AreEqual(p1.Email, perso.Email, "Test update email personnel");
