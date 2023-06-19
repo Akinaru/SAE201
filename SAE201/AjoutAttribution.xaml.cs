@@ -49,14 +49,21 @@ namespace SAE201
 
         private void btCreer_Click(object sender, RoutedEventArgs e)
         {
-            if (cbMateriel.SelectedItem != null && cbPersonnel.SelectedItem != null && datePicker.SelectedDate != null)
-            
-            
-            
+            if (cbMateriel.SelectedItem == null || cbPersonnel.SelectedItem == null || datePicker.SelectedDate == null || tbCommentaire.Text.Trim() == "")
             {
-
-
-
+                if (tbCommentaire.Text.Trim() == "")
+                {
+                    tbCommentaire.BorderBrush = Brushes.Red;
+                }
+                else
+                {
+                    tbCommentaire.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
+                }
+                MessageBox.Show("L'un des champs est incorrect.", "Format", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            else
+            {
+                
                 Materiel m = new Materiel(0, (string)cbMateriel.SelectedItem, "", "", 0);
                 Personnel p = new Personnel(0, ((Personnel)cbPersonnel.SelectedItem).Nom, ((Personnel)cbPersonnel.SelectedItem).Prenom, "");
                 Personnel pFinal = p.Read(p.GetId());
@@ -99,6 +106,11 @@ namespace SAE201
         private void btAnnuler_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void tbCommentaire_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            tbCommentaire.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
         }
     }
 }
