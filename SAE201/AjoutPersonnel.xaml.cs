@@ -86,7 +86,17 @@ namespace SAE201
 
         private void tbPrenom_TextChanged(object sender, TextChangedEventArgs e)
         {
+            tbPrenom.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
+        }
 
+        private void tbNom_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            tbNom.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
+        }
+
+        private void tbEmail_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            tbEmail.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF0C192F"));
         }
     }
 }
