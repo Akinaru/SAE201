@@ -5,16 +5,15 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>matinfo.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Npgsql" Version="7.0.4" />
+    <Content Include="matinfo.ico" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Ressources\image\logo.ico">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <PackageReference Include="Npgsql" Version="7.0.4" />
   </ItemGroup>
 
 </Project>
