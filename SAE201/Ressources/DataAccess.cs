@@ -35,8 +35,10 @@ namespace SAE201.Ressources /// A MODIFIER SI VOTRE PROJET A UN AUTRE NOM
             {
                 NpgSQLConnect = new NpgsqlConnection
                 {
+                    ConnectionString = "Server=srv-peda-new;port=5433;Database=gallottm;Search Path=sae201;uid=gallottm;password=pqEGfv;" // A MODIFIER POUR VOTR BD
+                    
                     //https://help.alwaysdata.com/fr/acc%C3%A8s-distant/informations-de-connexion/
-                    ConnectionString = "Server=postgresql-martinmateo.alwaysdata.net;port=5432;Database=martinmateo_sae201;Search Path=sae201;uid=martinmateo;password=SAE204zinzinerie;" // A MODIFIER POUR VOTR BD
+                    //ConnectionString = "Server=postgresql-martinmateo.alwaysdata.net;port=5432;Database=martinmateo_sae201;Search Path=sae201;uid=martinmateo;password=SAE204zinzinerie;" // A MODIFIER POUR VOTR BD
                 };
                 NpgSQLConnect.Open();
 
