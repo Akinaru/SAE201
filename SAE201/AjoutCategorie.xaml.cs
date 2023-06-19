@@ -16,10 +16,13 @@ using System.Windows.Shapes;
 namespace SAE201
 {
     /// <summary>
-    /// Logique d'interaction pour AjoutCategorie.xaml
+    /// Fenêtre pour ajouter une catégorie
     /// </summary>
     public partial class AjoutCategorie : Window
     {
+        /// <summary>
+        /// Constructeur de la fenêtre ajout catégorie, activé lors du clic sur le bouton d'ajout de catégorie.
+        /// </summary>
         public AjoutCategorie()
         {
             InitializeComponent();

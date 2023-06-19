@@ -19,7 +19,7 @@ using System.Windows.Shapes;
 namespace SAE201
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Fenêtre principale du logiciel où tout ce passe, selection de catégorie, de personnel, ...
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -27,6 +27,9 @@ namespace SAE201
         private Window pageAjout;
         private Window pageAide;
         private Window pageModif;
+        /// <summary>
+        /// Initialisation de la fenêtre, se lance lors du lancement de l'application
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();

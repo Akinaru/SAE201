@@ -21,10 +21,13 @@ using System.Xml.Schema;
 namespace SAE201
 {
     /// <summary>
-    /// Logique d'interaction pour Ajout.xaml
+    /// Fenêtre pour ajouter un personnel
     /// </summary>
     public partial class AjoutPersonnel : Window
     {
+        /// <summary>
+        /// Constructeur de la fenêtre ajout personnel, activé lors du clic sur le bouton d'ajout de personnel.
+        /// </summary>
         public AjoutPersonnel()
         {
             InitializeComponent();

@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 namespace SAE201
 {
     /// <summary>
-    /// Logique d'interaction pour ModifAttribution.xaml
+    /// Fenêtre pour modifier une attribution
     /// </summary>
     public partial class ModifAttribution : Window
     {
@@ -25,6 +25,11 @@ namespace SAE201
         Materiel materiel;
         Personnel personnel;
         MainWindow fenetre;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="attrib"></param>
+        /// <param name="window">Pour pouvoir récupérer les listview,...</param>
         public ModifAttribution(Attribution attrib, MainWindow window)
         {
             InitializeComponent();

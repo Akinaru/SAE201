@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 namespace SAE201
 {
     /// <summary>
-    /// Logique d'interaction pour Aide.xaml
+    /// Fenêtre d'aide pour les débutants au logiciel
     /// </summary>
     public partial class Aide : Window
     {

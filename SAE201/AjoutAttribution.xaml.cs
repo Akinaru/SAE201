@@ -17,13 +17,19 @@ using System.Windows.Shapes;
 namespace SAE201
 {
     /// <summary>
-    /// Logique d'interaction pour AjoutAttribution.xaml
+    /// Fenêtre pour ajouter une attribution
     /// </summary>
     public partial class AjoutAttribution : Window
     {
 
         public MainWindow fenetre;
 
+        /// <summary>
+        /// Constructeur de la fenêtre ajout attribution, activé lors du clic sur le bouton d'ajout d'attribution.
+        /// </summary>
+        /// <param name="materiel"></param>
+        /// <param name="personnel"></param>
+        /// <param name="fenetre">Pour pouvoir récupérer les listview,...</param>
         public AjoutAttribution(Materiel materiel, Personnel personnel, MainWindow fenetre)
         {
             InitializeComponent();

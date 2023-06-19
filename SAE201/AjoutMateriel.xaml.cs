@@ -17,13 +17,18 @@ using System.Windows.Shapes;
 namespace SAE201
 {
     /// <summary>
-    /// Logique d'interaction pour AjoutMateriel.xaml
+    /// Fenêtre pour ajouter un matériel
     /// </summary>
     public partial class AjoutMateriel : Window
     {
 
         public MainWindow fenetre;
 
+        /// <summary>
+        /// Constructeur de la fenêtre ajout matériel, activé lors du clic sur le bouton d'ajout de matériel.
+        /// </summary>
+        /// <param name="categorie"></param>
+        /// <param name="fenetre">Pour pouvoir récupérer les listview,...</param>
         public AjoutMateriel(CategorieMateriel categorie, MainWindow fenetre)
         {
             InitializeComponent();
