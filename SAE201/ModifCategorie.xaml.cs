@@ -23,6 +23,11 @@ namespace SAE201
         CategorieMateriel catego;
         MainWindow fenetre;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="categorie"></param>
+        /// <param name="window"></param>
         public ModifCategorie(CategorieMateriel categorie, MainWindow window)
         {
             InitializeComponent();
