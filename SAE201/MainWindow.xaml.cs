@@ -174,7 +174,7 @@ namespace SAE201
         {
             if (listViewMateriel.SelectedItem != null)
             {
-                pageModif = new Modification((Materiel)listViewMateriel.SelectedItem);
+                pageModif = new ModifMateriel((Materiel)listViewMateriel.SelectedItem, this);
                 pageModif.Show();
             }
         }
