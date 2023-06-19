@@ -25,10 +25,10 @@ namespace SAE201
         MainWindow fenetre;
 
         /// <summary>
-        /// Constructeur de la fenêtre modification materiel, activé lors du clic droit et modification d'un matériel.
+        /// Constructeur de la fenêtre modification materiel, activé lors du clic droit et modification d'un matérielg.
         /// </summary>
         /// <param name="mat"></param>
-        /// <param name="fenetre"></param>
+        /// <param name="fenetre">Pour pouvoir récupérer les listview,...</param>
         public ModifMateriel(Materiel mat, MainWindow fenetre)
         {
             InitializeComponent();

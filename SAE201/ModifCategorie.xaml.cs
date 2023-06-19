@@ -27,7 +27,7 @@ namespace SAE201
         /// Constructeur de la fenêtre modification categorie, activé lors du clic droit et modification d'une catégorie.
         /// </summary>
         /// <param name="categorie"></param>
-        /// <param name="window"></param>
+        /// <param name="window">Pour pouvoir récupérer les listview,...</param>
         public ModifCategorie(CategorieMateriel categorie, MainWindow window)
         {
             InitializeComponent();
